@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XGdYx5/DvevcpBSdGbRwPUjPZuIg4gonTzZxckhWPgk/OTLr67ZfW1WFBUTlgk1QXGbSeydm//CvAWguXFo7Aw==",
+  "dgSpecHash": "s8/e3905nEr9vlWoJVRh5Cg2FcsBlLEEAjam2ZdmPCIjYZud6aUFZtTFVsY+1ZG5LJxaNvfGcSlB6bHUNnxx9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+  "projectFilePath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eto_d\\.nuget\\packages\\mpt.bindinghelper\\1.0.1\\mpt.bindinghelper.1.0.1.nupkg.sha512",
     "C:\\Users\\eto_d\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"

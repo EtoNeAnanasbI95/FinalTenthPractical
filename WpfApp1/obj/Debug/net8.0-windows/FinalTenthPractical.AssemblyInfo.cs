@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("WpfApp1")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FinalTenthPractical")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1459c76481d40ac57a965d5f335f1d0ce1722d0")]
-[assembly: System.Reflection.AssemblyProductAttribute("WpfApp1")]
-[assembly: System.Reflection.AssemblyTitleAttribute("WpfApp1")]
+[assembly: System.Reflection.AssemblyProductAttribute("FinalTenthPractical")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FinalTenthPractical")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

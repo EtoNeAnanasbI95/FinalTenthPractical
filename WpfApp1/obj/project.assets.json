@@ -91,9 +91,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
-      "projectName": "WpfApp1",
-      "projectPath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+      "projectUniqueName": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
+      "projectName": "FinalTenthPractical",
+      "projectPath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
       "packagesPath": "C:\\Users\\eto_d\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
@@ -118,6 +118,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
