@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
       <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
       <PackageReference Include="WPF-UI" Version="3.0.4" />
     </ItemGroup>

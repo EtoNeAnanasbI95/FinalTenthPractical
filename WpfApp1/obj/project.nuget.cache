@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "s8/e3905nEr9vlWoJVRh5Cg2FcsBlLEEAjam2ZdmPCIjYZud6aUFZtTFVsY+1ZG5LJxaNvfGcSlB6bHUNnxx9A==",
+  "dgSpecHash": "v+ol5z55bFNEI4ax0ENTniysiNx9+X34iSZqI+OrmSXWYyjlWsSElib7Zc5qfvjKU6VQ389qV9Bu45bV3TY6Tw==",
   "success": true,
   "projectFilePath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\eto_d\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.122\\microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512",
     "C:\\Users\\eto_d\\.nuget\\packages\\mpt.bindinghelper\\1.0.1\\mpt.bindinghelper.1.0.1.nupkg.sha512",
     "C:\\Users\\eto_d\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"
   ],
