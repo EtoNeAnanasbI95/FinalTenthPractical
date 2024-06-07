@@ -1,0 +1,6 @@
+@EMIAS_HostAddress = http://localhost:5285
+
+GET {{EMIAS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
