@@ -22,8 +22,23 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+      <PackageReference Include="Mpt.10labThemes" Version="1.1.0" />
       <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
-      <PackageReference Include="WPF-UI" Version="3.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
     </ItemGroup>
 
 </Project>

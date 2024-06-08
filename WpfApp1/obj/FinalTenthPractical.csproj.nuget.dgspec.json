@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj": {}
+    "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj": {
+    "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
+        "projectUniqueName": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
         "projectName": "FinalTenthPractical",
-        "projectPath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\FinalTenthPractical.csproj",
+        "projectPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
         "packagesPath": "C:\\Users\\eto_d\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eto_d\\RiderProjects\\WpfApp1\\WpfApp1\\obj\\",
+        "outputPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eto_d\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,13 +44,13 @@
               "target": "Package",
               "version": "[1.1.122, )"
             },
+            "Mpt.10labThemes": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Mpt.BindingHelper": {
               "target": "Package",
               "version": "[1.0.1, )"
-            },
-            "WPF-UI": {
-              "target": "Package",
-              "version": "[3.0.4, )"
             }
           },
           "imports": [

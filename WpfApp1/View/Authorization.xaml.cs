@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
 
 namespace WpfApp1;
 
@@ -20,4 +21,13 @@ public partial class Authorization : Window
     {
         InitializeComponent();
     }
+    
+    private void ChangeTheme(object sender, RoutedEventArgs e)
+    {
+        if (Settings.Default.CurrentTheme == "Light")
+            App.Theme = "Dark";
+        else
+            App.Theme = "Light";
+    }
+
 }
