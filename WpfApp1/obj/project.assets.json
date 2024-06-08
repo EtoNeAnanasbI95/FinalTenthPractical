@@ -18,7 +18,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mpt.10labThemes/1.1.0": {
+      "Mpt.10labThemes/1.2.3": {
         "type": "package",
         "dependencies": {
           "WPF-UI": "3.0.4"
@@ -86,15 +86,16 @@
         "tools/Install.ps1"
       ]
     },
-    "Mpt.10labThemes/1.1.0": {
-      "sha512": "kkGkC53F6yI8LP6XmGaADJFY5QvAwzJzoT2q1pWaZ/ocJzG3P1LLrY6PmtDoahyIH+/ZZFDlfQSpOTIQOKLvCQ==",
+    "Mpt.10labThemes/1.2.3": {
+      "sha512": "Rqz2ZFQ12ExHTW4/aZVrQua8uLx0Kfctgvq6Yiwj/H2+2RHNJWDJaGf9ABy6tGW7PbAG7qPpDqnEMeWpCCv39g==",
       "type": "package",
-      "path": "mpt.10labthemes/1.1.0",
+      "path": "mpt.10labthemes/1.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "README.md",
         "lib/net8.0-windows7.0/Themes.dll",
-        "mpt.10labthemes.1.1.0.nupkg.sha512",
+        "mpt.10labthemes.1.2.3.nupkg.sha512",
         "mpt.10labthemes.nuspec"
       ]
     },
@@ -147,24 +148,24 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Microsoft.Xaml.Behaviors.Wpf >= 1.1.122",
-      "Mpt.10labThemes >= 1.1.0",
+      "Mpt.10labThemes >= 1.2.3",
       "Mpt.BindingHelper >= 1.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eto_d\\.nuget\\packages\\": {}
+    "C:\\Users\\Ilyam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
+      "projectUniqueName": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
       "projectName": "FinalTenthPractical",
-      "projectPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
-      "packagesPath": "C:\\Users\\eto_d\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\obj\\",
+      "projectPath": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
+      "packagesPath": "C:\\Users\\Ilyam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\eto_d\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ilyam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -172,6 +173,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -184,6 +186,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -196,7 +203,7 @@
           },
           "Mpt.10labThemes": {
             "target": "Package",
-            "version": "[1.1.0, )"
+            "version": "[1.2.3, )"
           },
           "Mpt.BindingHelper": {
             "target": "Package",
@@ -222,7 +229,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

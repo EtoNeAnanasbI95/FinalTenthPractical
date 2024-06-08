@@ -9,11 +9,26 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Model\" />
+      <None Remove="Model\Cross_negate.png" />
+      <None Remove="Model\scroll_negate.png" />
+      <None Remove="Model\square.png" />
+      <None Remove="Model\изображение 19.png" />
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="View\Authorization.xaml">
+      <Resource Include="Model\scroll_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\square.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\изображение 19.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="View\Load.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
@@ -22,8 +37,14 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
-      <PackageReference Include="Mpt.10labThemes" Version="1.1.0" />
+      <PackageReference Include="Mpt.10labThemes" Version="1.2.3" />
       <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Model\Cross_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
     <ItemGroup>

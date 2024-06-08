@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\eto_d\Desktop\FinalTenthPractical\WpfApp1\obj\Debug\net8.0-windows\
+C:\Users\Ilyam\Source\Repos\FinalTenthPractical\WpfApp1\obj\Debug\net8.0-windows\
 FinalTenthPractical
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\eto_d\Desktop\FinalTenthPractical\WpfApp1\App.xaml
-11612784185
+C:\Users\Ilyam\Source\Repos\FinalTenthPractical\WpfApp1\App.xaml
+5625247329
 
-6-1377348889
-202729600729
-View\Authorization.xaml;
+10-1849677218
+202-6405074
+View\Autorized.xaml;View\FrameAutorizedDoctor.xaml;View\FrameAutorizedPatient.xaml;View\Load.xaml;View\Patient.xaml;
 
-True
+False
 
