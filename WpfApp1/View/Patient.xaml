@@ -1,0 +1,23 @@
+﻿<Window x:Class="FinalTenthPractical.View.Patient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalTenthPractical.View"
+        mc:Ignorable="d"
+        Title="Patient" Height="860" Width="1500">
+    <Grid>
+        <TreeView>
+            <TreeViewItem  Header="Главная">
+                <TreeViewItem Header="Записи и направления" />
+                <TreeViewItem Header="Рецепты" />
+                <TreeViewItem Header="Диспансеризация" />
+            </TreeViewItem>
+            <TreeViewItem Header="Медкарта">
+                <TreeViewItem Header="Приёмы" />
+                <TreeViewItem Header="Анализы" />
+                <TreeViewItem Header="Исследования" />
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
