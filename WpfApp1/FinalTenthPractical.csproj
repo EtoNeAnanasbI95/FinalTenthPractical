@@ -22,7 +22,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
-      <PackageReference Include="Mpt.10labThemes" Version="1.1.0" />
+      <PackageReference Include="Mpt.10labThemes" Version="1.2.3" />
       <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
     </ItemGroup>
 
