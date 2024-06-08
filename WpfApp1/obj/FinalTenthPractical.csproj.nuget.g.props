@@ -5,15 +5,15 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\eto_d\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Ilyam\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.9.1</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.10.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\eto_d\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Ilyam\.nuget\packages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgWPF-UI Condition=" '$(PkgWPF-UI)' == '' ">C:\Users\eto_d\.nuget\packages\wpf-ui\3.0.4</PkgWPF-UI>
-    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\eto_d\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.122</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgWPF-UI Condition=" '$(PkgWPF-UI)' == '' ">C:\Users\Ilyam\.nuget\packages\wpf-ui\3.0.4</PkgWPF-UI>
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Ilyam\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.122</PkgMicrosoft_Xaml_Behaviors_Wpf>
   </PropertyGroup>
 </Project>

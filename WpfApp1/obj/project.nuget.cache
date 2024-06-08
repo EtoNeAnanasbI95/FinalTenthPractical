@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eCS9NzXTLpd8d2C8BMR3RkDetZTIfQmOMnp400YOF9LgH0ekLBpzLgDdUoMG/b/xtsYYvDYov5NdUIIH4jH/Jw==",
+  "dgSpecHash": "PpheqX28ob4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
+  "projectFilePath": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\eto_d\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.122\\microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512",
-    "C:\\Users\\eto_d\\.nuget\\packages\\mpt.10labthemes\\1.1.0\\mpt.10labthemes.1.1.0.nupkg.sha512",
-    "C:\\Users\\eto_d\\.nuget\\packages\\mpt.bindinghelper\\1.0.1\\mpt.bindinghelper.1.0.1.nupkg.sha512",
-    "C:\\Users\\eto_d\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"
+    "C:\\Users\\Ilyam\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.122\\microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512",
+    "C:\\Users\\Ilyam\\.nuget\\packages\\mpt.10labthemes\\1.1.0\\mpt.10labthemes.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ilyam\\.nuget\\packages\\mpt.bindinghelper\\1.0.1\\mpt.bindinghelper.1.0.1.nupkg.sha512",
+    "C:\\Users\\Ilyam\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"
   ],
   "logs": []
 }
