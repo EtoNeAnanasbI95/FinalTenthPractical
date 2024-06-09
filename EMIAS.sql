@@ -1,0 +1,93 @@
+CREATE DATABASE EMIAS;
+GO
+
+USE EMIAS;
+GO
+
+CREATE TABLE Specialities_(
+	IdSpeciality INT PRIMARY KEY IDENTITY(1,1),
+	Name_ NVARCHAR(50) NOT NULL,
+);
+GO
+
+
+CREATE TABLE Patient_(
+	OMS BIGINT PRIMARY KEY IDENTITY(1,1),
+	Surname NVARCHAR(50) NOT NULL,
+	Name_ NVARCHAR(50) NOT NULL,
+	Patronymic NVARCHAR(50) NOT NULL,
+	BirthDay DATE NOT NULL,
+	Address_ NVARCHAR(255) NOT NULL,
+	LivingAddress NVARCHAR(255) NULL,
+	Phone NVARCHAR(18) NULL,
+	Email NVARCHAR(50) NULL,
+	Nickname NVARCHAR(50) NULL,
+);
+GO
+
+
+CREATE TABLE Admin_(
+	IdAdmin INT PRIMARY KEY IDENTITY(1,1),
+	Surname NVARCHAR(50) NOT NULL,
+	Name_ NVARCHAR(50) NOT NULL,
+	Patronymic NVARCHAR(50) NOT NULL,
+	EnterPassword NVARCHAR(50) NOT NULL,
+);
+GO
+
+CREATE TABLE Directions_(
+	IdDirection CHAR(18) PRIMARY KEY IDENTITY(1,1),
+
+	FOREIGN KEY () REFERENCES (),
+	FOREIGN KEY () REFERENCES (),
+);
+GO
+
+CREATE TABLE Status_(
+	IdStatus INT PRIMARY KEY IDENTITY(1,1),
+	Name_ NVARCHAR(50) NOT NULL,
+);
+GO
+
+CREATE TABLE Doctor_(
+	IdDoctor INT PRIMARY KEY IDENTITY(1,1),
+	Surname NVARCHAR(50) NOT NULL,
+	Name_ NVARCHAR(50) NOT NULL,
+	Patronymic NVARCHAR(50) NOT NULL,
+	EnterPassword NVARCHAR(50) NOT NULL,
+	WorkAddress NVARCHAR(50) NOT NULL,
+	FOREIGN KEY () REFERENCES (),
+);
+GO
+
+CREATE TABLE Appointments_(
+	IdAppointment INT PRIMARY KEY IDENTITY(1,1),
+	AppointmentDate DATE NOT NULL,
+	AppointmentTime TIME NOT NULL,
+	FOREIGN KEY () REFERENCES (),
+	FOREIGN KEY () REFERENCES (),
+	FOREIGN KEY () REFERENCES (),
+	
+);
+GO
+
+CREATE TABLE AppointmentDocument_(
+------------- здесь € вообще ниху€ не пон€л
+	Rtf NVARCHAR(MAX) NOT NULL,
+);
+GO
+
+CREATE TABLE AnalysDocument_(
+------------- здесь € вообще ниху€ не пон€л
+	Rtf NVARCHAR(MAX) NOT NULL,
+
+);
+GO
+
+CREATE TABLE ResearchDocument_(
+------------- здесь € вообще ниху€ не пон€л
+	Rtf NVARCHAR(MAX) NOT NULL,
+	Attachment BINARY NULL,
+);
+GO
+
