@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FinalTenthPractical.View
+namespace FinalTenthPractical.View.PAGES
 {
     /// <summary>
-    /// Логика взаимодействия для Patient.xaml
+    /// Логика взаимодействия для AdminAdministrator.xaml
     /// </summary>
-    public partial class Patient : Window
+    public partial class AdminAdministrator : Page
     {
-        public Patient()
+        public AdminAdministrator()
         {
             InitializeComponent();
         }

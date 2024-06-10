@@ -10,16 +10,32 @@
 
     <ItemGroup>
       <None Remove="Model\Cross_negate.png" />
+      <None Remove="Model\Cross_negate_negate.png" />
+      <None Remove="Model\Moon.png" />
       <None Remove="Model\scroll_negate.png" />
+      <None Remove="Model\scroll_negate_negate.png" />
       <None Remove="Model\square.png" />
+      <None Remove="Model\square_negate.png" />
       <None Remove="Model\изображение 19.png" />
     </ItemGroup>
 
     <ItemGroup>
+      <Resource Include="Model\Cross_negate_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\Moon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Model\scroll_negate.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
+      <Resource Include="Model\scroll_negate_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Model\square.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\square_negate.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\изображение 19.png">
@@ -37,7 +53,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
-      <PackageReference Include="Mpt.10labThemes" Version="1.2.3" />
+      <PackageReference Include="Mpt.10labThemes" Version="1.2.5" />
       <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
     </ItemGroup>
 
