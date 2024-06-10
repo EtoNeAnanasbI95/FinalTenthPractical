@@ -18,7 +18,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mpt.10labThemes/1.2.3": {
+      "Mpt.10labThemes/1.2.5": {
         "type": "package",
         "dependencies": {
           "WPF-UI": "3.0.4"
@@ -86,16 +86,16 @@
         "tools/Install.ps1"
       ]
     },
-    "Mpt.10labThemes/1.2.3": {
-      "sha512": "Rqz2ZFQ12ExHTW4/aZVrQua8uLx0Kfctgvq6Yiwj/H2+2RHNJWDJaGf9ABy6tGW7PbAG7qPpDqnEMeWpCCv39g==",
+    "Mpt.10labThemes/1.2.5": {
+      "sha512": "ecse6O5ErdEnZ8dyXw1nl0ZFTOfNRHhkLVdgdmRtEvHIFHCPB/57gEZfK8pknq8Utgy6CB/fiDIUwdxZLsThbA==",
       "type": "package",
-      "path": "mpt.10labthemes/1.2.3",
+      "path": "mpt.10labthemes/1.2.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "lib/net8.0-windows7.0/Themes.dll",
-        "mpt.10labthemes.1.2.3.nupkg.sha512",
+        "mpt.10labthemes.1.2.5.nupkg.sha512",
         "mpt.10labthemes.nuspec"
       ]
     },
@@ -148,7 +148,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Microsoft.Xaml.Behaviors.Wpf >= 1.1.122",
-      "Mpt.10labThemes >= 1.2.3",
+      "Mpt.10labThemes >= 1.2.5",
       "Mpt.BindingHelper >= 1.0.1"
     ]
   },
@@ -158,11 +158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
+      "projectUniqueName": "C:\\Users\\Ilyam\\source\\repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
       "projectName": "FinalTenthPractical",
-      "projectPath": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
+      "projectPath": "C:\\Users\\Ilyam\\source\\repos\\FinalTenthPractical\\WpfApp1\\FinalTenthPractical.csproj",
       "packagesPath": "C:\\Users\\Ilyam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ilyam\\Source\\Repos\\FinalTenthPractical\\WpfApp1\\obj\\",
+      "outputPath": "C:\\Users\\Ilyam\\source\\repos\\FinalTenthPractical\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ilyam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -203,7 +203,7 @@
           },
           "Mpt.10labThemes": {
             "target": "Package",
-            "version": "[1.2.3, )"
+            "version": "[1.2.5, )"
           },
           "Mpt.BindingHelper": {
             "target": "Package",

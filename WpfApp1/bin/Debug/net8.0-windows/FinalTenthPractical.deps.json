@@ -9,7 +9,7 @@
       "FinalTenthPractical/1.0.0": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.122",
-          "Mpt.10labThemes": "1.1.0",
+          "Mpt.10labThemes": "1.2.5",
           "Mpt.BindingHelper": "1.0.1"
         },
         "runtime": {
@@ -24,14 +24,14 @@
           }
         }
       },
-      "Mpt.10labThemes/1.1.0": {
+      "Mpt.10labThemes/1.2.5": {
         "dependencies": {
           "WPF-UI": "3.0.4"
         },
         "runtime": {
           "lib/net8.0-windows7.0/Themes.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+            "assemblyVersion": "1.2.5.0",
+            "fileVersion": "1.2.5.0"
           }
         }
       },
@@ -66,12 +66,12 @@
       "path": "microsoft.xaml.behaviors.wpf/1.1.122",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512"
     },
-    "Mpt.10labThemes/1.1.0": {
+    "Mpt.10labThemes/1.2.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kkGkC53F6yI8LP6XmGaADJFY5QvAwzJzoT2q1pWaZ/ocJzG3P1LLrY6PmtDoahyIH+/ZZFDlfQSpOTIQOKLvCQ==",
-      "path": "mpt.10labthemes/1.1.0",
-      "hashPath": "mpt.10labthemes.1.1.0.nupkg.sha512"
+      "sha512": "sha512-ecse6O5ErdEnZ8dyXw1nl0ZFTOfNRHhkLVdgdmRtEvHIFHCPB/57gEZfK8pknq8Utgy6CB/fiDIUwdxZLsThbA==",
+      "path": "mpt.10labthemes/1.2.5",
+      "hashPath": "mpt.10labthemes.1.2.5.nupkg.sha512"
     },
     "Mpt.BindingHelper/1.0.1": {
       "type": "package",

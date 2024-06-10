@@ -65,7 +65,7 @@ namespace FinalTenthPractical.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinalTenthPractical;V1.0.0.0;component/view/autorized.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinalTenthPractical;component/view/autorized.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\Autorized.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
