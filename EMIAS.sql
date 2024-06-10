@@ -1,178 +1,187 @@
+DROP DATABASE EMIAS;
+GO
+
 CREATE DATABASE EMIAS;
 GO
 
 USE EMIAS;
 GO
 
-CREATE TABLE Specialities(
-	IdSpeciality INT PRIMARY KEY IDENTITY(1,1),
-	Name NVARCHAR(50) NOT NULL,
+CREATE TABLE Specialities
+(
+    ID_Speciality    INT PRIMARY KEY IDENTITY(1,1),
+    NameSpecialities NVARCHAR(50) NOT NULL,
+    PathImage        NVARCHAR(50) NOT NULL
 );
 GO
 
-
-insert into Specialities(Name)
-values
-('РџРµРґРёР°С‚РѕСЂ'),
-('Р“РёРЅРµРєРѕР»РѕРі'),
-('РўСЂР°РІРјР°С‚РѕР»РѕРі')
-go
-
-
-CREATE TABLE Patient(
-	OMS BIGINT PRIMARY KEY not null,
-	Surname NVARCHAR(50) NOT NULL,
-	Name NVARCHAR(50) NOT NULL,
-	Patronymic NVARCHAR(50) NOT NULL,
-	BirthDay DATE NOT NULL,
-	Address NVARCHAR(255) NOT NULL,
-	LivingAddress NVARCHAR(255) NULL,
-	Phone NVARCHAR(18) NULL,
-	Email NVARCHAR(50) NULL,
-	Nickname NVARCHAR(50) NULL,
+CREATE TABLE Patient
+(
+    OMS            BIGINT PRIMARY KEY,
+    Surname        NVARCHAR(50) NOT NULL,
+    FirstName      NVARCHAR(50) NOT NULL,
+    Patronymic     NVARCHAR(50) NOT NULL,
+    BirthDay       DATE NOT NULL,
+    AddressPatient NVARCHAR(255) NOT NULL,
+    LivingAddress  NVARCHAR(255) NULL,
+    Phone          NVARCHAR(18) NULL,
+    Email          NVARCHAR(50) NULL,
+    Nickname       NVARCHAR(50) NULL
 );
 GO
 
-insert into Patient(OMS,Surname,Name,Patronymic,BirthDay,Address,LivingAddress,Phone,Email,Nickname)
-values
-(1,'РџСЂРѕРІР°СЂРµРЅРѕРІ','РђР»РµРєСЃРµР№','РђРЅРґСЂРµРµРІРёС‡Г·','09.05.2006',' РіРѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° РћС‚СЂР°РґРЅРѕРµ РґРѕРј 52 РєРІ.34','РіРѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° РћС‚СЂР°РґРЅРѕРµ РґРѕРј 52 РєРІ.34','+79233245784','povar1234@gmail.com','Nekto228'),
-(2,'РќРёРєРёС‚Р°','Р’Р°СЃСЋРєРѕРІ','РћР±РµР·СЊСЏРЅРѕРІРёС‡','21.03.2006','РіРѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° РњСѓС…РѕСЃСЂР°РЅСЃРє РґРѕРј 12 РєРІ.120','РіРѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° РњСѓС…РѕСЃСЂР°РЅСЃРє РґРѕРј 12 РєРІ.120','+71023247459','NekitNeLox228@gmail.com','RaspikYaukami412'),
-(3,'Р”РјРёС‚СЂРёР№','РљРёСЂРёР»РѕРІ','РЎРµСЂРіРµРµРІРёС‡','07.11.2007','Р“РѕСЂРѕРґ РҐР°Р±Р°СЂРѕРІСЃРє СЃРµР»Рѕ Р—РµР»С‘РЅРѕРµ РґРѕРј 3','Р“РѕСЂРѕРґ РҐР°Р±Р°СЂРѕРІСЃРє СЃРµР»Рѕ Р—РµР»С‘РЅРѕРµ РґРѕРј 3','+79234627580','IlikeHairyMen@gmail.com','SyperSys_129')
-go
-drop table Admin
-
-CREATE TABLE Admin(
-	IdAdmin INT PRIMARY KEY IDENTITY(1,1),
-	Surname NVARCHAR(50) NOT NULL,
-	Name NVARCHAR(50) NOT NULL,
-	Patronymic NVARCHAR(50) NOT NULL,
-	EnterPassword NVARCHAR(50) NOT NULL,
-
+CREATE TABLE Admin_
+(
+    ID_Admin      INT PRIMARY KEY IDENTITY(1,1),
+    SurnameAdmin  NVARCHAR(50) NOT NULL,
+    FirstName     NVARCHAR(50) NOT NULL,
+    Patronymic    NVARCHAR(50) NOT NULL,
+    EnterPassword NVARCHAR(50) NOT NULL
 );
 GO
 
-insert into Admin(Surname,Name,Patronymic,EnterPassword)
-values
-('РЎРёРЅРёС†С‹РЅР°','Р•Р»РёР·РѕРІРµС‚Р°','Р”РјРёС‚СЂРёРµРІРЅР°','13579'),
-('РЎРєРѕСЂРѕРіСѓРґР°РµРІР°','РЎРѕС„РёСЏ','РђР»РµРєСЃРµРµРІРЅР°','97531'),
-('Р›Р°РІСЂРѕРј','РњР°РєСЃРёРј','Р”РјРёС‚СЂРёРµРІРёС‡','32546')
-go
-
-CREATE TABLE Directions(
-	IdDirection CHAR(18) PRIMARY KEY not null,
-	IdSpeciality int not null foreign key (IdSpeciality) references Specialities(IdSpeciality),
-	OMS BIGINT not null foreign key (OMS) references Patient(OMS),
-
+CREATE TABLE Directions
+(
+    ID_Direction  INT PRIMARY KEY IDENTITY(1,1),
+    Speciality_ID INT    NOT NULL,
+    FOREIGN KEY (Speciality_ID) REFERENCES Specialities (ID_Speciality),
+    OMS           BIGINT NOT NULL,
+    FOREIGN KEY (OMS) REFERENCES Patient (OMS)
 );
 GO
 
-insert into Directions(IdDirection,IdSpeciality,OMS)
-values
-(1,1,1),
-(2,2,2),
-(3,3,3)
-go
-
-CREATE TABLE Status(
-	IdStatus INT PRIMARY KEY IDENTITY(1,1),
-	Name NVARCHAR(50) NOT NULL,
+CREATE TABLE Status
+(
+    ID_Status  INT PRIMARY KEY IDENTITY(1,1),
+    NameStatus NVARCHAR(50) NOT NULL
 );
 GO
 
-insert into Status_(Name_)
-values
-('РЅР° СЂР°СЃСЃРјРѕС‚СЂРµРЅРёРё'),
-('РїСЂРёРЅСЏС‚Рѕ'),
-('РѕР¶РёРґР°РµС‚ РїСЂРёС‘РјР°')
-go
-
-drop table Doctor
-CREATE TABLE Doctor(
-	IdDoctor INT PRIMARY KEY IDENTITY(1,1),
-	Surname NVARCHAR(50) NOT NULL,
-	Name NVARCHAR(50) NOT NULL,
-	Patronymic NVARCHAR(50) NOT NULL,
-	EnterPassword NVARCHAR(50) NOT NULL,
-	WorkAddress NVARCHAR(50) NOT NULL,
-	IdSpeciality int not null foreign key references Specialities(IdSpeciality)
+CREATE TABLE Doctor
+(
+    ID_Doctor     INT PRIMARY KEY IDENTITY(1,3),
+    Surname       NVARCHAR(50) NOT NULL,
+    FirstName_    NVARCHAR(50) NOT NULL,
+    Patronymic    NVARCHAR(50) NOT NULL,
+    Speciality_ID int not null,
+    FOREIGN KEY (Speciality_ID) REFERENCES Specialities (ID_Speciality),
+    EnterPassword NVARCHAR(50) NOT NULL,
+    WorkAddress   NVARCHAR(50) NOT NULL
 );
 GO
 
-insert into Doctor(Surname,Name,Patronymic,EnterPassword,WorkAddress,IdSpeciality)
-values
-('РњРѕСЂР°СЂСЊ','Р РѕРјР°РЅ','РћР»РµРіРѕРІРёС‡','123456','Р“РѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° Р§РµСЂС‚Р°РЅРѕРІСЃРєР°СЏ РґРѕРј 10',1),
-('РњР°СЂРёСЏ','Р“Р°РІСЂРёРєРѕРІР°','Р’Р»Р°РґРёРјРёСЂРѕРІРЅР°','654321','Р“РѕСЂРѕРґ РњРѕСЃРєРІР° СѓР»РёС†Р° РЎРµРІР°СЃС‚РѕРїРѕР»СЊСЃРєР°СЏ РґРѕРј 25',2),
-('Р‘РёРєС‚РёРјРёСЂРѕРІ','Р СѓСЃР»Р°РЅ','РћР»РµРіРѕРІРёС‡','09876','Р“РѕСЂРѕРґ РђСЃС‚СЂР°С…Р°РЅСЊ СѓР»РёС†Р° Р§РµСЂРµРјРЅС‹С… РґРѕРј 7',3)
-go
-
-
-
-CREATE TABLE Appointments(
-	IdAppointment INT PRIMARY KEY IDENTITY(1,1),
-	AppointmentDate DATE NOT NULL,
-	AppointmentTime TIME NOT NULL,
-	IdDoctor int not null FOREIGN KEY (IdDoctor) REFERENCES Doctor(IdDoctor),
-	OMS BIGINT not null foreign key (OMS) references Patient(OMS),
-	IdStatus int not null FOREIGN KEY (IdStatus) REFERENCES Status(IdStatus),
-	
+CREATE TABLE Appointments
+(
+    ID_Appointment  INT PRIMARY KEY IDENTITY(1,1),
+    AppointmentDate DATE   NOT NULL,
+    AppointmentTime TIME   NOT NULL,
+    Doctor_ID       INT    NOT NULL,
+    FOREIGN KEY (Doctor_ID) REFERENCES Doctor (ID_Doctor),
+    OMS             BIGINT NOT NULL,
+    FOREIGN KEY (OMS) REFERENCES Patient (OMS),
+    Status_ID       INT    NOT NULL,
+    FOREIGN KEY (Status_ID) REFERENCES Status (ID_Status)
 );
 GO
 
-insert into Appointments(AppointmentDate,AppointmentTime,IdDoctor,OMS,IdStatus)
-values
-('20.06.2024','12:00',1,1,1),
-('15.06.2024','18:00',4,2,2),
-('10.05.2023','9:00',7,3,3)
-go
-
-
-
-CREATE TABLE AppointmentDocument_(
-IdAppointment int not null foreign key (IdAppointment) references Appointments(IdAppointment),
-	Rtf NVARCHAR(MAX) NOT NULL,
+CREATE TABLE AppointmentDocument
+(
+    ID_Appointment INT PRIMARY KEY IDENTITY (1,1),
+    FOREIGN KEY (ID_Appointment) REFERENCES Appointments (ID_Appointment),
+    Rtf            NVARCHAR(MAX) NOT NULL,
 );
 GO
 
-insert into AppointmentDocument(IdAppointment,Rtf)
-values
-(1,'СЏРІРёР»СЃСЏ'),
-(2,'РЅРµ СЏРІРёР»СЃСЏ'),
-(3,'РѕРїРѕР·РґР°Р»')
-go
-
-CREATE TABLE AnalysDocument(
-IdAppointment int not null foreign key (IdAppointment) references Appointments(IdAppointment),
-
-	Rtf NVARCHAR(MAX) NOT NULL,
-
+CREATE TABLE AnalysDocument
+(
+    ID_Appointment INT PRIMARY KEY IDENTITY (1,1),
+    FOREIGN KEY (ID_Appointment) REFERENCES Appointments (ID_Appointment),
+    Rtf            NVARCHAR(MAX) NOT NULL,
 );
 GO
 
-insert into AnalysDocument(IdAppointment,Rtf)
-values
-(1,'СѓРјСЂС‘С‚ РѕС‚ СЃРїРёРґР°'),
-(2,'СЂР°Рє Р»РµРІРѕРіРѕ СЏРёС‡РєР° 10 СЃС‚РµРїРµРЅРё'),
-(3,'Р·РґРѕСЂРѕРІ')
-go
-
-CREATE TABLE ResearchDocument(
-IdAppointment int not null foreign key (IdAppointment) references Appointments(IdAppointment),
-	Rtf NVARCHAR(MAX) NOT NULL,
-	Attachment BINARY NULL,
+CREATE TABLE ResearchDocument
+(
+    ID_Appointment INT PRIMARY KEY IDENTITY (1,1),
+    FOREIGN KEY (ID_Appointment) REFERENCES Appointments (ID_Appointment),
+    Rtf            NVARCHAR(MAX) NOT NULL,
+    Attachment     VARBINARY NULL
 );
 GO
 
-insert into ResearchDocument(IdAppointment,Rtf)
+insert into Specialities(NameSpecialities, PathImage)
 values
-(1,'РІР·СЏС‚ РјР°Р·РѕРє'),
-(2,'РѕС‚СЂРµР·Р°Р»Рё Р»РµРІРѕРµ СЏРёС‡РєРѕ'),
-(3,'РІР·СЏС‚Р° РєСЂРѕРІСЊ')
+    ('Педиатор', ''),
+    ('Гинеколог', ''),
+    ('Травматолог', '')
 go
 
+insert into Patient(OMS, Surname, FirstName, Patronymic, BirthDay, AddressPatient, LivingAddress, Phone, Email, Nickname)
+values
+    (1,'Проваренов','Алексей','Андреевич','09.05.2006',' город Москва улица Отрадное дом 52 кв.34','город Москва улица Отрадное дом 52 кв.34','+79233245784','povar1234@gmail.com','Nekto228'),
+    (2,'Никита','Васюков','Обезьянович','21.03.2006','город Москва улица Мухосранск дом 12 кв.120','город Москва улица Мухосранск дом 12 кв.120','+71023247459','NekitNeLox228@gmail.com','RaspikYaukami412'),
+    (3,'Дмитрий','Кирилов','Сергеевич','07.11.2007','Город Хабаровск село Зелёное дом 3','Город Хабаровск село Зелёное дом 3','+79234627580','IlikeHairyMen@gmail.com','SyperSys_129')
+go
+
+insert into Admin_(SurnameAdmin, FirstName, Patronymic, EnterPassword)
+values
+    ('Синицына','Елизовета','Дмитриевна','13579'),
+    ('Скорогудаева','София','Алексеевна','97531'),
+    ('Лавром','Максим','Дмитриевич','32546')
+go
+
+insert into Directions(Speciality_ID, OMS)
+values
+    (1,1),
+    (2,2),
+    (3,3)
+go
+
+insert into Status(NameStatus)
+values
+    ('на рассмотрении'),
+    ('принято'),
+    ('ожидпет приёма')
+go
+
+insert into Doctor(Surname, FirstName_, Patronymic, Speciality_ID, EnterPassword, WorkAddress)
+values
+    ('Морарь', 'Роман', 'Олегович', 1, '123456', 'Город Москва улица Чертановская дом 10'),
+    ('Мария', 'Гаврикова', 'Владимировна', 2,'654321', 'Город Москва улица Севастопольская дом 25'),
+    ('Биктимиров', 'Руслан', 'Олегович', 3,'09876', 'Город Астрахань улица Черемных дом 7')
+go
+
+insert into Appointments(AppointmentDate,AppointmentTime, Doctor_ID, OMS, Status_ID)
+values
+    ('20.06.2024','12:00',1,1,1),
+    ('15.06.2024','18:00',4,2,2),
+    ('10.05.2023','9:00',7,3,3)
+go
+
+insert into AppointmentDocument(Rtf)
+values
+    ('явился'),
+    ('не явился'),
+    ('опоздал')
+go
+
+insert into AnalysDocument(Rtf)
+values
+    ('умрёт от спида'),
+    ('рак левого яичка 10 степени'),
+    ('здоров')
+go
+
+insert into ResearchDocument(Rtf)
+values
+    ('взят мазок'),
+    ('отрезали левое яичко'),
+    ('взята кровь')
+go
 
 select * from Specialities
 select * from Patient
-select * from Admin
+select * from Admin_
 select * from Directions
 select * from Status
 select * from Patient
@@ -181,5 +190,3 @@ select * from Appointments
 select * from AppointmentDocument
 select * from AnalysDocument
 select * from ResearchDocument
-
-
