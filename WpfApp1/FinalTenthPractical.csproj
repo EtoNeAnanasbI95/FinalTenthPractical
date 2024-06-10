@@ -11,6 +11,7 @@
     <ItemGroup>
       <None Remove="Model\Cross_negate.png" />
       <None Remove="Model\Cross_negate_negate.png" />
+      <None Remove="Model\Moon.png" />
       <None Remove="Model\scroll_negate.png" />
       <None Remove="Model\scroll_negate_negate.png" />
       <None Remove="Model\square.png" />
@@ -20,6 +21,9 @@
 
     <ItemGroup>
       <Resource Include="Model\Cross_negate_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\Moon.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\scroll_negate.png">

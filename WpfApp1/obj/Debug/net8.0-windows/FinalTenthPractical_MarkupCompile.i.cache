@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Ilyam\source\repos\FinalTenthPractical\WpfApp1\App.xaml
-5625247329
+9-841680760
 
-12406958654
+161633647978
 2021093457180
-View\Autorized.xaml;View\FrameAutorizedDoctor.xaml;View\FrameAutorizedPatient.xaml;View\Load.xaml;View\Patient.xaml;
+View\Load.xaml;View\PAGES\AdminAdministrator.xaml;View\PAGES\AdminDoctor.xaml;View\PAGES\AdminPatient.xaml;View\PAGES\FrameAutorizedDoctor.xaml;View\PAGES\FrameAutorizedPatient.xaml;View\WINDOWS\Administrator.xaml;View\WINDOWS\Autorized.xaml;View\WINDOWS\Patient.xaml;
 
 True
 

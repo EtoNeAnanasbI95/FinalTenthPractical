@@ -29,7 +29,7 @@ public partial class Load : Window
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        timer = new System.Timers.Timer(3000);
+        timer = new System.Timers.Timer(100);
         timer.Elapsed += Timer_Elapsed;
         timer.AutoReset = false;
         timer.Start();

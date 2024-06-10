@@ -2,30 +2,54 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="View\Autorized.xaml.cs">
+    <Compile Update="View\PAGES\AdminAdministrator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\FrameAutorizedDoctor.xaml.cs">
+    <Compile Update="View\PAGES\AdminDoctor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\FrameAutorizedPatient.xaml.cs">
+    <Compile Update="View\PAGES\AdminPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Patient.xaml.cs">
+    <Compile Update="View\WINDOWS\Administrator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\WINDOWS\Autorized.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\FrameAutorizedDoctor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\FrameAutorizedPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\WINDOWS\Patient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\Autorized.xaml">
+    <Page Update="View\PAGES\AdminAdministrator.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\FrameAutorizedDoctor.xaml">
+    <Page Update="View\PAGES\AdminDoctor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\FrameAutorizedPatient.xaml">
+    <Page Update="View\PAGES\AdminPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Patient.xaml">
+    <Page Update="View\WINDOWS\Administrator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\WINDOWS\Autorized.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\FrameAutorizedDoctor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\FrameAutorizedPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\WINDOWS\Patient.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
