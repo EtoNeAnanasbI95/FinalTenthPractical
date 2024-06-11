@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eto_d\\source\\repos\\EMIAS\\EMIAS\\EMIAS.csproj": {}
+    "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\EMIAS\\EMIAS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eto_d\\source\\repos\\EMIAS\\EMIAS\\EMIAS.csproj": {
+    "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\EMIAS\\EMIAS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eto_d\\source\\repos\\EMIAS\\EMIAS\\EMIAS.csproj",
+        "projectUniqueName": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\EMIAS\\EMIAS.csproj",
         "projectName": "EMIAS",
-        "projectPath": "C:\\Users\\eto_d\\source\\repos\\EMIAS\\EMIAS\\EMIAS.csproj",
+        "projectPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\EMIAS\\EMIAS.csproj",
         "packagesPath": "C:\\Users\\eto_d\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eto_d\\source\\repos\\EMIAS\\EMIAS\\obj\\",
+        "outputPath": "C:\\Users\\eto_d\\Desktop\\FinalTenthPractical\\EMIAS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eto_d\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,9 +46,27 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.6.2, )"
             }
           },
           "imports": [
@@ -69,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
