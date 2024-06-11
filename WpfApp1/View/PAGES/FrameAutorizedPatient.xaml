@@ -6,8 +6,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View"
       mc:Ignorable="d"
-      Background="{StaticResource PrimaryBackground}"
-      Foreground="{StaticResource PrimaryForeground}"
+      Background="{DynamicResource PrimaryBackground}"
+      Foreground="{DynamicResource PrimaryForeground}"
       d:DesignHeight="110"
       d:DesignWidth="400"
       Title="FrameAutorizedPatient">
@@ -17,7 +17,7 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <ui:TextBox  
-            Style="{StaticResource ClearTextbox }"
+            Style="{DynamicResource ClearTextbox }"
             x:Name="TBXPolis"
             PlaceholderText="Номер полиса"
             Margin="16,27,0,56"
@@ -26,7 +26,7 @@
             Width="368"
             Height="27"
             FontSize="12"
-            FontFamily="{StaticResource Inter}"
+            FontFamily="{DynamicResource Inter}"
             VerticalContentAlignment="Center"
             TextWrapping="Wrap"
             MaxLength="16"/>
@@ -34,7 +34,7 @@
             Style="{DynamicResource FocusingButton}"
             Content="Войти"
             HorizontalAlignment="Left"
-            FontFamily="{StaticResource Inter}"
+            FontFamily="{DynamicResource Inter}"
             Width="177"
             Height="26"
             VerticalAlignment="Top"
@@ -44,7 +44,7 @@
             Style="{DynamicResource FocusingButton}"
             Content="Я врач"
             HorizontalAlignment="Left"
-            FontFamily="{StaticResource Inter}"
+            FontFamily="{DynamicResource Inter}"
             Width="177"
             Height="26"
             VerticalAlignment="Top"

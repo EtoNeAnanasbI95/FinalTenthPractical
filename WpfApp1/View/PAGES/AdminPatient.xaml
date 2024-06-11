@@ -6,7 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       Background="Transparent"
-      Foreground="{StaticResource PrimaryForeground}"
+      Foreground="{DynamicResource PrimaryForeground}"
       mc:Ignorable="d" 
       Title="AdminPatient" Height="Auto" Width="Auto">
 
@@ -26,11 +26,11 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="562*"/>
         </Grid.RowDefinitions>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="0" PlaceholderText="Номер полиса"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="8" PlaceholderText="Дата рождения"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес прописки"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Номер полиса"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="8" PlaceholderText="Дата рождения"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес прописки"/>
     </Grid>
 </Page>

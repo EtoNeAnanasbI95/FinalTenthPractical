@@ -12,8 +12,8 @@
         Title="Patient"
         Height="860"
         Width="1500"
-        Background="{StaticResource PrimaryBackground}"
-        Foreground="{StaticResource PrimaryForeground}"
+        Background="{DynamicResource PrimaryBackground}"
+        Foreground="{DynamicResource PrimaryForeground}"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -55,7 +55,9 @@
                 <ColumnDefinition Width="7"/>
             </Grid.ColumnDefinitions>
             <Border Background="#007BFE" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Grid.RowSpan="3"/>
-            <Image Source="/Model/Moon.png" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="270,0,0,0" />
+            <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="270,0,0,0" Click="KNOPKA">
+                <Image Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="270,0,0,0" Source="/Model/Moon.png"/>
+            </ui:Button>
             <Grid Grid.Column="6" Grid.Row="1" Margin="2,0,0,0" Grid.ColumnSpan="2" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="28*"/>
@@ -128,7 +130,7 @@
                 </Button>
             </Grid>
             <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20px" FontFamily="Inter" Text="ЕМИАС — Администратор" FontWeight="Bold" />
-            <DataGrid Background="{StaticResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"/>
+            <DataGrid Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"/>
             <ComboBox 
                 Style="{DynamicResource ClearComboBoxStyle}"
                 Grid.Column="5"
@@ -139,9 +141,9 @@
                 <ComboBoxItem Content="Сотрудник"/>
                 <ComboBoxItem Content="Администратор"/>
             </ComboBox>
-            <Separator Grid.Column="5" Height="1" BorderBrush="{StaticResource Focusing}" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
+            <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <Frame x:Name="FrameAdmin" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2"/>
-            <Separator Grid.Column="5" Height="1" BorderBrush="{StaticResource Focusing}" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
+            <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <ui:Button  Style="{DynamicResource AttentionButton}" Content="Выйти из аккаунта" Grid.Column="5" Grid.Row="17" Grid.ColumnSpan="2"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Удалить запись" Grid.Column="5" Grid.Row="13" Grid.ColumnSpan="2"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Изменить запись" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="2"/>

@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
+using WpfApp1;
 
 namespace FinalTenthPractical.View
 {
@@ -74,6 +76,18 @@ namespace FinalTenthPractical.View
                         FrameAdmin.Navigate(new AdminAdministrator());
                         break;
                 }
+            }
+        }
+        
+        private void KNOPKA(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.CurrentTheme == "Dark")
+            {
+                App.Theme = "Light";
+            }
+            else
+            {
+                App.Theme = "Dark";
             }
         }
     }

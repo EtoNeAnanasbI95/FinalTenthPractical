@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
       Background="Transparent"
-      Foreground="{StaticResource PrimaryForeground}"
+      Foreground="{DynamicResource PrimaryForeground}"
       Height="Auto" Width="Auto" Title="AdminAdministrator">
 
     <Grid>
@@ -26,9 +26,9 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="562*"/>
         </Grid.RowDefinitions>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
     </Grid>
 </Page>

@@ -5,7 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       Foreground="{DynamicResource PrimaryForeground}"
       Background="{DynamicResource PrimaryBackground}"
-      FontFamily="{StaticResource Inter}"
+      FontFamily="{DynamicResource Inter}"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View"
       mc:Ignorable="d" 
@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <ui:TextBox 
-            Style="{StaticResource ClearTextbox }"
+            Style="{DynamicResource ClearTextbox }"
             x:Name="NumberOfDoctor" 
             Width="368" 
             Height="27" 
