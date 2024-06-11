@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EMIAS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbef146974a0f886ae3e9403633734602df56477")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+849841ac2235e96432f0bc3f5d995cf889f35edb")]
 [assembly: System.Reflection.AssemblyProductAttribute("EMIAS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EMIAS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
