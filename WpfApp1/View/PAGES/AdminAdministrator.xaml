@@ -6,6 +6,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
+      Background="Transparent"
+      Foreground="{StaticResource PrimaryForeground}"
       Height="Auto" Width="Auto" Title="AdminAdministrator">
 
     <Grid>

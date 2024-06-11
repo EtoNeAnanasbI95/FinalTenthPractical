@@ -5,8 +5,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTenthPractical.View"
-        WindowStyle="None" mc:Ignorable="d" MinWidth="718" MinHeight="472"
-        Title="Patient"  Height="860" Width="1500" WindowStartupLocation="CenterScreen">
+        WindowStyle="None"
+        mc:Ignorable="d"
+        MinWidth="718"
+        MinHeight="472"
+        Title="Patient"
+        Height="860"
+        Width="1500"
+        Background="{StaticResource PrimaryBackground}"
+        Foreground="{StaticResource PrimaryForeground}"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -54,7 +62,13 @@
                     <ColumnDefinition Width="29*"/>
                     <ColumnDefinition Width="29*"/>
                 </Grid.ColumnDefinitions>
-                <Button BorderBrush="{x:Null}" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Column="2" Margin="29,-2,-28,-2" HorizontalAlignment="Stretch">
+                <Button
+                    BorderBrush="{x:Null}" 
+                    VerticalAlignment="Stretch"
+                    Click="Button_Click_1"
+                    Grid.Column="2"
+                    Margin="29,-2,-28,-2"
+                    HorizontalAlignment="Stretch">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -114,15 +128,20 @@
                 </Button>
             </Grid>
             <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20px" FontFamily="Inter" Text="ЕМИАС — Администратор" FontWeight="Bold" />
-            <DataGrid Background="#D9D9D9" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"/>
-            <ComboBox Style="{DynamicResource ClearClearComboBoxStyle}"  Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="OnPageSelector">
+            <DataGrid Background="{StaticResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"/>
+            <ComboBox 
+                Style="{DynamicResource ClearComboBoxStyle}"
+                Grid.Column="5"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                SelectionChanged="OnPageSelector">
                 <ComboBoxItem Content="Пользователь"/>
                 <ComboBoxItem Content="Сотрудник"/>
                 <ComboBoxItem Content="Администратор"/>
             </ComboBox>
-            <Separator Grid.Column="5" Height="1" BorderBrush="#007BFE" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
+            <Separator Grid.Column="5" Height="1" BorderBrush="{StaticResource Focusing}" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <Frame x:Name="FrameAdmin" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2"/>
-            <Separator Grid.Column="5" Height="1" BorderBrush="#007BFE" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
+            <Separator Grid.Column="5" Height="1" BorderBrush="{StaticResource Focusing}" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <ui:Button  Style="{DynamicResource AttentionButton}" Content="Выйти из аккаунта" Grid.Column="5" Grid.Row="17" Grid.ColumnSpan="2"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Удалить запись" Grid.Column="5" Grid.Row="13" Grid.ColumnSpan="2"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Изменить запись" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="2"/>

@@ -5,39 +5,56 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       Foreground="{DynamicResource PrimaryForeground}"
       Background="{DynamicResource PrimaryBackground}"
+      FontFamily="{StaticResource Inter}"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View"
       mc:Ignorable="d" 
-      d:DesignHeight="110" d:DesignWidth="400"
+      d:DesignHeight="110"
+      d:DesignWidth="400"
       Title="FrameAutorizedDoctor">
-
-    <Grid Background="White">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <ui:TextBox Style="{StaticResource ClearTextbox }" x:Name="NumberOfDoctor" 
-                 Padding="5,0,0,0" 
-                 Width="368" 
-                 Height="27" 
-                 Grid.ColumnSpan="2"
-                 PlaceholderText="Номер сотрудника" 
-                 Margin="16,7,0,76"  
-                 HorizontalAlignment="Left"
-                 BorderThickness="2" 
-                 TextWrapping="Wrap"
-                 MaxLength="16"
-                 IsUndoEnabled="False"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" 
-                    x:Name="PasswordDoctor"
-                    Padding="5,0,0,0"
-                    PlaceholderText="Пароль"
-                    Margin="16,41,0,42" 
-                    HorizontalAlignment="Left"
-                    Grid.ColumnSpan="2" Width="368" Height="27" 
-                  MaxLength="16" IsUndoEnabled="False"/>
-        <ui:Button Style="{DynamicResource FocusingButton}" Content="Войти" HorizontalAlignment="Left" FontFamily="Inter" Width="177" Height="26" VerticalAlignment="Top" Margin="16,77,0,0" Click="Button_Click_1"/>
-        <ui:Button Style="{DynamicResource FocusingButton}"  Content="Я пациент" HorizontalAlignment="Left" FontFamily="Inter" Width="177" Height="26" VerticalAlignment="Top" Margin="7,77,0,7" Grid.Column="1" Click="Button_Click"/>
+        <ui:TextBox 
+            Style="{StaticResource ClearTextbox }"
+            x:Name="NumberOfDoctor" 
+            Width="368" 
+            Height="27" 
+            Grid.ColumnSpan="2"
+            PlaceholderText="Номер сотрудника" 
+            Margin="16,7,0,76"  
+            HorizontalAlignment="Left"
+            TextWrapping="Wrap"
+            MaxLength="16"/>
+        <ui:TextBox 
+            Style="{DynamicResource ClearTextbox }" 
+            x:Name="PasswordDoctor"
+            PlaceholderText="Пароль"
+            Margin="16,41,0,42" 
+            HorizontalAlignment="Left"
+            Grid.ColumnSpan="2" Width="368" Height="27" 
+            MaxLength="16"/>
+        <ui:Button 
+            Style="{DynamicResource FocusingButton}" 
+            Content="Войти" 
+            HorizontalAlignment="Left" 
+            Width="177" 
+            Height="26" 
+            VerticalAlignment="Top" 
+            Margin="16,77,0,0"
+            Click="Button_Click_1"/>
+        <ui:Button 
+            Style="{DynamicResource FocusingButton}"  
+            Content="Я пациент" 
+            HorizontalAlignment="Left" 
+            Width="177"
+            Height="26"
+            VerticalAlignment="Top"
+            Margin="7,77,0,7"
+            Grid.Column="1"
+            Click="Button_Click"/>
     </Grid>
 </Page>
