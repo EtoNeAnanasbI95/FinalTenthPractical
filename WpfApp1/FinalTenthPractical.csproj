@@ -9,17 +9,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Model\Copy.png" />
       <None Remove="Model\Cross_negate.png" />
       <None Remove="Model\Cross_negate_negate.png" />
       <None Remove="Model\Moon.png" />
       <None Remove="Model\scroll_negate.png" />
       <None Remove="Model\scroll_negate_negate.png" />
+      <None Remove="Model\Settings.png" />
       <None Remove="Model\square.png" />
       <None Remove="Model\square_negate.png" />
       <None Remove="Model\изображение 19.png" />
     </ItemGroup>
 
     <ItemGroup>
+      <Resource Include="Model\Copy.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Model\Cross_negate_negate.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
@@ -30,6 +35,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\scroll_negate_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\Settings.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\square.png">

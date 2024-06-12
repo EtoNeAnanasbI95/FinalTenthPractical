@@ -24,7 +24,7 @@
             Width="368" 
             Height="27" 
             Grid.ColumnSpan="2"
-            PlaceholderText="Номер сотрудника" 
+            PlaceholderText=" Номер сотрудника" 
             Margin="16,7,0,76"  
             HorizontalAlignment="Left"
             TextWrapping="Wrap"
@@ -32,7 +32,7 @@
         <ui:TextBox 
             Style="{DynamicResource ClearTextbox }" 
             x:Name="PasswordDoctor"
-            PlaceholderText="Пароль"
+            PlaceholderText=" Пароль"
             Margin="16,41,0,42" 
             HorizontalAlignment="Left"
             Grid.ColumnSpan="2" Width="368" Height="27" 

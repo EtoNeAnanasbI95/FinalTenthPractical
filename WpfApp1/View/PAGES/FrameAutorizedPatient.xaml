@@ -19,7 +19,7 @@
         <ui:TextBox  
             Style="{DynamicResource ClearTextbox }"
             x:Name="TBXPolis"
-            PlaceholderText="Номер полиса"
+            PlaceholderText=" Номер полиса"
             Margin="16,27,0,56"
             HorizontalAlignment="Left"
             Grid.ColumnSpan="2"

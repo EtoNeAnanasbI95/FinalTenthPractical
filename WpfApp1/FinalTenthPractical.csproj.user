@@ -11,6 +11,9 @@
     <Compile Update="View\PAGES\AdminPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PAGES\SettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\WINDOWS\Administrator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\AdminPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\SettingsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\WINDOWS\Administrator.xaml">
