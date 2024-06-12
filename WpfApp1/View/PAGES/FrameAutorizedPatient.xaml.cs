@@ -40,7 +40,7 @@ namespace FinalTenthPractical.View
         {
 
             var auth = Autorized.GetWindow(this);
-            Administrator admini = new Administrator();
+           Patient admini = new Patient();
             admini.Show();
             auth.Close();
 

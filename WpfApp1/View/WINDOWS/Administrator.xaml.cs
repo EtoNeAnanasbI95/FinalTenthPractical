@@ -1,5 +1,4 @@
-﻿using FinalTenthPractical.View.PAGES;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
+using WpfApp1;
 
 namespace FinalTenthPractical.View
 {
@@ -23,30 +24,7 @@ namespace FinalTenthPractical.View
         public Administrator()
         {
             InitializeComponent();
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Autorized auth = new Autorized();
-            auth.Show();
-            this.Close();
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            {
-                if (WindowState == WindowState.Normal)
-                    WindowState = WindowState.Maximized;
-                else
-                    WindowState = WindowState.Normal;
-            }
-
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
 
         }
 
@@ -65,15 +43,50 @@ namespace FinalTenthPractical.View
                 switch (selectedItem.Content.ToString())
                 {
                     case "Пользователь":
-                        FrameAdmin.Navigate(new AdminPatient());
+                        FrameAdmin.Navigate(new PAGES.AdminPatient());
                         break;
                     case "Сотрудник":
-                        FrameAdmin.Navigate(new AdminDoctor());
+                        FrameAdmin.Navigate(new PAGES.AdminDoctor());
                         break; 
                     case "Администратор":
-                        FrameAdmin.Navigate(new AdminAdministrator());
+                        FrameAdmin.Navigate(new PAGES.AdminAdministrator());
                         break;
                 }
+            }
+        }
+        
+        private void KNOPKA(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.CurrentTheme == "Dark")
+            {
+                App.Theme = "Light";
+            }
+            else
+            {
+                App.Theme = "Dark";
+            }
+        }
+
+        private void RollUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Autorized auth = new Autorized();
+            auth.Show();
+            this.Close();
+        }
+
+        private void UnwrapButton_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                if (WindowState == WindowState.Normal)
+                    WindowState = WindowState.Maximized;
+                else
+                    WindowState = WindowState.Normal;
             }
         }
     }

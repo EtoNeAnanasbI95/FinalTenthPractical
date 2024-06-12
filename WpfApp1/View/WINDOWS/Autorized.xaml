@@ -7,11 +7,6 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
         Title="Autorized" Height="220"  Width="400" ResizeMode="NoResize" WindowStyle="None">
-    <Window.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Template" Value="{StaticResource {x:Type TextBox}}" />
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="27*"/>

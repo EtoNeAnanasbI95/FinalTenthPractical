@@ -6,6 +6,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
+      Foreground="{DynamicResource PrimaryForeground}"
+      Background="Transparent"
       Height="Auto" Width="Auto" Title="AdminDoctor">
 
     <Grid>
@@ -24,15 +26,15 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="562*"/>
         </Grid.RowDefinitions>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
-        <ComboBox Style="{DynamicResource ClearClearComboBoxStyle}" Grid.Row="8">
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
+        <ComboBox Style="{DynamicResource ClearComboBoxStyle}" Grid.Row="8">
             <ComboBoxItem Content="Офтальмолог"/>
             <ComboBoxItem Content="Педиатр"/>
             <ComboBoxItem Content="Какой-то хуй"/>
         </ComboBox>
-        <ui:TextBox Style="{StaticResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес места работы"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес места работы"/>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalTenthPractical.View.PAGES;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace FinalTenthPractical.View
         {
             InitializeComponent();
 
+
             this.MinWidth = 718;
             this.MinHeight = 472;
         }
@@ -34,8 +36,35 @@ namespace FinalTenthPractical.View
             this.Close();
    
         }
+     
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Settings(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
+        private void RollUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Autorized auth = new Autorized();
+            auth.Show();
+            this.Close();
+        }
+
+        private void UnwrapButton_Click(object sender, RoutedEventArgs e)
         {
             {
                 if (WindowState == WindowState.Normal)
@@ -43,18 +72,16 @@ namespace FinalTenthPractical.View
                 else
                     WindowState = WindowState.Normal;
             }
+        }
+
+        private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
 
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Settings(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
-
-        }
-
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
+            Frame.Navigate(new SettingsPage());
         }
     }
 }
