@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1;
 

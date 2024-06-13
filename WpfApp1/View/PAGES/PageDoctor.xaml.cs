@@ -27,14 +27,14 @@ namespace FinalTenthPractical.View.PAGES
         {
             InitializeComponent();
 
-            Document doc = new Document();
-            doc.LoadFromFile(@"C:\Users\Ilyam\Downloads\РЕЗУЛЬТАТЫ_ЛАБЮОРАТОРНЫХ_ИССЛЕДОВАНИЙ.docx");
-            doc.SaveToFile("конвертировать.rtf", FileFormat.Rtf);
-
-            var range = new TextRange(RTBone.Document.ContentStart, RTBone.Document.ContentEnd);
-            var fs = new FileStream("конвертировать.rtf", FileMode.OpenOrCreate);
-            range.Load(fs, DataFormats.Rtf);
-            fs.Close();
+            // Document doc = new Document();
+            // doc.LoadFromFile(@"C:\Users\Ilyam\Downloads\РЕЗУЛЬТАТЫ_ЛАБЮОРАТОРНЫХ_ИССЛЕДОВАНИЙ.docx");
+            // doc.SaveToFile("конвертировать.rtf", FileFormat.Rtf);
+            //
+            // var range = new TextRange(RTBone.Document.ContentStart, RTBone.Document.ContentEnd);
+            // var fs = new FileStream("конвертировать.rtf", FileMode.OpenOrCreate);
+            // range.Load(fs, DataFormats.Rtf);
+            // fs.Close();
 
             DoctorWay first = new DoctorWay();
             first.TxtBlock.Text = "Ебать в рот";
