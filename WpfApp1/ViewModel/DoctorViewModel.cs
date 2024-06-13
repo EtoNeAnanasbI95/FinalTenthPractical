@@ -4,8 +4,20 @@ namespace WpfApp1.ViewModel;
 
 public class DoctorViewModel : ApiHelper.ApiHelper
 {
-    public string NumberOfDoctor { get; set; }
-    public string PasswordDoctor { get; set; }
+    private string _NumberOfDoctor;
+
+    public string NumberOfDoctor
+    {
+        get => _NumberOfDoctor;
+        set => SetField(ref _NumberOfDoctor, value);
+    }
+    private string _PasswordDoctor;
+
+    public string PasswordDoctor
+    {
+        get => _PasswordDoctor;
+        set => SetField(ref _PasswordDoctor, value);
+    }
 
     public event EventHandler GodoctorPage;
 
@@ -17,6 +29,7 @@ public class DoctorViewModel : ApiHelper.ApiHelper
             var doctor = Get<Doctor>("Doctors", Convert.ToInt32(NumberOfDoctor));
             if (doctor.EnterPassword == PasswordDoctor) GodoctorPage?.Invoke(this, EventArgs.Empty);
             Console.WriteLine("Auth successful");
-        } catch (Exception) {Console.WriteLine("Auth bad request");}
+        } 
+        catch (Exception) {Console.WriteLine("Auth bad request");}
     }
 }

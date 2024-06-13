@@ -2,5 +2,11 @@
 
 public class PatientViewModel : ApiHelper.ApiHelper
 {
-    public string OMS { get; set; }
+    private string _OMS;
+
+    public string OMS
+    {
+        get => _OMS;
+        set => SetField(ref _OMS, value);
+    }
 }

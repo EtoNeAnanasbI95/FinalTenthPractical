@@ -44,7 +44,6 @@ namespace FinalTenthPractical.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             var auth = AuthorizationWindow.GetWindow(this);
             PatientWindow patient = new PatientWindow();
             patient.Show();
