@@ -18,6 +18,7 @@
       <None Remove="Model\Settings.png" />
       <None Remove="Model\square.png" />
       <None Remove="Model\square_negate.png" />
+      <None Remove="Model\TrashBeen.png" />
       <None Remove="Model\изображение 19.png" />
     </ItemGroup>
 
@@ -44,6 +45,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\square_negate.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Model\TrashBeen.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Model\изображение 19.png">

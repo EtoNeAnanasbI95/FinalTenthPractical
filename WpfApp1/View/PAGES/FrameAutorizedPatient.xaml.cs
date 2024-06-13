@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalTenthPractical.View.WINDOWS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,7 @@ namespace FinalTenthPractical.View
         {
 
             var auth = Autorized.GetWindow(this);
-           Patient admini = new Patient();
+           Doctor admini = new Doctor();
             admini.Show();
             auth.Close();
 
