@@ -82,8 +82,6 @@
                 </Image.RenderTransform>
             </Image>
         </ui:Button>
-
-        <DatePicker Style="{DynamicResource ClearDatePicker}" Grid.Row="3" Grid.Column="6"/>
         <TextBlock Foreground="White" Grid.Row="5" Grid.Column="1" Text="Полис ОМС:" Margin="3,0,0,0" FontSize="14"  FontFamily="Inter" VerticalAlignment="Center" Grid.ColumnSpan="3" Height="16" />
     </Grid>
 </Window>

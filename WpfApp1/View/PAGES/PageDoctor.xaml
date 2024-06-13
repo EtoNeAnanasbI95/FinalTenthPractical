@@ -1,0 +1,68 @@
+﻿<Page x:Class="FinalTenthPractical.View.PAGES.PageDoctor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
+      mc:Ignorable="d" 
+      Height="1485" Width="Auto"
+      Title="PageDoctor">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="367.84"/>
+            <ColumnDefinition Width="19"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="19"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="13"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="467*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="0" Foreground="{DynamicResource PrimaryForeground }" Text="Пациент: Иванова Ирина Ивановна" FontFamily="Inter" FontSize="20" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Foreground="{DynamicResource PrimaryForeground }" HorizontalAlignment="Center" Text="Номер полиса: 7777 0000 0000 0000" FontFamily="Inter" FontSize="20" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Foreground="{DynamicResource PrimaryForeground}" VerticalAlignment="Center" Text="Приём" FontFamily="Inter" FontSize="14" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Foreground="{DynamicResource SecondaryBackground}" VerticalAlignment="Center" Text="Жалобы" FontFamily="Inter" FontSize="14" />
+        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="8" Grid.Column="0" Foreground="{DynamicResource SecondaryBackground}" VerticalAlignment="Center" Text="Общий осмотр" FontFamily="Inter" FontSize="14" />
+        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Row="11" PlaceholderText="Основной диагноз" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="13" Grid.Column="0" Foreground="{DynamicResource SecondaryBackground}" VerticalAlignment="Center" Text="Дополнения к основному диагнозу" FontFamily="Inter" FontSize="14" />
+        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="16" Grid.Column="0" Foreground="{DynamicResource SecondaryBackground}" VerticalAlignment="Center" Text="Рекомендации" FontFamily="Inter" FontSize="14" />
+        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="19" Grid.Column="0" Foreground="{DynamicResource SecondaryBackground}" VerticalAlignment="Center" Text="Рекомендации" FontFamily="Inter" FontSize="14" />
+        <Grid Grid.Row="20" Grid.ColumnSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="24"/>
+                <ColumnDefinition Width="157.27"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Style="{DynamicResource ClearComboBoxStyle}" Grid.Column="0" Height="24"/>
+            <ui:Button Style="{DynamicResource FocusingButton}" Content=" Добавить направление " Grid.Column="2" />
+        </Grid>
+            <ListBox x:Name="ListSecond"  Grid.Row="22" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>
