@@ -15,21 +15,31 @@
         Background="{DynamicResource PrimaryBackground}"
         Foreground="{DynamicResource PrimaryForeground}"
         WindowStartupLocation="CenterScreen">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            ResizeBorderThickness="2"
+            GlassFrameThickness="0"
+            CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="22"/>
-            <RowDefinition Height="29*"/>
             <RowDefinition/>
+            <RowDefinition Height="727"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="28"/>
             <RowDefinition Height="9"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8"/>
             <ColumnDefinition Width="8.667"/>
-            <ColumnDefinition Width="355"/>
-            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="341.333"/>
+            <ColumnDefinition Width="8"/>
+            <ColumnDefinition Width="19"/>
             <ColumnDefinition Width="75"/>
             <ColumnDefinition Width="35"/>
             <ColumnDefinition Width="435*"/>
@@ -37,10 +47,10 @@
             <ColumnDefinition Width="67.333"/>
             <ColumnDefinition Width="19"/>
         </Grid.ColumnDefinitions>
-        <Border Background="#007BFE" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="10" />
-        <Border Background="{DynamicResource SecondaryBackground}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="6" Margin="0,0,1,0"/>
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" VerticalAlignment="Center" FontSize="20px" FontFamily="Inter" FontWeight="Bold" Height="25" Margin="0,0,35,0" ><Run Text="ЕМИАС — "/><Run Language="ru-ru" Text="Васиев Георгий Игнатьевич"/></TextBlock>
-        <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="5" Grid.Row="0" Click="KNOPKA" Margin="0,0,2,0">
+        <Border Background="#007BFE" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="11" />
+        <Border Background="{DynamicResource SecondaryBackground}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="7" Margin="0,0,1,0"/>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" VerticalAlignment="Center" FontSize="20px" FontFamily="Inter" FontWeight="Bold" Height="25" ><Run Text="ЕМИАС — "/><Run Language="ru-ru" Text="Васиев Георгий Игнатьевич"/></TextBlock>
+        <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="6" Grid.Row="0" Click="KNOPKA" Margin="0,0,2,0">
             <Image  Source="/Model/Moon.png" RenderTransformOrigin="1,1">
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -52,7 +62,7 @@
                 </Image.RenderTransform>
             </Image>
         </ui:Button>
-        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="8" Grid.Row="0" Width="78" Grid.ColumnSpan="2" Margin="5,0,0,0">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="9" Grid.Row="0" Width="78" Grid.ColumnSpan="2" Margin="5,0,0,0">
             <ui:Button Foreground="White" Style="{DynamicResource ButtonBar}" Click="RollUpButton_Click" Height="26">
                 <ui:SymbolIcon Foreground="White" Symbol="LineHorizontal120"/>
             </ui:Button>
@@ -63,7 +73,22 @@
                 <ui:SymbolIcon Symbol="Dismiss48"/>
             </ui:Button>
         </StackPanel>
-        <DatePicker Style="{DynamicResource ClearDatePicker}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,1,0" Height="24"/>
-        <Frame x:Name="FrameDoc" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="6"/>
+        <DatePicker Style="{DynamicResource ClearDatePicker}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Height="24"/>
+        <Grid Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="6" Grid.RowSpan="7">
+            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <Frame x:Name="FrameDoc" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="6"/>
+            </ScrollViewer>
+        </Grid>
+        <ui:Button Style="{DynamicResource AttentionButton}" Grid.Column="1" Grid.Row="6" Content="Выйти из аккаунта" Grid.ColumnSpan="2"/>
+        <ListBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LB">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,0,0,20"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
     </Grid>
 </Window>
