@@ -17,6 +17,15 @@
     <Compile Update="View\PAGES\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContril.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContrilEnd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContrilTime.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\USERCONTROLS\DoctorWay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +62,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContril.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContrilEnd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContrilTime.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\USERCONTROLS\DoctorWay.xaml">

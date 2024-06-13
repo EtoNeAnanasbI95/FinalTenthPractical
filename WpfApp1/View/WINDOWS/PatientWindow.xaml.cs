@@ -18,9 +18,9 @@ namespace FinalTenthPractical.View
     /// <summary>
     /// Логика взаимодействия для Patient.xaml
     /// </summary>
-    public partial class Patient : Window
+    public partial class PatientWindow : Window
     {
-        public Patient()
+        public PatientWindow()
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace FinalTenthPractical.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Autorized auth = new Autorized();
+            AuthorizationWindow auth = new AuthorizationWindow();
             auth.Show();
             this.Close();
    
@@ -59,8 +59,7 @@ namespace FinalTenthPractical.View
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Autorized auth = new Autorized();
-            auth.Show();
+            AuthorizationWindow auth = new AuthorizationWindow();
             this.Close();
         }
 

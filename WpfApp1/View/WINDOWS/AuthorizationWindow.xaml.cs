@@ -17,9 +17,9 @@ namespace FinalTenthPractical.View
     /// <summary>
     /// Логика взаимодействия для Autorized.xaml
     /// </summary>
-    public partial class Autorized : Window
+    public partial class AuthorizationWindow : Window
     {
-        public Autorized()
+        public AuthorizationWindow()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;

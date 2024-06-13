@@ -6,28 +6,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d" 
-             Height="32" Width="1095">
+             Height="32" Width="Auto"
+             Margin="0"
+             Padding="0">
     <Grid>
-      
-        <Border BorderThickness="3" Grid.ColumnSpan="2" BorderBrush="#807F7F">
+
+        <Border BorderThickness="4" Grid.ColumnSpan="2" BorderBrush="{DynamicResource SecondaryBackground}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="38"/>
                 </Grid.ColumnDefinitions>
-             <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="1" Click="Trash_Button">
-            <Image Source="/Model/TrashBeen.png" RenderTransformOrigin="1,1" Height="14" Width="15">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform X="2" Y="5"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-        </ui:Button>
-            <TextBlock x:Name="TxtBlock" FontFamily="Inter" FontSize="14" Text="Направление к специалисту: Офтальмолог" Grid.Column="0" Margin="18,0,0,0" VerticalAlignment="Center"/>
+                <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="1" Click="Trash_Button">
+                    <Image Source="/Model/TrashBeen.png" RenderTransformOrigin="1,1" Height="14" Width="15">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="2" Y="5"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </ui:Button>
+                <TextBlock x:Name="TxtBlock" FontFamily="Inter" FontSize="14" Text="Направление к специалисту: Офтальмолог" Grid.Column="0" Margin="18,0,0,0" VerticalAlignment="Center"/>
             </Grid>
         </Border>
     </Grid>

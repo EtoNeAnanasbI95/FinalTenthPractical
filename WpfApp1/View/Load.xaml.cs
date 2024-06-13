@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1;
 
@@ -39,7 +40,7 @@ public partial class Load : Window
     {
         Dispatcher.Invoke(() =>
         {
-            var authorizedWindow = new Autorized();
+            var authorizedWindow = new AuthorizationWindow();
             authorizedWindow.Show();
             Close();
         });
