@@ -21,9 +21,9 @@ namespace FinalTenthPractical.View.WINDOWS
     /// <summary>
     /// Логика взаимодействия для Doctor.xaml
     /// </summary>
-    public partial class Doctor : Window
+    public partial class DoctorWindow : Window
     {
-        public Doctor()
+        public DoctorWindow()
         {
             InitializeComponent();
 
@@ -82,8 +82,7 @@ namespace FinalTenthPractical.View.WINDOWS
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Autorized auth = new Autorized();
-            auth.Show();
+            AuthorizationWindow auth = new AuthorizationWindow();
             this.Close();
         }
     }

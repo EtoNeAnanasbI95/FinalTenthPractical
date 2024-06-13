@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View
 {
@@ -21,16 +22,20 @@ namespace FinalTenthPractical.View
     /// </summary>
     public partial class FrameAutorizedPatient : Page
     {
+        private PatientViewModel _patientViewModel;
+        
         public FrameAutorizedPatient()
         {
             InitializeComponent();
+            _patientViewModel = new PatientViewModel();
+            DataContext = _patientViewModel;
         }
      
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var parentWindow = Window.GetWindow(this);
 
-            if (parentWindow != null && parentWindow is Autorized autorized)
+            if (parentWindow != null && parentWindow is AuthorizationWindow autorized)
             {
                 autorized.FramePatientAutorize.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
                 autorized.FramePatientAutorize.Content = new FrameAutorizedDoctor();
@@ -40,9 +45,9 @@ namespace FinalTenthPractical.View
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            var auth = Autorized.GetWindow(this);
-           Doctor admini = new Doctor();
-            admini.Show();
+            var auth = AuthorizationWindow.GetWindow(this);
+            PatientWindow patient = new PatientWindow();
+            patient.Show();
             auth.Close();
 
         }

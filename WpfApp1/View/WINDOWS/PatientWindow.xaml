@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blendc:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml.cs c:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTenthPractical.View"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"  WindowStyle="None" x:Class="FinalTenthPractical.View.Patient"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"  WindowStyle="None" x:Class="FinalTenthPractical.View.PatientWindow"
         FontFamily="Inter"
         mc:Ignorable="d"
          MinWidth="718"

@@ -40,7 +40,7 @@ public partial class Load : Window
     {
         Dispatcher.Invoke(() =>
         {
-            var authorizedWindow = new Autorized();
+            var authorizedWindow = new AuthorizationWindow();
             authorizedWindow.Show();
             Close();
         });

@@ -19,6 +19,7 @@
         <ui:TextBox  
             Style="{DynamicResource ClearTextbox }"
             x:Name="TBXPolis"
+            Text="{Binding OMS}"
             PlaceholderText=" Номер полиса"
             Margin="16,27,0,56"
             HorizontalAlignment="Left"

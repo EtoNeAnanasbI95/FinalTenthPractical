@@ -19,9 +19,9 @@ namespace FinalTenthPractical.View
     /// <summary>
     /// Логика взаимодействия для Administrator.xaml
     /// </summary>
-    public partial class Administrator : Window
+    public partial class AdministratorWindow : Window
     {
-        public Administrator()
+        public AdministratorWindow()
         {
             InitializeComponent();
 
@@ -75,7 +75,7 @@ namespace FinalTenthPractical.View
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Autorized auth = new Autorized();
+            AuthorizationWindow auth = new AuthorizationWindow();
             auth.Show();
             this.Close();
         }
