@@ -18,6 +18,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="/Model/Офтальмолог.png" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock Grid.Row="2" Text="Офтальмолог" Grid.ColumnSpan="3" FontFamily="Inter" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Height="19"/>
+        <TextBlock 
+            Grid.Row="2"
+            Text="Офтальмолог"
+            Grid.ColumnSpan="3"
+            FontFamily="{StaticResource Inter}"
+            FontSize="16"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
     </Grid>
 </UserControl>
