@@ -55,7 +55,7 @@
                 <ColumnDefinition Width="7"/>
             </Grid.ColumnDefinitions>
             <Border Background="#007BFE" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Grid.RowSpan="3"/>
-            <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="270,0,0,0" Click="KNOPKA">
+            <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="270,0,0,0" Click="ChangeTheme">
                 <Image Source="/Model/Moon.png" RenderTransformOrigin="1,1">
                     <Image.RenderTransform>
                         <TransformGroup>

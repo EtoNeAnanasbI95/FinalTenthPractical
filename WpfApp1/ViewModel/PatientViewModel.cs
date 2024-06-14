@@ -3,7 +3,7 @@
 public class PatientViewModel : ApiHelper.ApiHelper
 {
     private string _OMS;
-
+    
     public string OMS
     {
         get => _OMS;

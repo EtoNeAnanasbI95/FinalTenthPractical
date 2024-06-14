@@ -41,8 +41,6 @@ namespace FinalTenthPractical.View.WINDOWS
 
             List<Object> users = new List<Object>() { first, second, th };
             LB.ItemsSource = users;  
-            
-           
 
             FrameDoc.Navigate(new PageDoctor());
         }
@@ -52,7 +50,7 @@ namespace FinalTenthPractical.View.WINDOWS
 
         }
 
-        private void KNOPKA(object sender, RoutedEventArgs e)
+        private void ChangeTheme(object sender, RoutedEventArgs e)
         {
             if (Settings.Default.CurrentTheme == "Dark")
             {
@@ -82,7 +80,6 @@ namespace FinalTenthPractical.View.WINDOWS
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationWindow auth = new AuthorizationWindow();
             this.Close();
         }
     }
