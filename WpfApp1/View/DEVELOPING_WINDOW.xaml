@@ -1,0 +1,47 @@
+﻿<Window x:Class="FinalTenthPractical.View.DEVELOPING_WINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:FinalTenthPractical.View"
+        mc:Ignorable="d"
+        Background="{DynamicResource PrimaryBackground}"
+        Foreground="{DynamicResource PrimaryForeground}"
+        FontFamily="{DynamicResource Inter}"
+        Title="DEVELOPING_WINDOW" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <ui:Button
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                Click="GO_ADMIN"
+                HorizontalAlignment="Center"
+                Content="ADMIN"/>
+            <Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                Click="GO_AUTH"
+                HorizontalAlignment="Center"
+                Content="AUTH"/>
+            <ui:Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                Click="GO_DOCTOR"
+                HorizontalAlignment="Center"
+                Content="DOCTOR"/>
+            <ui:Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                Click="GO_PATIENT"
+                HorizontalAlignment="Center"
+                Content="PATIENT"/>
+            <ui:Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                HorizontalAlignment="Center"
+                Click="CHANGE_THEME"
+                Content="ПОМЕНЯТЬ_ТЕМУ"/>
+        </StackPanel>
+    </Grid>
+</Window>

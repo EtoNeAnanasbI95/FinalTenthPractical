@@ -32,7 +32,6 @@ namespace FinalTenthPractical.View
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow auth = new AuthorizationWindow();
-            auth.Show();
             this.Close();
    
         }
