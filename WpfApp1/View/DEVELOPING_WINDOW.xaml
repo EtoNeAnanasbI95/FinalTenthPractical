@@ -1,0 +1,17 @@
+﻿<Window x:Class="FinalTenthPractical.View.DEVELOPING_WINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:FinalTenthPractical.View"
+        mc:Ignorable="d"
+        Title="DEVELOPING_WINDOW" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Click="GO_ADMIN" HorizontalAlignment="Center">ADMIN</Button>
+            <Button Click="GO_AUTH" HorizontalAlignment="Center">AUTH</Button>
+            <Button Click="GO_DOCTOR" HorizontalAlignment="Center">DOCTOR</Button>
+            <Button Click="GO_PATIENT" HorizontalAlignment="Center">PATIENT</Button>
+        </StackPanel>
+    </Grid>
+</Window>
