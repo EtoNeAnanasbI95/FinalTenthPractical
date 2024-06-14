@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="FinalTenthPractical.View.USERCONTROLS.DoctorsPatient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
+             mc:Ignorable="d"
+             Height="89" Width="124" Background="{DynamicResource PrimaryBackground }">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="47"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="47"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="30.25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="/Model/Офтальмолог.png" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Grid.Row="2" Text="Офтальмолог" Grid.ColumnSpan="3" FontFamily="Inter" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Height="19"/>
+    </Grid>
+</UserControl>

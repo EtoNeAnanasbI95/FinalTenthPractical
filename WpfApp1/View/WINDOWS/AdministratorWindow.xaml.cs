@@ -24,8 +24,6 @@ namespace FinalTenthPractical.View
         public AdministratorWindow()
         {
             InitializeComponent();
-
-
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -55,7 +53,7 @@ namespace FinalTenthPractical.View
             }
         }
         
-        private void KNOPKA(object sender, RoutedEventArgs e)
+        private void ChangeTheme(object sender, RoutedEventArgs e)
         {
             if (Settings.Default.CurrentTheme == "Dark")
             {
@@ -75,7 +73,6 @@ namespace FinalTenthPractical.View
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationWindow auth = new AuthorizationWindow();
             this.Close();
         }
 

@@ -5,22 +5,22 @@ namespace WpfApp1.ViewModel;
 public class DoctorViewModel : ApiHelper.ApiHelper
 {
     private string _NumberOfDoctor;
-
+    
     public string NumberOfDoctor
     {
         get => _NumberOfDoctor;
         set => SetField(ref _NumberOfDoctor, value);
     }
     private string _PasswordDoctor;
-
+    
     public string PasswordDoctor
     {
         get => _PasswordDoctor;
         set => SetField(ref _PasswordDoctor, value);
     }
-
+    
     public event EventHandler GodoctorPage;
-
+    
     public void AuthDoctor(object sender, EventArgs e)
     {
         Console.WriteLine("Try auth");
