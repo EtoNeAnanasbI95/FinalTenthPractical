@@ -1,5 +1,7 @@
 ﻿using System.Windows;
+using FinalTenthPractical.Properties;
 using FinalTenthPractical.View.WINDOWS;
+using WpfApp1;
 
 namespace FinalTenthPractical.View;
 
@@ -36,5 +38,17 @@ public partial class DEVELOPING_WINDOW : Window
         PatientWindow windows = new PatientWindow();
         windows.Show();
         this.Close();
+    }
+
+    private void CHANGE_THEME(object sender, RoutedEventArgs e)
+    {   
+        if (Settings.Default.CurrentTheme == "Dark")
+        {
+            App.Theme = "Light";
+        }
+        else
+        {
+            App.Theme = "Dark";
+        }
     }
 }
