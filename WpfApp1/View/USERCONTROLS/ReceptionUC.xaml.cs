@@ -20,14 +20,17 @@ namespace FinalTenthPractical.View.USERCONTROLS
     /// </summary>
     public partial class ReceptionUC : UserControl
     {
+        public Action Click { get; set; }
+        
         public ReceptionUC()
-        {
+        {   
             InitializeComponent();
+            OnClick.Click += (sender, args) => OnCardClick(sender, args);
         }
 
-        private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void OnCardClick(object sender, EventArgs e)
         {
-
+            Click?.Invoke();
         }
     }
 }
