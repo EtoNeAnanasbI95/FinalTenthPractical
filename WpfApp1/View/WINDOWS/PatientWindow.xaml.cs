@@ -89,6 +89,12 @@ namespace FinalTenthPractical.View
                 {
                     case "Приёмы":
                         Frame.Navigate(new MedicalCardPatient());
+                        break; 
+                    case "Анализы":
+                        Frame.Navigate(new MedicalCardAnaliz());
+                        break; 
+                    case "Исследования":
+                        Frame.Navigate(new MedicalCardStudy());
                         break;
                 }
             }

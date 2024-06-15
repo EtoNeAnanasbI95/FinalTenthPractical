@@ -11,7 +11,13 @@
     <Compile Update="View\PAGES\AdminPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PAGES\MedicalCardAnaliz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\PAGES\MedicalCardPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\MedicalCardStudy.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\PAGES\PageDoctor.xaml.cs">
@@ -52,7 +58,13 @@
     <Page Update="View\PAGES\AdminPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\PAGES\MedicalCardAnaliz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\PAGES\MedicalCardPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\MedicalCardStudy.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\PageDoctor.xaml">
