@@ -11,6 +11,10 @@
         FontFamily="{DynamicResource Inter}"
         Title="DEVELOPING_WINDOW" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <ui:Button
                 Background="{DynamicResource PrimaryBackground}"
@@ -42,6 +46,15 @@
                 HorizontalAlignment="Center"
                 Click="CHANGE_THEME"
                 Content="ПОМЕНЯТЬ_ТЕМУ"/>
+            <ui:Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
+                HorizontalAlignment="Center"
+                Click="DEV_BUTTON"
+                Content="DEV_BUTTON"/>
+        </StackPanel>
+        <StackPanel Name="Panel" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            
         </StackPanel>
     </Grid>
 </Window>

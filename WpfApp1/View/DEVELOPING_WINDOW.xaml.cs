@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using FinalTenthPractical.Properties;
+using FinalTenthPractical.View.USERCONTROLS;
 using FinalTenthPractical.View.WINDOWS;
 using WpfApp1;
 
@@ -50,5 +51,17 @@ public partial class DEVELOPING_WINDOW : Window
         {
             App.Theme = "Dark";
         }
+    }
+    private void DEV_BUTTON(object sender, RoutedEventArgs e)
+    {
+        ReceptionUC rcu = new ReceptionUC();
+        rcu.Click = test;
+        Panel.Children.Add(rcu);
+    }
+    
+    private void test()
+    {
+        MessageBox.Show("AHAHHHA");
+
     }
 }

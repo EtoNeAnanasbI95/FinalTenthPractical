@@ -5,26 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d" 
-             Height="63" Width="349" MouseLeftButtonUp="UserControl_MouseLeftButtonUp">
+             Height="63" Width="349">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6"/>
-            <ColumnDefinition Width="168.5"/>
-            <ColumnDefinition Width="168.5"/>
-            <ColumnDefinition Width="6"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
-            <RowDefinition Height="18"/>
-            <RowDefinition Height="4"/>
-            <RowDefinition Height="16"/>
-            <RowDefinition Height="16"/>
-            <RowDefinition Height="4"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6" Background="{DynamicResource PrimaryBackground }"/>
-        <TextBlock x:Name="FirstTB" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Осмотр при подозрении на ОРВИ" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}"/>
-        <TextBlock x:Name="SecondTB" Grid.Row="3" Grid.Column="1" Text="Халатова С.Ш." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-        <TextBlock x:Name="ThirdTB" Grid.Row="4" Grid.Column="1" Text="29 декабря 2024 г." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-        <TextBlock Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+        <Button x:Name="OnClick">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="168.5"/>
+                    <ColumnDefinition Width="168.5"/>
+                    <ColumnDefinition Width="6"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="4"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6" Background="{DynamicResource PrimaryBackground }"/>
+                <TextBlock x:Name="FirstTB" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Осмотр при подозрении на ОРВИ" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}"/>
+                <TextBlock x:Name="SecondTB" Grid.Row="3" Grid.Column="1" Text="Халатова С.Ш." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+                <TextBlock x:Name="ThirdTB" Grid.Row="4" Grid.Column="1" Text="29 декабря 2024 г." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+            </Grid>
+        </Button>
     </Grid>
 </UserControl>
