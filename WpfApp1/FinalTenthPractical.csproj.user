@@ -11,6 +11,9 @@
     <Compile Update="View\PAGES\AdminPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PAGES\MedicalCardPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\PAGES\PageDoctor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,22 +32,13 @@
     <Compile Update="View\USERCONTROLS\DoctorWay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\WINDOWS\Administrator.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\WINDOWS\Autorized.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\PAGES\FrameAutorizedDoctor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\PAGES\FrameAutorizedPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\WINDOWS\Doctor.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\WINDOWS\Patient.xaml.cs">
+    <Compile Update="View\USERCONTROLS\ReceptionUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -56,6 +50,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\AdminPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\MedicalCardPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\PageDoctor.xaml">
@@ -76,22 +73,13 @@
     <Page Update="View\USERCONTROLS\DoctorWay.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\WINDOWS\Administrator.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\WINDOWS\Autorized.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\PAGES\FrameAutorizedDoctor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\FrameAutorizedPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\WINDOWS\Doctor.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\WINDOWS\Patient.xaml">
+    <Page Update="View\USERCONTROLS\ReceptionUC.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
