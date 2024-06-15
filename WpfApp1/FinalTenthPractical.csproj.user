@@ -11,6 +11,9 @@
     <Compile Update="View\PAGES\AdminPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PAGES\MakeAnAppointmentPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\PAGES\MedicalCardAnaliz.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,7 +26,13 @@
     <Compile Update="View\PAGES\PageDoctor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PAGES\SelectingSpecialistPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\PAGES\SettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\AnalizUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\USERCONTROLS\DoctorRightContril.xaml.cs">
@@ -58,6 +67,9 @@
     <Page Update="View\PAGES\AdminPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\PAGES\MakeAnAppointmentPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\PAGES\MedicalCardAnaliz.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -70,7 +82,13 @@
     <Page Update="View\PAGES\PageDoctor.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\PAGES\SelectingSpecialistPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\PAGES\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\AnalizUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\USERCONTROLS\DoctorRightContril.xaml">

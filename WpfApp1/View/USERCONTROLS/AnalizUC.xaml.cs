@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace FinalTenthPractical.View.USERCONTROLS
 {
     /// <summary>
-    /// Логика взаимодействия для ReceptionUC.xaml
+    /// Логика взаимодействия для AnalizUC.xaml
     /// </summary>
-    public partial class ReceptionUC : UserControl
+    public partial class AnalizUC : UserControl
     {
-        public Action Click { get; set; }
-        
-        public ReceptionUC()
-        {   
-            InitializeComponent();
-            OnClick.Click += (sender, args) => OnCardClick(sender, args);
-        }
-
-        private void OnCardClick(object sender, EventArgs e)
+        public AnalizUC()
         {
-            Click?.Invoke();
+            InitializeComponent();
         }
-
     }
 }

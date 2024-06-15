@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalTenthPractical.View.USERCONTROLS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace FinalTenthPractical.View.PAGES
         public MedicalCardAnaliz()
         {
             InitializeComponent();
+
+            AnalizUC th = new AnalizUC();
+            th.FirstTB.Text = "Общий клинический анализ крови; микроскопическое исследование мазка";
+            th.SecondTB.Text = "29 хуебря 2023 г.";
+
+            List<Object> Cards = new List<Object>() { th };
+            LBUC.ItemsSource = Cards;
         }
     }
 }

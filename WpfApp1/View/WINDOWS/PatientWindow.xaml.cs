@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -95,9 +96,19 @@ namespace FinalTenthPractical.View
                         break; 
                     case "Исследования":
                         Frame.Navigate(new MedicalCardStudy());
-                        break;
+                        break; 
+                    case "Записи и направления":
+                        Frame.Navigate(new AppointmentPatient());
+                        break;  
                 }
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -81,8 +81,8 @@
                             <ColumnDefinition Width="41"/>
                         </Grid.ColumnDefinitions>
                         <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Адрес фактического проживания" Style="{DynamicResource ClearTextbox}" Margin="11,23,9,0"/>
-                        <ui:Button Margin="299,23,0,0" Height="37" Width="41" Style="{DynamicResource FocusingButton}" Grid.ColumnSpan="2" VerticalAlignment="Top" Click="Button_Click">
-                            <Image Source="/Model/Copy.png" Width="18"  />
+                        <ui:Button  Margin="0,23,0,0" Grid.Column="1" Height="37" Width="41" Style="{DynamicResource FocusingButton}" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                            <ui:SymbolIcon Symbol="Copy20"/>
                         </ui:Button>
                     </Grid>
                 </StackPanel>

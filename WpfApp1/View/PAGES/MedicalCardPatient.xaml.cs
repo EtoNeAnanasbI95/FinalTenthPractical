@@ -30,7 +30,17 @@ namespace FinalTenthPractical.View.PAGES
             th.SecondTB.Text = "Пиздаворот Х.У.";
             th.ThirdTB.Text = "21 хуебря 2024 г.";
 
-            List<Object> Cards = new List<Object>() { th };
+            ReceptionUC vfg = new ReceptionUC();
+            vfg.FirstTB.Text = "Осмотр письки";
+            vfg.SecondTB.Text = "Пиздаворот Х.У.";
+            vfg.ThirdTB.Text = "21 хуебря 2024 г.";
+
+            ReceptionUC wer = new ReceptionUC();
+            wer.FirstTB.Text = "Осмотр письки";
+            wer.SecondTB.Text = "Пиздаворот Х.У.";
+            wer.ThirdTB.Text = "21 хуебря 2024 г.";
+
+            List<Object> Cards = new List<Object>() { th, vfg, wer };
             LBUC.ItemsSource = Cards;
         }
     }

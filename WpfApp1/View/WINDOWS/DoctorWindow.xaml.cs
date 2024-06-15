@@ -47,6 +47,7 @@ namespace FinalTenthPractical.View.WINDOWS
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            this.DragMove();
 
         }
 

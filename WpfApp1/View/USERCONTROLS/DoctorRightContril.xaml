@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="TBLfio" Text="Иванова Ирина Ивановна" VerticalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource SecondaryForeground}" Margin="6,3,0,0" Grid.ColumnSpan="2" Height="18"/>
         <TextBlock x:Name="TBLtime" Text="10:00" FontFamily="Inter" VerticalAlignment="Center" FontSize="14" Foreground="{DynamicResource SecondaryForeground}" Margin="6,0,6,0" TextAlignment="Right" Height="14" Grid.Column="2"/>
-        <ui:Button Style="{DynamicResource FocusingButton}" FontFamily="Inter" FontWeight="Light" FontSize="5" Grid.Row="1" Margin="6,5,7,5" Content="Начать прием"/>
+        <ui:Button Style="{DynamicResource FocusingButton}" FontFamily="Inter" FontWeight="Light" FontSize="12" Grid.Row="1" Margin="6,5,7,5" Content="Начать прием"/>
         <ui:Button Style="{DynamicResource AttentionButton }" FontFamily="Inter" FontWeight="Light" FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7,5,6,5" Content="Отменить запись"/>
     </Grid>
 </UserControl>

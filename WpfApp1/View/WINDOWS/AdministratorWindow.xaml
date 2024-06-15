@@ -15,6 +15,15 @@
         Background="{DynamicResource PrimaryBackground}"
         Foreground="{DynamicResource PrimaryForeground}"
         WindowStartupLocation="CenterScreen">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+        CaptionHeight="0"
+        ResizeBorderThickness="2"
+        GlassFrameThickness="0"
+        CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="TBLfio" Text="Иванова Ирина Ивановна" VerticalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource SecondaryForeground}" Margin="6,5,0,9" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="TBLtime" Text="10:00" FontFamily="Inter" VerticalAlignment="Center" FontSize="14" Foreground="{DynamicResource SecondaryForeground}" Margin="6,5,6,9" TextAlignment="Right" Grid.Column="2"/>
-        <ui:Button  Style="{DynamicResource FocusingButton}" Background="{DynamicResource SecondaryForeground}" FontFamily="Inter" Grid.Row="1" Margin="6,5,7,5" Content="Начать прием"/>
-        <ui:Button Style="{DynamicResource AttentionButton }" Background="{DynamicResource SecondaryForeground}" FontFamily="Inter" FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7,5,6,5" Content="Отменить запись"/>
+        <ui:Button FontWeight="Light" Style="{DynamicResource FocusingButton}" Background="{DynamicResource SecondaryForeground}" FontFamily="Inter" FontSize="12" Grid.Row="1" Margin="6,5,7,5" Content="Начать прием"/>
+        <ui:Button FontWeight="Light" Style="{DynamicResource AttentionButton }" Background="{DynamicResource SecondaryForeground}" FontFamily="Inter" FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7,5,6,5" Content="Отменить запись"/>
     </Grid>
 </UserControl>
