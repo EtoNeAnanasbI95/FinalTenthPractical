@@ -19,14 +19,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="27"/>
             <ColumnDefinition Width="367"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="763*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Text="Приёмы" Grid.Column="1" FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}"/>
         <Border Grid.Column="1" Grid.Row="3" Background="{DynamicResource SecondaryBackground }"/>
         <ListBox x:Name="LBUC"  Grid.Row="3" Grid.Column="1">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
-                    <Setter Property="Margin" Value="8,9,11,0"/>
+                    <Setter Property="Margin" Value="8,9,8,0"/>
                     <Setter Property="Padding" Value="0"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>

@@ -27,9 +27,7 @@ namespace FinalTenthPractical.View.USERCONTROLS
 
         private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            var parentPage = Window.GetWindow(this) as MainWindow;
 
-            mainWindow.NavigateToPage(new PriyomyPage());
         }
     }
 }
