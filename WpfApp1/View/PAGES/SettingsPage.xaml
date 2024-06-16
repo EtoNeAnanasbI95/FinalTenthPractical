@@ -7,9 +7,28 @@
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
       FontFamily="{StaticResource Inter}"
-      Height="Auto" Width="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+      Height="Auto"
+      Width="Auto"
+      VerticalAlignment="Stretch"
+      HorizontalAlignment="Stretch"
       Title="Settings">
-
+    <Page.Resources>
+        <Style TargetType="ui:Button" x:Key="CopyButton">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{StaticResource Focusing}" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource FocusingSelection}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#807f7f" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Grid>
@@ -74,17 +93,17 @@
                 <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" >
                     <ui:TextBox FontSize="16" Height="37" PlaceholderText=" Номер телефона" Style="{DynamicResource ClearTextbox}" Margin="11,2,0,0"/>
                     <ui:TextBox FontSize="16" Height="37" PlaceholderText=" E-mail" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
-                    <ui:TextBox x:Name="InfoOne" FontSize="16" Height="37" PlaceholderText=" Адрес прописки" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
+                    <ui:TextBox x:Name="InfoOne" FontSize="16" Height="37" PlaceholderText=" Адрес прописки" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,23"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="41"/>
                         </Grid.ColumnDefinitions>
-
-                        <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Адрес фактического проживания" Style="{DynamicResource ClearTextbox}" Margin="11,23,9,0"/>
-                        <ui:Button  Margin="0,23,0,0" Grid.Column="1" Height="37" Width="41" Style="{DynamicResource FocusingButton}" Grid.ColumnSpan="2" VerticalAlignment="Top">
-                            <ui:SymbolIcon Symbol="Copy20"/>
-
+                        <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Адрес фактического проживания" Style="{DynamicResource ClearTextbox}" Margin="11,0,9,0"/>
+                        <ui:Button  
+                            Grid.Column="1"
+                            Style="{DynamicResource CopyButton}">
+                            <ui:SymbolIcon Foreground="White" FontSize="24" Symbol="Copy20"/>
                         </ui:Button>
                     </Grid>
                 </StackPanel>
