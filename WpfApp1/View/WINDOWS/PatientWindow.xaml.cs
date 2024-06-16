@@ -58,7 +58,6 @@ namespace FinalTenthPractical.View
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationWindow auth = new AuthorizationWindow();
             this.Close();
         }
 
@@ -80,6 +79,19 @@ namespace FinalTenthPractical.View
         private void Button_Settings(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(new SettingsPage());
+        }
+
+        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (e.NewValue is TreeViewItem selectedItem)
+            {
+                switch (selectedItem.Header)
+                {
+                    case "Приёмы":
+                        Frame.Navigate(new MedicalCardPatient());
+                        break;
+                }
+            }
         }
     }
 }

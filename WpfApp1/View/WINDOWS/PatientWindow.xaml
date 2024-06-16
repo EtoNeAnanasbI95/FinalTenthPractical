@@ -58,7 +58,7 @@
 
         <Border Grid.Column="0" Background="#007BFE" Grid.ColumnSpan="6"/>
 
-        <TreeView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="4">
+        <TreeView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="4" SelectedItemChanged="TreeView_SelectedItemChanged">
             <TreeViewItem  Header="Главная" Foreground="#E4FFFFFF" FontFamily="Inter" >
                 <TreeViewItem Header="Записи и направления"  Foreground="#E4FFFFFF" FontFamily="Inter"/>
                 <TreeViewItem Header="Рецепты" Foreground="#E4FFFFFF" FontFamily="Inter" />
