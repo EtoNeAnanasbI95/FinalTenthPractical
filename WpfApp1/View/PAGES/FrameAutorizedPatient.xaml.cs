@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
 using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View
@@ -28,6 +29,7 @@ namespace FinalTenthPractical.View
         {
             InitializeComponent();
             _patientViewModel = new PatientViewModel();
+            _patientViewModel.GoPatient += (sender, args) => GoPatient();
             DataContext = _patientViewModel;
         }
      
@@ -42,13 +44,12 @@ namespace FinalTenthPractical.View
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void GoPatient()
         {
             var auth = AuthorizationWindow.GetWindow(this);
             PatientWindow patient = new PatientWindow();
             patient.Show();
             auth.Close();
-
         }
     }
 }

@@ -43,6 +43,12 @@
             <ui:Button 
                 Background="{DynamicResource PrimaryBackground}"
                 Foreground="{DynamicResource PrimaryForeground}"
+                Click="GO_LOAD"
+                HorizontalAlignment="Center"
+                Content="LOAD"/>
+            <ui:Button 
+                Background="{DynamicResource PrimaryBackground}"
+                Foreground="{DynamicResource PrimaryForeground}"
                 HorizontalAlignment="Center"
                 Click="CHANGE_THEME"
                 Content="ПОМЕНЯТЬ_ТЕМУ"/>

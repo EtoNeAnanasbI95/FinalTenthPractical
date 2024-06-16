@@ -55,7 +55,6 @@
                         MethodName="AuthDoctor" />
                 </b:EventTrigger>
             </b:Interaction.Triggers>
-
         </ui:Button>
         <ui:Button 
             Style="{DynamicResource FocusingButton}"  
