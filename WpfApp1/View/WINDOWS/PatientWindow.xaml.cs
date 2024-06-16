@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -89,9 +90,25 @@ namespace FinalTenthPractical.View
                 {
                     case "Приёмы":
                         Frame.Navigate(new MedicalCardPatient());
-                        break;
+                        break; 
+                    case "Анализы":
+                        Frame.Navigate(new MedicalCardAnaliz());
+                        break; 
+                    case "Исследования":
+                        Frame.Navigate(new MedicalCardStudy());
+                        break; 
+                    case "Записи и направления":
+                        Frame.Navigate(new AppointmentPatient());
+                        break;  
                 }
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

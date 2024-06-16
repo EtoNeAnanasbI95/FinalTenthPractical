@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace FinalTenthPractical.View.PAGES
 {
     /// <summary>
-    /// Логика взаимодействия для MedicalCardPatient.xaml
+    /// Логика взаимодействия для MedicalCardStudy.xaml
     /// </summary>
-    public partial class MedicalCardPatient : Page
+    public partial class MedicalCardStudy : Page
     {
-        public MedicalCardPatient()
+        public MedicalCardStudy()
         {
             InitializeComponent();
 

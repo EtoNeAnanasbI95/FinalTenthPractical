@@ -7,6 +7,15 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
         Title="Autorized" Height="220"  Width="400" ResizeMode="NoResize" WindowStyle="None">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+        CaptionHeight="0"
+        ResizeBorderThickness="2"
+        GlassFrameThickness="0"
+        CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="27*"/>

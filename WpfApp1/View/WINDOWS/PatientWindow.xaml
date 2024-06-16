@@ -10,7 +10,17 @@
          MinWidth="718"
         MinHeight="200"
         Background="{DynamicResource PrimaryBackground}"
-    Title="Patient"  Height="860" Width="1500" WindowStartupLocation="CenterScreen">
+    Title="Patient"  Height="860" Width="1500" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+        CaptionHeight="0"
+        ResizeBorderThickness="5"
+        GlassFrameThickness="0"
+        CornerRadius="7"/>
+    </WindowChrome.WindowChrome>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -33,6 +43,7 @@
             <ColumnDefinition Width="7"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="Frame" Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="3" Grid.Column="6"/>
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="Transparent"/>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="7" Grid.Row="1">
             <ui:Button Foreground="Black" Style="{DynamicResource ButtonBar}" Click="RollUpButton_Click">

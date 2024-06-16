@@ -2,12 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d" 
              Height="63" Width="349">
+    <UserControl.Resources>
+        <Style x:Key="Buttonqq" TargetType="ui:Button">
+
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <Button x:Name="OnClick">
+        <Border Grid.Column="0" Grid.ColumnSpan="4" BorderThickness="0" Grid.RowSpan="6" Background="{DynamicResource PrimaryBackground }"/>
+        <ui:Button Background="Transparent" Style="{DynamicResource Buttonqq}" BorderThickness="0" x:Name="OnClick">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="6"/>
@@ -16,19 +23,16 @@
                     <ColumnDefinition Width="6"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="18"/>
-                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="27"/>
                     <RowDefinition Height="16"/>
                     <RowDefinition Height="16"/>
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
-                <Border Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6" Background="{DynamicResource PrimaryBackground }"/>
-                <TextBlock x:Name="FirstTB" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Осмотр при подозрении на ОРВИ" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}"/>
-                <TextBlock x:Name="SecondTB" Grid.Row="3" Grid.Column="1" Text="Халатова С.Ш." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-                <TextBlock x:Name="ThirdTB" Grid.Row="4" Grid.Column="1" Text="29 декабря 2024 г." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+                <TextBlock x:Name="FirstTB" Grid.Column="1" Grid.ColumnSpan="2" Text="Осмотр при подозрении на ОРВИ" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}" Height="16" Width="231"/>
+                <TextBlock x:Name="SecondTB" Grid.Row="1" Grid.Column="1" Text="Халатова С.Ш." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
+                <TextBlock x:Name="ThirdTB" Grid.Row="2" Grid.Column="1" Text="29 декабря 2024 г." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Grid.ColumnSpan="2" Margin="168,0,0,0"/>
             </Grid>
-        </Button>
+        </ui:Button>
     </Grid>
 </UserControl>
