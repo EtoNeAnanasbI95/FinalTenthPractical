@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:FinalTenthPractical.View.WINDOWS"
-        WindowStyle="None"
         mc:Ignorable="d"
         MinWidth="718"
         MinHeight="472"
@@ -74,9 +73,8 @@
             </ui:Button>
         </StackPanel>
         <DatePicker Style="{DynamicResource ClearDatePicker}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-
         <Grid Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="6" Grid.RowSpan="7">
-            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto">
                 <Frame x:Name="FrameDoc" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="6"/>
             </ScrollViewer>
         </Grid>
