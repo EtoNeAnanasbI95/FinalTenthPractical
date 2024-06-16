@@ -10,4 +10,6 @@ public partial class ResearchDocument
     public string Rtf { get; set; } = null!;
 
     public byte[]? Attachment { get; set; }
+    
+    public string DocumentName { get; set; }
 }
