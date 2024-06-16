@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>изображение-19.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,6 +22,10 @@
       <None Remove="Model\TrashBeen.png" />
       <None Remove="Model\изображение 19.png" />
       <None Remove="Model\Офтальмолог.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="изображение-19.ico" />
     </ItemGroup>
 
     <ItemGroup>

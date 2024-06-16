@@ -24,6 +24,9 @@ namespace FinalTenthPractical.View
         public PatientWindow()
         {
             InitializeComponent();
+            
+
+
 
 
             this.MinWidth = 718;
