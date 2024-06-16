@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"      
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
-      Height="850" Width="1180"
+      Height="Auto" Width="Auto"
       Title="MedicalCardPatient">
 
     <Page.Resources>
@@ -17,7 +17,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="11"/>
+            <RowDefinition Height="0"/>
             <RowDefinition Height="24"/>
             <RowDefinition Height="13"/>
             <RowDefinition/>
@@ -33,8 +33,23 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}"><Run Language="ru-ru" Text="Выбор специалиста - Офтальмолог"/></TextBlock>
         <Border Grid.Column="1" Grid.Row="3" Background="{DynamicResource SecondaryBackground }"/>
+        <ListBox x:Name="LBUC" Grid.Row="3" Grid.Column="1">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="8,9,8,0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
         <ui:Button Style="{DynamicResource FocusingButton}" Content="Назад" Grid.Column="1" Grid.Row="5"/>
         <ui:Button Style="{DynamicResource FocusingButton}" Content="Записаться на прием" Grid.Column="2" Grid.Row="5" Margin="9,0,0,0"/>
+        <Grid Grid.Row="3" Grid.Column="2">
+            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <Frame x:Name="Frame"/>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Page>
 

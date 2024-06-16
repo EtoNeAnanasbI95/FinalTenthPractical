@@ -37,9 +37,10 @@
             Style="{DynamicResource FocusingButton}"
             Background="{DynamicResource SecondaryForeground}"
             FontSize="12"
+            Height="18"
             Grid.Row="1"
             Grid.ColumnSpan="3"
-            Margin="6,5,6,5"
+            Margin="6,5,6,4"
             Content="Начать прием"/>
     </Grid>
 </UserControl>

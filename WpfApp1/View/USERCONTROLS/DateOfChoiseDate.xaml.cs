@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace FinalTenthPractical.View.USERCONTROLS
 {
     /// <summary>
-    /// Логика взаимодействия для DoctorRightContrilTime.xaml
+    /// Логика взаимодействия для DateOfChoiseDate.xaml
     /// </summary>
-    public partial class DoctorRightContrilTime : UserControl
+    public partial class DateOfChoiseDate : UserControl
     {
-        public DoctorRightContrilTime()
+        public DateOfChoiseDate()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

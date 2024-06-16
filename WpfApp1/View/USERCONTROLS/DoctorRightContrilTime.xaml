@@ -35,20 +35,22 @@
             Margin="6,5,6,9" 
             TextAlignment="Right" Grid.Column="2"/>
         <ui:Button  
+            Height="18"
             Style="{DynamicResource FocusingButton}" 
             Background="{DynamicResource SecondaryForeground}" 
             FontSize="12"
             Grid.Row="1" 
-            Margin="6,5,7,5" 
-            Content="Начать прием"/>
+            Margin="6,5,7,4" 
+            Content="Начать прием" Click="Button_Click"/>
         <ui:Button 
+            Height="18"
             Style="{DynamicResource FocusingButton }" 
             Background="{DynamicResource SecondaryForeground}" 
             FontSize="12"
             Grid.Row="1" 
             Grid.Column="1" 
             Grid.ColumnSpan="2" 
-            Margin="7,5,6,5" 
+            Margin="7,5,6,4" 
             Content="Отменить запись"/>
     </Grid>
 </UserControl>

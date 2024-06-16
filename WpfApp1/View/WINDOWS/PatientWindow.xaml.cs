@@ -102,7 +102,10 @@ namespace FinalTenthPractical.View
                         break; 
                     case "Записи и направления":
                         Frame.Navigate(new AppointmentPatient());
-                        break;  
+                        break;
+                    case "Страница выбора врача":
+                        Frame.Navigate(new SelectingSpecialistPatient());
+                        break;
                 }
             }
         }

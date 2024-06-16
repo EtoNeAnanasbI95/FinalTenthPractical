@@ -12,10 +12,10 @@
         Title="DEVELOPING_WINDOW" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="275*"/>
+            <RowDefinition Height="159*"/>
         </Grid.RowDefinitions>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="238" Width="178">
             <ui:Button
                 Background="{DynamicResource PrimaryBackground}"
                 Foreground="{DynamicResource PrimaryForeground}"
@@ -58,9 +58,8 @@
                 HorizontalAlignment="Center"
                 Click="DEV_BUTTON"
                 Content="DEV_BUTTON"/>
+
         </StackPanel>
-        <StackPanel Name="Panel" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
-            
-        </StackPanel>
+        <StackPanel Name="Panel" VerticalAlignment="Top" HorizontalAlignment="Center" Height="0" Margin="0,238,0,0" Width="0"/>
     </Grid>
 </Window>

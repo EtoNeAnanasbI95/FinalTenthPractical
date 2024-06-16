@@ -77,4 +77,9 @@ public partial class DEVELOPING_WINDOW : Window
         MessageBox.Show("AHAHHHA");
 
     }
+
+    private void DEV_BUTTONN(object sender, RoutedEventArgs e)
+    {
+
+    }
 }

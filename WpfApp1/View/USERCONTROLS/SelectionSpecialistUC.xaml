@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="FinalTenthPractical.View.USERCONTROLS.SelectionSpecialistUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
+             mc:Ignorable="d" 
+                         Height="63" Width="349">
+    <UserControl.Resources>
+        <Style x:Key="Buttonqq" TargetType="ui:Button">
+
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Border Grid.Column="0" Grid.ColumnSpan="4" BorderThickness="0" Grid.RowSpan="6" Background="{DynamicResource PrimaryBackground }"/>
+        <ui:Button Background="Transparent" Style="{DynamicResource Buttonqq}" BorderThickness="0" x:Name="OnClick">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="168.5"/>
+                    <ColumnDefinition Width="168.5"/>
+                    <ColumnDefinition Width="6"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="4"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="FirstTB" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}" Height="16" Width="231"><Run Language="ru-ru" Text="Иванов Иван Иванович"/></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Ближайшая дата:" VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
+                <TextBlock x:Name="ThirdTB" Grid.Row="2" Grid.Column="1" Text="Сегодня" VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Grid.ColumnSpan="2" Margin="168,0,0,0"/>
+            </Grid>
+        </ui:Button>
+    </Grid>
+</UserControl>

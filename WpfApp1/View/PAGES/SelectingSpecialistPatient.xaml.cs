@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalTenthPractical.View.USERCONTROLS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace FinalTenthPractical.View.PAGES
         public SelectingSpecialistPatient()
         {
             InitializeComponent();
+
+            SelectionSpecialistUC th = new SelectionSpecialistUC();
+            th.FirstTB.Text = "Пахтусов Андрей Александрович";
+            th.ThirdTB.Text = "Послезавтра";
+
+            List<SelectionSpecialistUC> users = new List<SelectionSpecialistUC>() { th };
+            LBUC.ItemsSource = users;
+
+            Frame.Navigate(new ChoiseDatePatient());
+
         }
     }
 }

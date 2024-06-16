@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="FinalTenthPractical.View.USERCONTROLS.DateOfChoiseDate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
+             mc:Ignorable="d" 
+             Height="30" Width="150">
+    <Grid>
+        <ToggleButton Style="{DynamicResource ClearToggleButton }" Width="150" HorizontalAlignment="Center">
+            <TextBlock x:Name="date" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}" Text="29 мая, ср" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </ToggleButton>
+    </Grid>
+</UserControl>

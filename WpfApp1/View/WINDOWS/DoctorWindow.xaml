@@ -73,13 +73,13 @@
             </ui:Button>
         </StackPanel>
         <DatePicker Style="{DynamicResource ClearDatePicker}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Grid Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="6" Grid.RowSpan="7">
+        <Grid Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="7" Grid.RowSpan="7">
             <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto">
                 <Frame x:Name="FrameDoc" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="6"/>
             </ScrollViewer>
         </Grid>
         <ui:Button Style="{DynamicResource AttentionButton}" Grid.Column="1" Grid.Row="6" Content="Выйти из аккаунта" Grid.ColumnSpan="2"/>
-        <ListBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LB">
+        <ListBox Margin="-1,0,0,0" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LB">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Margin" Value="0,0,0,20"/>
