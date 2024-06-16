@@ -79,7 +79,7 @@ namespace FinalTenthPractical.View
 
         private void Button_Settings(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(new SettingsPage());
+            Frame.Navigate(new PatientSettingsPage());
         }
 
         private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -92,13 +92,13 @@ namespace FinalTenthPractical.View
                         Frame.Navigate(new MedicalCardPatient());
                         break; 
                     case "Анализы":
-                        Frame.Navigate(new MedicalCardAnaliz());
+                        Frame.Navigate(new PatientAnalysesPage());
                         break; 
                     case "Исследования":
                         Frame.Navigate(new MedicalCardStudy());
                         break; 
                     case "Записи и направления":
-                        Frame.Navigate(new AppointmentPatient());
+                        Frame.Navigate(new PatientAppointmentPage());
                         break;  
                 }
             }

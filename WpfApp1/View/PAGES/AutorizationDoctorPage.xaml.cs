@@ -1,5 +1,4 @@
-﻿using FinalTenthPractical.View.WINDOWS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,26 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FinalTenthPractical.Properties;
+using EMIAS.Models;
+using FinalTenthPractical.View.WINDOWS;
 using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View
 {
     /// <summary>
-    /// Логика взаимодействия для FrameAutorizedPatient.xaml
+    /// Логика взаимодействия для FrameAutorizedDoctor.xaml
     /// </summary>
-    public partial class FrameAutorizedPatient : Page
+    public partial class AutorizationDoctorPage : Page
     {
-        private PatientViewModel _patientViewModel;
+        private DoctorViewModel _doctorViewModel; 
         
-        public FrameAutorizedPatient()
+        public AutorizationDoctorPage()
         {
             InitializeComponent();
-            _patientViewModel = new PatientViewModel();
-            _patientViewModel.GoPatient += (sender, args) => GoPatient();
-            DataContext = _patientViewModel;
+            _doctorViewModel = new DoctorViewModel();
+            _doctorViewModel.GoDoctor += (_, _) => GoDoctor();
+            _doctorViewModel.GoAdmin += (_, _) => GoAdmin();
+            DataContext = _doctorViewModel;
         }
-     
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var parentWindow = Window.GetWindow(this);
@@ -40,15 +41,23 @@ namespace FinalTenthPractical.View
             if (parentWindow != null && parentWindow is AuthorizationWindow autorized)
             {
                 autorized.FramePatientAutorize.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
-                autorized.FramePatientAutorize.Content = new FrameAutorizedDoctor();
+                autorized.FramePatientAutorize.Content = new AutorizationPatientpage();
             }
         }
 
-        private void GoPatient()
+        private void GoDoctor()
         {
             var auth = AuthorizationWindow.GetWindow(this);
-            PatientWindow patient = new PatientWindow();
-            patient.Show();
+            DoctorWindow doc = new DoctorWindow();
+            doc.Show();
+            auth.Close();
+        }
+        
+        private void GoAdmin()
+        {
+            var auth = AuthorizationWindow.GetWindow(this);
+            AdministratorWindow adm = new AdministratorWindow();
+            adm.Show();
             auth.Close();
         }
     }

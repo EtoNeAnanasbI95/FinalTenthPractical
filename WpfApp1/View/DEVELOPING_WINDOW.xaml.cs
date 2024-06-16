@@ -68,11 +68,11 @@ public partial class DEVELOPING_WINDOW : Window
     private void DEV_BUTTON(object sender, RoutedEventArgs e)
     {
         ReceptionUC rcu = new ReceptionUC();
-        rcu.Click = test;
+        rcu.Click += (sender, e) => test(sender, e);
         Panel.Children.Add(rcu);
     }
     
-    private void test()
+    private void test(object sender, EventArgs e)
     {
         MessageBox.Show("AHAHHHA");
 

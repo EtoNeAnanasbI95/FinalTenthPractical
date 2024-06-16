@@ -4,7 +4,7 @@ using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
 
-public class MainViewModel : ApiHelper.ApiHelper
+public class MainViewModel : BindingHelper
 {
     
     public MainViewModel()

@@ -19,9 +19,9 @@ namespace FinalTenthPractical.View.PAGES
     /// <summary>
     /// Логика взаимодействия для Settings.xaml
     /// </summary>
-    public partial class SettingsPage : Page
+    public partial class PatientSettingsPage : Page
     {
-        public SettingsPage()
+        public PatientSettingsPage()
         {
             InitializeComponent();
         }

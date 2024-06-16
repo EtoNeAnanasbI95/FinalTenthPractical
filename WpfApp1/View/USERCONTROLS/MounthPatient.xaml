@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" x:Name="mounth" Grid.Row="1" FontFamily="Inter" FontSize="16" Text="Май 2024" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" Name="mounth" Grid.Row="1" FontFamily="Inter" FontSize="16" Text="Май 2024" Grid.ColumnSpan="2"/>
         <ListBox Padding="0" x:Name="LBBB" Grid.Row="3" Grid.Column="1">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">

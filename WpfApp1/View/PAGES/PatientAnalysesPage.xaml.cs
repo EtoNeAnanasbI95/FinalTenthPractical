@@ -19,9 +19,9 @@ namespace FinalTenthPractical.View.PAGES
     /// <summary>
     /// Логика взаимодействия для MedicalCardAnaliz.xaml
     /// </summary>
-    public partial class MedicalCardAnaliz : Page
+    public partial class PatientAnalysesPage : Page
     {
-        public MedicalCardAnaliz()
+        public PatientAnalysesPage()
         {
             InitializeComponent();
 

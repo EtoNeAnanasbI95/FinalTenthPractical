@@ -42,7 +42,7 @@ namespace FinalTenthPractical.View.WINDOWS
             List<Object> users = new List<Object>() { first, second, th };
             LB.ItemsSource = users;  
 
-            FrameDoc.Navigate(new PageDoctor());
+            FrameDoc.Navigate(new DoctorPage());
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

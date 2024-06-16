@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FinalTenthPractical.View.PAGES
 {
     /// <summary>
-    /// Логика взаимодействия для AdminAdministrator.xaml
+    /// Логика взаимодействия для AdminPatient.xaml
     /// </summary>
-    public partial class AdminAdministrator : Page
+    public partial class AdminPatientLBPage : Page
     {
-        public AdminAdministrator()
+        public AdminPatientLBPage()
         {
             InitializeComponent();
         }

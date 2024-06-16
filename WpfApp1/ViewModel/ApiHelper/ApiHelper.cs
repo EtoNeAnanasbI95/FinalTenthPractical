@@ -9,7 +9,7 @@ using SecondLibPractice;
 
 namespace WpfApp1.ViewModel.ApiHelper;
 
-public class ApiHelper : BindingHelper
+public static class ApiHelper
     {
         private static string _url = "http://93.185.159.39:5000/api";
         public static T? Get<T>(string model, int id = 0) 

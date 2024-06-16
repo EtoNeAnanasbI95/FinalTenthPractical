@@ -21,9 +21,9 @@ namespace FinalTenthPractical.View.PAGES
     /// <summary>
     /// Логика взаимодействия для PageDoctor.xaml
     /// </summary>
-    public partial class PageDoctor : Page
+    public partial class DoctorPage : Page
     {
-        public PageDoctor()
+        public DoctorPage()
         {
             InitializeComponent();
 

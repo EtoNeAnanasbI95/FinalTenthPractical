@@ -5,27 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d"
-             Height="89" Width="124" Background="{DynamicResource PrimaryBackground }">
+             Height="89" Width="124" 
+             Background="{DynamicResource PrimaryBackground }"
+             FontFamily="{StaticResource Inter}">
+    <UserControl.Resources>
+        <Style x:Key="Clear" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="47"/>
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="47"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="17"/>
-            <RowDefinition Height="30.25"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Image Source="/Model/Офтальмолог.png" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock 
-            x:Name="first"
-            Grid.Row="2"
-            Text="Офтальмолог"
-            Grid.ColumnSpan="3"
-            FontFamily="{StaticResource Inter}"
-            FontSize="16"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
+        <Button Name="Onclick" Style="{StaticResource Clear}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Name="Image"  
+                       Grid.Row="0" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"/>
+                <TextBlock
+                    Foreground="{DynamicResource PrimaryForeground}"
+                    Name="TextBlock"
+                    Grid.Row="1"
+                    FontFamily="{StaticResource Inter}"
+                    FontSize="16"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </Grid>
+        </Button>
     </Grid>
 </UserControl>

@@ -20,7 +20,7 @@ namespace FinalTenthPractical.View.USERCONTROLS
     /// </summary>
     public partial class ReceptionUC : UserControl
     {
-        public Action Click { get; set; }
+        public event EventHandler Click;
         
         public ReceptionUC()
         {   
@@ -30,8 +30,7 @@ namespace FinalTenthPractical.View.USERCONTROLS
 
         private void OnCardClick(object sender, EventArgs e)
         {
-            Click?.Invoke();
+            Click?.Invoke(sender, e);
         }
-
     }
 }
