@@ -19,6 +19,7 @@
         </Grid.RowDefinitions>
         <Image Source="/Model/Офтальмолог.png" Grid.Column="1" Grid.Row="1"/>
         <TextBlock 
+            x:Name="first"
             Grid.Row="2"
             Text="Офтальмолог"
             Grid.ColumnSpan="3"

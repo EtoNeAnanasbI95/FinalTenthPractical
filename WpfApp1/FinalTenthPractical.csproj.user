@@ -53,6 +53,12 @@
     <Compile Update="View\PAGES\FrameAutorizedPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\USERCONTROLS\MounthAppointmentPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\MounthPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\USERCONTROLS\ReceptionUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +113,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\FrameAutorizedPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\MounthAppointmentPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\MounthPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\USERCONTROLS\ReceptionUC.xaml">
