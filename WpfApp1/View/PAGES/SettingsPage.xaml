@@ -6,6 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
+      FontFamily="{StaticResource Inter}"
       Height="Auto" Width="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
       Title="Settings">
 
@@ -38,8 +39,7 @@
                     <RowDefinition Height="8.667"/>
                     <RowDefinition Height="2.333"/>
                 </Grid.RowDefinitions>
-
-                <TextBlock Text="Профиль" FontFamily="Inter" Foreground="{DynamicResource PrimaryForeground }" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20"/>
+                <TextBlock Text="Профиль" Foreground="{DynamicResource PrimaryForeground}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20"/>
                 <Border Grid.Column="1" Grid.Row="1"  Background="{DynamicResource PrimaryBackground}" Grid.ColumnSpan="2" Margin="131,0,0,0"/>
 
                 <Border Grid.Column="1" Grid.Row="3" Background="{DynamicResource SecondaryBackground }" />
@@ -63,30 +63,32 @@
                         <RowDefinition Height="47"/>
                         <RowDefinition Height="18"/>
                     </Grid.RowDefinitions>
-                    <TextBlock FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="1" Grid.Column="1" Text="7777 0000 0000 0000"  VerticalAlignment="Center" Height="23"/>
-                    <TextBlock FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="1" Grid.Column="3" Text="Иванова Ирина Ивановна"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="22"/>
-                    <TextBlock FontFamily="Inter" FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="3" Grid.Column="3" Text="Дата рождения"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                    <TextBlock FontFamily="Inter" FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="3" Grid.Column="1" Text="Название полиса"  VerticalAlignment="Center"/>
-                    <TextBlock FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="5" Grid.Column="1" Text="Ирина"  VerticalAlignment="Center"/>
-                    <TextBlock FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="5" Grid.Column="3" Text="01.01.2000"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                    <TextBlock FontFamily="Inter" FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Center"><Run Text="Выдан: АКЦИОНЕРНОЕ ОБЩЕСТВО “СТРАХОВАЯ КОМПАНИЯ"/><LineBreak/><Run Language="ru-ru" Text="                                     "/><Run Text="“СОГАЗ-МЕД”"/></TextBlock>
+                    <TextBlock FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="1" Grid.Column="1" Text="7777 0000 0000 0000"  VerticalAlignment="Center" Height="23"/>
+                    <TextBlock FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="1" Grid.Column="3" Text="Иванова Ирина Ивановна"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="22"/>
+                    <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="3" Grid.Column="3" Text="Дата рождения"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="3" Grid.Column="1" Text="Название полиса"  VerticalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="5" Grid.Column="1" Text="Ирина"  VerticalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Grid.Row="5" Grid.Column="3" Text="01.01.2000"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Center"><Run Text="Выдан: АКЦИОНЕРНОЕ ОБЩЕСТВО “СТРАХОВАЯ КОМПАНИЯ"/><LineBreak/><Run Language="ru-ru" Text="                                     "/><Run Text="“СОГАЗ-МЕД”"/></TextBlock>
                 </Grid>
                 <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" >
-                    <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Номер телефона" Style="{DynamicResource ClearTextbox}" Margin="11,2,0,0"/>
-                    <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" E-mail" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
-                    <ui:TextBox x:Name="InfoOne" FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Адрес прописки" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
+                    <ui:TextBox FontSize="16" Height="37" PlaceholderText=" Номер телефона" Style="{DynamicResource ClearTextbox}" Margin="11,2,0,0"/>
+                    <ui:TextBox FontSize="16" Height="37" PlaceholderText=" E-mail" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
+                    <ui:TextBox x:Name="InfoOne" FontSize="16" Height="37" PlaceholderText=" Адрес прописки" Style="{DynamicResource ClearTextbox}" Margin="11,23,0,0"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="41"/>
                         </Grid.ColumnDefinitions>
+
                         <ui:TextBox FontFamily="Inter" FontSize="16" Height="37" PlaceholderText=" Адрес фактического проживания" Style="{DynamicResource ClearTextbox}" Margin="11,23,9,0"/>
                         <ui:Button  Margin="0,23,0,0" Grid.Column="1" Height="37" Width="41" Style="{DynamicResource FocusingButton}" Grid.ColumnSpan="2" VerticalAlignment="Top">
                             <ui:SymbolIcon Symbol="Copy20"/>
+
                         </ui:Button>
                     </Grid>
                 </StackPanel>
-                <TextBlock x:Name="InfoSecond" FontFamily="Inter" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="5" Grid.Column="1" Text="Тема приложения:"  VerticalAlignment="Center" HorizontalAlignment="Left" Height="18" Width="127"/>
+                <TextBlock x:Name="InfoSecond" Foreground="{DynamicResource SecondaryForeground }" Grid.Row="5" Grid.Column="1" Text="Тема приложения:"  VerticalAlignment="Center" HorizontalAlignment="Left" Height="18" Width="127"/>
                 <ComboBox FontSize="16" Style="{DynamicResource ClearComboBoxStyle}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Height="37" SelectionChanged="ComboBox_SelectionChanged_1">
                     <ComboBoxItem Content="Светлая"/>
                     <ComboBoxItem Content="Темная"/>
