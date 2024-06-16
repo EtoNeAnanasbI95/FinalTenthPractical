@@ -29,7 +29,8 @@ namespace FinalTenthPractical.View
         {
             InitializeComponent();
             _doctorViewModel = new DoctorViewModel();
-            _doctorViewModel.GodoctorPage += (_, _) => GoDoctorPage();
+            _doctorViewModel.GoDoctor += (_, _) => GoDoctor();
+            _doctorViewModel.GoAdmin += (_, _) => GoAdmin();
             DataContext = _doctorViewModel;
         }
 
@@ -44,11 +45,19 @@ namespace FinalTenthPractical.View
             }
         }
 
-        private void GoDoctorPage()
+        private void GoDoctor()
         {
             var auth = AuthorizationWindow.GetWindow(this);
             DoctorWindow doc = new DoctorWindow();
             doc.Show();
+            auth.Close();
+        }
+        
+        private void GoAdmin()
+        {
+            var auth = AuthorizationWindow.GetWindow(this);
+            AdministratorWindow adm = new AdministratorWindow();
+            adm.Show();
             auth.Close();
         }
     }

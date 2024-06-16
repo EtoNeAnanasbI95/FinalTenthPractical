@@ -1,4 +1,5 @@
 ﻿using EMIAS.Models;
+using FinalTenthPractical.Properties;
 
 namespace WpfApp1.ViewModel;
 
@@ -19,17 +20,32 @@ public class DoctorViewModel : ApiHelper.ApiHelper
         set => SetField(ref _PasswordDoctor, value);
     }
     
-    public event EventHandler GodoctorPage;
+    public event EventHandler GoDoctor;
+    public event EventHandler GoAdmin;
     
     public void AuthDoctor(object sender, EventArgs e)
     {
-        Console.WriteLine("Try auth");
+        Console.WriteLine("Try auth doctor");
         try
         {
             var doctor = Get<Doctor>("Doctors", Convert.ToInt32(NumberOfDoctor));
-            if (doctor.EnterPassword == PasswordDoctor) GodoctorPage?.Invoke(this, EventArgs.Empty);
-            Console.WriteLine("Auth successful");
+            var admin = Get<Admin>("Admins", Convert.ToInt32(NumberOfDoctor));
+            if (doctor.EnterPassword == PasswordDoctor)
+            {
+                GoDoctor?.Invoke(this, EventArgs.Empty);
+                Settings.Default.CurrentDoctor = Convert.ToInt32(NumberOfDoctor);
+                Settings.Default.CurrentDoctorPassword = PasswordDoctor;
+                Settings.Default.Save();
+            }
+            else if (admin.EnterPassword == PasswordDoctor)
+            {
+                GoAdmin?.Invoke(this, EventArgs.Empty);
+                Settings.Default.CurrentAdmin = Convert.ToInt32(NumberOfDoctor);
+                Settings.Default.CurrentAdminPassword = PasswordDoctor;
+                Settings.Default.Save();
+            }
+            Console.WriteLine("Doctor auth successful");
         } 
-        catch (Exception) {Console.WriteLine("Auth bad request");}
+        catch (Exception) {Console.WriteLine("Doctor or admin auth bad request");}
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
+using FinalTenthPractical.View.WINDOWS;
 using WpfApp1.ViewModel;
 
 namespace WpfApp1;
@@ -40,9 +41,30 @@ public partial class Load : Window
     {
         Dispatcher.Invoke(() =>
         {
-            var authorizedWindow = new AuthorizationWindow();
-            authorizedWindow.Show();
-            Close();
+            if (Settings.Default.CurrentPatient != 0)
+            {
+                PatientWindow window = new PatientWindow();
+                window.Show();
+                Close();
+            }
+            else if (Settings.Default.CurrentDoctor != 0)
+            {
+                DoctorWindow window = new DoctorWindow();
+                window.Show();
+                Close();
+            }
+            else if (Settings.Default.CurrentAdmin != 0)
+            {
+                AdministratorWindow window = new AdministratorWindow();
+                window.Show();
+                Close();
+            }
+            else
+            {
+                var authorizedWindow = new AuthorizationWindow();
+                authorizedWindow.Show();
+                Close();
+            }
         });
     }
 }
