@@ -4,7 +4,8 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FinalTenthPractical.View"
+        xmlns:local="clr-namespace:FinalTenthPractical.View" 
+        xmlns:local1="clr-namespace:WpfApp1.ViewModel"
         WindowStyle="None"
         mc:Ignorable="d"
         MinWidth="718"
@@ -15,6 +16,9 @@
         Background="{DynamicResource PrimaryBackground}"
         Foreground="{DynamicResource PrimaryForeground}"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local1:AdminViewModel />
+    </Window.DataContext>
 
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -88,7 +92,7 @@
                 </ui:Button>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20px" FontFamily="Inter" Text="ЕМИАС — Администратор" FontWeight="Bold" />
-            <DataGrid Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"/>
+            <DataGrid Name="HumanGrid" Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"  ItemsSource="{Binding Items}"/>
             <ComboBox 
                 Style="{DynamicResource ClearComboBoxStyle}"
                 Grid.Column="5"
@@ -97,7 +101,7 @@
                 SelectionChanged="OnPageSelector">
                     <ComboBoxItem Content="Пользователь"/>
                     <ComboBoxItem Content="Сотрудник"/>
-                <ComboBoxItem Content="Администратор"/>
+                    <ComboBoxItem Content="Администратор"/>
             </ComboBox>
             <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <Frame x:Name="FrameAdmin" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2"/>

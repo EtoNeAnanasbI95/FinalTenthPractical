@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FinalTenthPractical.Properties;
 using WpfApp1;
+using WpfApp1.ViewModel;
+using WpfApp1.ViewModel.ApiHelper;
 
 namespace FinalTenthPractical.View
 {
@@ -24,6 +27,7 @@ namespace FinalTenthPractical.View
         public AdministratorWindow()
         {
             InitializeComponent();
+            DataContext = new AdminViewModel();
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -42,12 +46,15 @@ namespace FinalTenthPractical.View
                 {
                     case "Пользователь":
                         FrameAdmin.Navigate(new PAGES.AdminPatient());
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Patients");
                         break;
                     case "Сотрудник":
                         FrameAdmin.Navigate(new PAGES.AdminDoctor());
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Doctors");
                         break; 
                     case "Администратор":
                         FrameAdmin.Navigate(new PAGES.AdminAdministrator());
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Admins");
                         break;
                 }
             }
