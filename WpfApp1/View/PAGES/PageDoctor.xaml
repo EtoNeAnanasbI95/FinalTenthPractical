@@ -63,7 +63,7 @@
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right"  Foreground="{DynamicResource PrimaryForeground }" Text="Номер полиса: 7777 0000 0000 0000" FontFamily="Inter" FontSize="20" Margin="40,0,0,0" Width="368"  />
         <TextBlock Grid.Row="3" Grid.Column="1" Foreground="{DynamicResource PrimaryForeground }" Text="Прием" FontFamily="Inter" FontSize="16" />
         <TextBlock Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" Foreground="{DynamicResource SecondaryForeground }" Text="Жалобы" FontFamily="Inter" FontSize="14" Margin="0,7,0,0" Height="17" />
-        <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <ui:TextBox TextWrapping="Wrap" Style="{DynamicResource ClearTextbox}" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
         <TextBlock Grid.Row="8" Grid.Column="1" VerticalAlignment="Top" Foreground="{DynamicResource SecondaryForeground }" Text="Общий осмотр" FontFamily="Inter" FontSize="14" Margin="0,7,0,0" Height="17" />
         <ui:TextBox Style="{DynamicResource ClearTextbox}" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2"/>
         <ui:TextBox Style="{DynamicResource ClearTextbox}" PlaceholderText="Основной диагноз" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2"/>

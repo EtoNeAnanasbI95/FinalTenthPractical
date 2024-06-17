@@ -5,9 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
-      Height="850" Width="786"
+      Height="Auto" Width="Auto"
       Title="ChoiseDatePatient" FontFamily="Inter">
-
+    <Page.Resources>
+        <Style TargetType="WrapPanel" x:Key="WP">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13"/>
@@ -17,15 +21,11 @@
             <RowDefinition Height="24"/>
             <RowDefinition Height="14"/>
             <RowDefinition Height="17"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition/>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="12"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" FontSize="20" Text="Иванов Иван Иванович" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryForeground }"/>
-        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="14" Text="Текущая неделя" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryForeground }"/>
-        <ScrollViewer Grid.Row="3" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
-            <Grid Margin="0,5,0,5">
-                <WrapPanel x:Name="LB1"/>
-            </Grid>
-        </ScrollViewer>
+        <TextBlock Grid.Column="1" FontSize="20" Text="Иванов Иван Иванович" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryForeground }" Height="24"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="14" Text="Текущая неделя" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryForeground }" Height="17"/>
+        <WrapPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" x:Name="LB1" Width="0"/>
     </Grid>
 </Page>

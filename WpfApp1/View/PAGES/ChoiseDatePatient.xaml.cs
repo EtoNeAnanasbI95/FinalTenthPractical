@@ -47,7 +47,11 @@ namespace FinalTenthPractical.View.PAGES
             y.date.Text = "29 января, сб";
 
             List<DateOfChoiseDate> users = new List<DateOfChoiseDate>() { th, q, w, e,r ,t, y };
-            LB1.ItemsSource = users;
+
+            foreach (var user in users)
+            {
+                LB1.Children.Add(user);
+            }
         }
     }
 }

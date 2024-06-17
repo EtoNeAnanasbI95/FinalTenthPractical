@@ -6,9 +6,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d" 
-             Height="30" Width="150">
-    <Grid>
-        <ToggleButton Style="{DynamicResource ClearToggleButton }" Width="150" HorizontalAlignment="Center">
+             Height="38" Width="156">
+    <Grid Margin="0,0,0,-2">
+        <ToggleButton VerticalAlignment="Top" Style="{DynamicResource ClearToggleButton }" Width="140">
             <TextBlock x:Name="date" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}" Text="29 мая, ср" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </ToggleButton>
     </Grid>

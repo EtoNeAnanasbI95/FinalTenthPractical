@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
-        <ApplicationIcon>изображение-19.ico</ApplicationIcon>
+        <ApplicationIcon>Снимок-экрана-2024-06-17-022157.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="изображение-19.ico" />
+      <Content Include="Снимок-экрана-2024-06-17-022157.ico" />
     </ItemGroup>
 
     <ItemGroup>
