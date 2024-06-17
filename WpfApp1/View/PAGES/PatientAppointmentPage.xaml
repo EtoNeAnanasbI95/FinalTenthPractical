@@ -4,8 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
+      xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d"
+      Loaded="PatientAppointmentPage_OnLoaded"
       Background="{DynamicResource PrimaryBackground}"
       Foreground="{DynamicResource PrimaryForeground}"
       Height="Auto" Width="Auto"
@@ -45,8 +47,24 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock  Foreground="{DynamicResource PrimaryForeground}" Grid.Column="0" Text="Действующие записи" FontSize="20" VerticalAlignment="Center" FontFamily="Inter"/>
-            <DatePicker Style="{DynamicResource ClearDatePicker}"  Tag="Записи с:" Grid.Row="5" Grid.Column="1"/>
-            <DatePicker Style="{DynamicResource ClearDatePicker}" Tag="Записи по:" Grid.Row="5" Grid.Column="3" />
+            <DatePicker Style="{DynamicResource ClearDatePicker}"  Tag="Записи с:" Grid.Row="5" Grid.Column="1">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectedDateChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="DataOfPick" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </DatePicker>
+            <DatePicker Style="{DynamicResource ClearDatePicker}" Tag="Записи по:" Grid.Row="5" Grid.Column="3">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectedDateChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="DataToPick" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </DatePicker>
         </Grid>
 
         <Grid Grid.Row="9" Grid.Column="1">
@@ -57,14 +75,30 @@
                 <ColumnDefinition Width="147"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock  Foreground="{DynamicResource PrimaryForeground}" Grid.Column="0" Text="Действующие записи" FontSize="20" VerticalAlignment="Center" FontFamily="Inter"/>
-            <DatePicker Style="{DynamicResource ClearDatePicker}"  Tag="Записи с:" Grid.Row="5" Grid.Column="1"/>
-            <DatePicker Style="{DynamicResource ClearDatePicker}" Tag="Записи по:" Grid.Row="5" Grid.Column="3" />
+            <TextBlock  Foreground="{DynamicResource PrimaryForeground}" Grid.Column="0" Text="Архивные записи" FontSize="20" VerticalAlignment="Center" FontFamily="Inter"/>
+            <DatePicker Style="{DynamicResource ClearDatePicker}"  Tag="Записи с:" Grid.Row="5" Grid.Column="1">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectedDateChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="DataOfPickArchive" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </DatePicker>
+            <DatePicker Style="{DynamicResource ClearDatePicker}" Tag="Записи по:" Grid.Row="5" Grid.Column="3">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectedDateChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="DataToPickArchive" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </DatePicker>
         </Grid>
         <TextBlock Foreground="{DynamicResource PrimaryForeground}" Grid.Row="1" Grid.Column="1" Text="Запись" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <ScrollViewer Grid.Row="3" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
             <Grid Background="{DynamicResource SecondaryBackground}">
-                <ItemsControl x:Name="LB1" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="LB1" ItemsSource="{Binding SpecialitiesCards}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -80,7 +114,7 @@
         </ScrollViewer>
         <ScrollViewer Margin="18,0,0,0" Grid.Row="7" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
             <Grid>
-                <ItemsControl x:Name="LB2" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="LB2" ItemsSource="{Binding AppointmentCards}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -97,7 +131,7 @@
 
         <ScrollViewer Margin="18,0,0,0" Grid.Row="11" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
             <Grid>
-                <ItemsControl x:Name="LB3" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="LB3" ItemsSource="{Binding ArchiveAppointmentCards}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>

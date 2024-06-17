@@ -1,4 +1,6 @@
-﻿using EMIAS.Models;
+﻿using System.Windows;
+using System.Windows.Media;
+using EMIAS.Models;
 using FinalTenthPractical.View;
 using SecondLibPractice;
 

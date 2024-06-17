@@ -24,5 +24,23 @@ namespace FinalTenthPractical.View.USERCONTROLS
         {
             InitializeComponent();
         }
+
+        public int CurrentAppointmentId;
+        public int CycleStage;
+        public int NumberOfCard;
+
+        public event EventHandler SecondActionClick;
+
+        private void secondAction(object sender, RoutedEventArgs e)
+        {
+            SecondActionClick?.Invoke(this, EventArgs.Empty);
+        }
+        
+        public event EventHandler FirstActionClick;
+
+        private void fistAction(object sender, RoutedEventArgs e)
+        {
+            FirstActionClick?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

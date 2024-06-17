@@ -23,14 +23,14 @@ namespace FinalTenthPractical.View
     /// </summary>
     public partial class AutorizationPatientpage : Page
     {
-        private PatientViewModel _patientViewModel;
+        private PatientMainAppointmentViewModel _patientMainAppointmentViewModel;
         
         public AutorizationPatientpage()
         {
             InitializeComponent();
-            _patientViewModel = new PatientViewModel();
-            _patientViewModel.GoPatient += (sender, args) => GoPatient();
-            DataContext = _patientViewModel;
+            _patientMainAppointmentViewModel = new PatientMainAppointmentViewModel();
+            _patientMainAppointmentViewModel.GoPatient += (sender, args) => GoPatient();
+            DataContext = _patientMainAppointmentViewModel;
         }
      
         private void Button_Click(object sender, RoutedEventArgs e)

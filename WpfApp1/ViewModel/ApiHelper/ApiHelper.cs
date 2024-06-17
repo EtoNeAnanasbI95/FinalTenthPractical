@@ -39,12 +39,9 @@ public static class ApiHelper
             return true;
         }
 
-        public static bool Delete<T>(string model, int id)
+        public static HttpResponseMessage Delete<T>(string model, int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.DeleteAsync($"{_url}/{model}/{id}").Result;
-            if (response.StatusCode != HttpStatusCode.NoContent) return false;
-            return true;
+            return  client.DeleteAsync($"{_url}/{model}/{id}").Result;
         }
-
     }

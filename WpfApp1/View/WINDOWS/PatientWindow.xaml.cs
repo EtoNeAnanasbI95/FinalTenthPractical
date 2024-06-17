@@ -25,7 +25,7 @@ namespace FinalTenthPractical.View
         {
             InitializeComponent();
 
-
+            Frame.Content = new PatientAppointmentPage();
             this.MinWidth = 718;
             this.MinHeight = 472;
         }
@@ -89,13 +89,13 @@ namespace FinalTenthPractical.View
                 switch (selectedItem.Header)
                 {
                     case "Приёмы":
-                        Frame.Navigate(new MedicalCardPatient());
+                        Frame.Navigate(new PatientAppointmentDocumentsPage());
                         break; 
                     case "Анализы":
-                        Frame.Navigate(new PatientAnalysesPage());
+                        Frame.Navigate(new PatientAnalysDocumentsPage());
                         break; 
                     case "Исследования":
-                        Frame.Navigate(new MedicalCardStudy());
+                        Frame.Navigate(new PatientResearchDocumentsPage());
                         break; 
                     case "Записи и направления":
                         Frame.Navigate(new PatientAppointmentPage());

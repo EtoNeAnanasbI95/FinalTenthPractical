@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,19 +21,17 @@ namespace FinalTenthPractical.View.USERCONTROLS
     /// </summary>
     public partial class MounthPatient : UserControl
     {
+        public ObservableCollection<MounthAppointmentPatient> Items { get; set; }
+        
         public MounthPatient()
         {
             InitializeComponent();
+            DataContext = this;
+        }
 
-
-            MounthAppointmentPatient oihgf = new MounthAppointmentPatient();
-            oihgf.tbt.Text = "мать его ебал";
-
-            MounthAppointmentPatient vgyu = new MounthAppointmentPatient();
-            vgyu.tbt.Text = "мать его ебал";
-
-            List<MounthAppointmentPatient> users = new List<MounthAppointmentPatient>() {oihgf, vgyu };
-            LBBB.ItemsSource = users;
+        private void MounthPatient_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (Items.Count == 0) IsEmpty.Text = "В этом месяце нет записей";
         }
     }
 }

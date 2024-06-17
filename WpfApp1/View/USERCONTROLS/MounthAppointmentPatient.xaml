@@ -21,11 +21,11 @@
             <RowDefinition Height="16"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="tbt" Grid.Row="1" Text="Врач общей практики (семейный врач)" TextAlignment="Center" Grid.Column="1" FontFamily="Inter" FontSize="12" Grid.ColumnSpan="2" Foreground="{DynamicResource PrimaryForeground }"/>
-        <TextBlock Grid.Row="3" Text="Иванов Иван Иванович" Grid.Column="1" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-        <TextBlock Grid.Row="4" Text="30 мая" Grid.Column="1" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-        <TextBlock Grid.Row="3" Margin="0,0,8,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Москва, Профсоюзная улица, д. 111А" Grid.Column="2" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
-        <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="1" FontFamily="Inter" FontSize="12" FontWeight="Light" Grid.Row="5" Margin="3,7,7,8" Content="Перенести"/>
-        <ui:Button Style="{DynamicResource AttentionButton }" Grid.Column="2" FontFamily="Inter" FontSize="12" FontWeight="Light" Grid.Row="5" Margin="7,7,9,8" Content="Отменить"/>
+        <TextBlock x:Name="Specialisation" Grid.Row="1" TextAlignment="Center" Grid.Column="1" FontFamily="Inter" FontSize="12" Grid.ColumnSpan="2" Foreground="{DynamicResource PrimaryForeground }"/>
+        <TextBlock Grid.Row="3" x:Name="DoctorName" Grid.Column="1" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+        <TextBlock Grid.Row="4" x:Name="Date" Grid.Column="1" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+        <TextBlock Grid.Row="3" x:Name="Address" Margin="0,0,8,0" Grid.RowSpan="2" TextWrapping="Wrap" Grid.Column="2" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }"/>
+        <ui:Button Click="fistAction" x:Name="FirstAction" Style="{DynamicResource FocusingButton}" Grid.Column="1" FontFamily="Inter" FontSize="12" FontWeight="Light" Grid.Row="5" Margin="3,7,7,8" />
+        <ui:Button Click="secondAction" Name="SecondAction" Style="{DynamicResource AttentionButton }" Grid.Column="2" FontFamily="Inter" FontSize="12" FontWeight="Light" Grid.Row="5" Margin="7,7,9,8" />
     </Grid>
 </UserControl>

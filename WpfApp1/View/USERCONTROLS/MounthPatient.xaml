@@ -6,22 +6,15 @@
              xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
              mc:Ignorable="d" 
              MinHeight="253"
+             Loaded="MounthPatient_OnLoaded"
              Height="Auto" Width="371" Background="{DynamicResource SecondaryBackground }">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="9"/>
-            <RowDefinition Height="19"/>
-            <RowDefinition Height="8"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="15"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Name="mounth" Grid.Row="1" FontFamily="Inter" FontSize="16" Text="Май 2024" Grid.ColumnSpan="2"/>
-        <ListBox Padding="0" x:Name="LBBB" Grid.Row="3" Grid.Column="1">
+        <TextBlock x:Name="mounth" Grid.Row="0" FontFamily="Inter" VerticalAlignment="Center" FontSize="16" Margin="10,0,0,0" />
+        <ListBox Padding="0" x:Name="LB" Grid.Row="1" ItemsSource="{Binding Items}" VerticalAlignment="Top">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Margin" Value="0,0,0,13"/>
@@ -31,6 +24,11 @@
                 </Style>
             </ListBox.Resources>
         </ListBox>
-        <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Background="{DynamicResource PrimaryBackground }"/>
+        <TextBlock 
+            Name="IsEmpty"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Foreground="{StaticResource SecondaryForeground}"/>
     </Grid>
 </UserControl>

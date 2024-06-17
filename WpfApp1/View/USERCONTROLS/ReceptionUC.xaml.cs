@@ -30,7 +30,9 @@ namespace FinalTenthPractical.View.USERCONTROLS
 
         private void OnCardClick(object sender, EventArgs e)
         {
-            Click?.Invoke(sender, e);
+            Click?.Invoke(this, e);
         }
+
+        public int AppointmentId;
     }
 }

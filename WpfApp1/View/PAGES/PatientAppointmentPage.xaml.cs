@@ -2,39 +2,21 @@
 using System.Windows;
 using System.Windows.Controls;
 using EMIAS.Models;
+using WpfApp1.ViewModel;
 using WpfApp1.ViewModel.ApiHelper;
 
 namespace FinalTenthPractical.View.PAGES;
 
 public partial class PatientAppointmentPage : Page
 {
-    
-    
+    private PatientMainAppointmentViewModel _patientMainAppointmentViewModel;
     public PatientAppointmentPage()
     {
         InitializeComponent();
-        var specialities = ApiHelper.Get<List<Speciality>>("Specialities");
-        List<DoctorsPatient> users = new List<DoctorsPatient>();
-        foreach (var item in specialities)
-        {
-            Console.WriteLine(item.IdSpeciality);
-            DoctorsPatient doctor = new DoctorsPatient();
-            doctor.IdSpecials = item.IdSpeciality.Value;
-            users.Add(doctor);
-        }
-        LB1.ItemsSource = users;
         
-        MounthPatient sdcx = new MounthPatient();
-        sdcx.mounth.Text = "Хуябрь 2023";
-
-        List<MounthPatient> mounthhh = new List<MounthPatient>() {sdcx};
-        LB2.ItemsSource = mounthhh;
+        _patientMainAppointmentViewModel = new PatientMainAppointmentViewModel();
+        DataContext = _patientMainAppointmentViewModel;
         
-        MounthPatient r = new MounthPatient();
-        sdcx.mounth.Text = "Хуябрь 2023";
-
-        List<MounthPatient> qqqqq = new List<MounthPatient>() {r};
-        LB3.ItemsSource = qqqqq;
     }
 
     private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -48,6 +30,10 @@ public partial class PatientAppointmentPage : Page
         }
     }
 
-
-
+    private void PatientAppointmentPage_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        _patientMainAppointmentViewModel.Specialisations();
+        _patientMainAppointmentViewModel.ActiveAppointments();
+        _patientMainAppointmentViewModel.ArchiveAppointments();
+    }
 }
