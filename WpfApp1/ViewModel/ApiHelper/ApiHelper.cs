@@ -9,7 +9,7 @@ using SecondLibPractice;
 
 namespace WpfApp1.ViewModel.ApiHelper;
 
-public class ApiHelper : BindingHelper
+public static class ApiHelper
     {
         private static string _url = "http://93.185.159.39:5000/api";
         public static T? Get<T>(string model, int id = 0) 
@@ -39,12 +39,9 @@ public class ApiHelper : BindingHelper
             return true;
         }
 
-        public static bool Delete<T>(string model, int id)
+        public static HttpResponseMessage Delete<T>(string model, int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.DeleteAsync($"{_url}/{model}/{id}").Result;
-            if (response.StatusCode != HttpStatusCode.NoContent) return false;
-            return true;
+            return  client.DeleteAsync($"{_url}/{model}/{id}").Result;
         }
-
     }

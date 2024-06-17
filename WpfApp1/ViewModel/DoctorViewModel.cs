@@ -1,9 +1,10 @@
 ﻿using EMIAS.Models;
 using FinalTenthPractical.Properties;
+using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
 
-public class DoctorViewModel : ApiHelper.ApiHelper
+public class DoctorViewModel : BindingHelper
 {
     private string _NumberOfDoctor;
     
@@ -28,8 +29,8 @@ public class DoctorViewModel : ApiHelper.ApiHelper
         Console.WriteLine("Try auth doctor");
         try
         {
-            var doctor = Get<Doctor>("Doctors", Convert.ToInt32(NumberOfDoctor));
-            var admin = Get<Admin>("Admins", Convert.ToInt32(NumberOfDoctor));
+            var doctor = ApiHelper.ApiHelper.Get<Doctor>("Doctors", Convert.ToInt32(NumberOfDoctor));
+            var admin = ApiHelper.ApiHelper.Get<Admin>("Admins", Convert.ToInt32(NumberOfDoctor));
             if (doctor.EnterPassword == PasswordDoctor)
             {
                 GoDoctor?.Invoke(this, EventArgs.Empty);

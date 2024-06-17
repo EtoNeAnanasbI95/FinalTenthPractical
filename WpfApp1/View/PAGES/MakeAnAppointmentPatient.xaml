@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
-      Height="850" Width="1180"
+      Height="Auto" Width="Auto"
       Title="MakeAnAppointmentPatient">
 
     <Grid>
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="23"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="11"/>
+            <RowDefinition Height="1"/>
             <RowDefinition Height="24"/>
             <RowDefinition Height="9"/>
             <RowDefinition Height="30"/>
@@ -33,51 +33,70 @@
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="5" VerticalAlignment="Center"  Grid.Column="1" Text="Специальности" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="7" VerticalAlignment="Center"  Grid.Column="1" Text="Направления" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="9" VerticalAlignment="Center"  Grid.Column="1" Text="Цели обращения" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
-        <Grid Background="{DynamicResource SecondaryBackground }" Grid.Row="4" Grid.Column="1">
-            <ScrollViewer>
-                <ListBox x:Name="LB_first">
-                    <ListBox.ItemsPanel>
+        <ScrollViewer Grid.Row="4" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+            <Grid Background="{DynamicResource SecondaryBackground}">
+                <ItemsControl x:Name="LB_first" ItemsSource="{Binding CurrentRecords}">
+                    <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-            </ScrollViewer>
-        </Grid>
-        <Grid Background="{DynamicResource SecondaryBackground }" Grid.Row="6" Grid.Column="1">
-            <ScrollViewer>
-                <ListBox x:Name="LB_second">
-                    <ListBox.ItemsPanel>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="11,0"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="6" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+            <Grid Background="{DynamicResource SecondaryBackground}">
+                <ItemsControl x:Name="LB_second" ItemsSource="{Binding CurrentRecords}">
+                    <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-            </ScrollViewer>
-        </Grid>
-        <Grid Background="{DynamicResource SecondaryBackground }" Grid.Row="8" Grid.Column="1">
-            <ScrollViewer>
-                <ListBox x:Name="LB_third">
-                    <ListBox.ItemsPanel>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="11,0"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="8" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+            <Grid Background="{DynamicResource SecondaryBackground}">
+                <ItemsControl x:Name="LB_third" ItemsSource="{Binding CurrentRecords}">
+                    <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-            </ScrollViewer>
-        </Grid>
-        <Grid Background="{DynamicResource SecondaryBackground }" Grid.Row="10" Grid.Column="1">
-            <ScrollViewer>
-                <ListBox x:Name="LB_four">
-                    <ListBox.ItemsPanel>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="11,0"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="10" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+            <Grid Background="{DynamicResource SecondaryBackground}">
+                <ItemsControl x:Name="LB_four" ItemsSource="{Binding CurrentRecords}">
+                    <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-            </ScrollViewer>
-        </Grid>
-
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="11,0"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
 
     </Grid>
 </Page>

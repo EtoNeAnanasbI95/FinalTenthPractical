@@ -28,10 +28,52 @@
                     <RowDefinition Height="16"/>
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="FirstTB" Grid.Column="1" Grid.ColumnSpan="2" Text="Осмотр при подозрении на ОРВИ" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Inter" FontSize="14" Foreground="{DynamicResource PrimaryForeground}" Height="16" Width="231"/>
-                <TextBlock x:Name="SecondTB" Grid.Row="1" Grid.Column="1" Text="Халатова С.Ш." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
-                <TextBlock x:Name="ThirdTB" Grid.Row="2" Grid.Column="1" Text="29 декабря 2024 г." VerticalAlignment="Center" TextAlignment="Left" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Height="14"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" LineHeight="16" Text="Москва, Профсоюзная улица, дом 111 хуй" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Inter" FontSize="12" Foreground="{DynamicResource SecondaryForeground }" Grid.ColumnSpan="2" Margin="168,0,0,0"/>
+                <TextBlock 
+                    x:Name="Title"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Text="Осмотр при подозрении на ОРВИ"
+                    VerticalAlignment="Center" 
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontFamily="Inter" FontSize="14"
+                    Foreground="{DynamicResource PrimaryForeground}" 
+                    Height="16"
+                    Width="231"/>
+                <TextBlock 
+                    x:Name="doctorName"
+                    Grid.Row="1" 
+                    Grid.Column="1"
+                    Text="Халатова С.Ш."
+                    VerticalAlignment="Center"
+                    TextAlignment="Left"
+                    FontFamily="Inter"
+                    FontSize="12"
+                    Foreground="{DynamicResource SecondaryForeground }"
+                    Height="14"/>
+                <TextBlock 
+                    x:Name="Date" 
+                    Grid.Row="2" Grid.Column="1"
+                    Text="29 декабря 2024 г."
+                    VerticalAlignment="Center"
+                    TextAlignment="Left"
+                    FontFamily="Inter"
+                    FontSize="12"
+                    Foreground="{DynamicResource SecondaryForeground }" 
+                    Height="14"/>
+                <TextBlock
+                    x:Name="Address"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.RowSpan="2"
+                    LineHeight="16"
+                    Text="Москва, Профсоюзная улица, дом 111 хуй"
+                    TextWrapping="Wrap"
+                    TextAlignment="Right"
+                    FontFamily="Inter"
+                    FontSize="12"
+                    Foreground="{DynamicResource SecondaryForeground }" 
+                    Grid.ColumnSpan="2" Margin="168,0,0,0"/>
             </Grid>
         </ui:Button>
     </Grid>

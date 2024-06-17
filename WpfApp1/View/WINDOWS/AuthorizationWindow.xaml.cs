@@ -25,7 +25,7 @@ namespace FinalTenthPractical.View
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            FramePatientAutorize.NavigationService.Navigate(new FrameAutorizedPatient());
+            FramePatientAutorize.NavigationService.Navigate(new AutorizationPatientpage());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -12,7 +12,7 @@
         MinHeight="200"
         Background="{DynamicResource PrimaryBackground}"
     Title="Patient"  Height="860" Width="1500" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-    
+
 
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -43,7 +43,11 @@
             <ColumnDefinition Width="89"/>
             <ColumnDefinition Width="7"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="Frame" Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="3" Grid.Column="6"/>
+        <Grid Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="3" Grid.Column="6">
+            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto">
+                <Frame x:Name="Frame"/>
+            </ScrollViewer>
+        </Grid>
         <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="Transparent"/>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="7" Grid.Row="1">

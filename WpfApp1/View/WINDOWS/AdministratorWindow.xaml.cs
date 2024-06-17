@@ -41,13 +41,13 @@ namespace FinalTenthPractical.View
                 switch (selectedItem.Content.ToString())
                 {
                     case "Пользователь":
-                        FrameAdmin.Navigate(new PAGES.AdminPatient());
+                        FrameAdmin.Navigate(new PAGES.AdminPatientLBPage());
                         break;
                     case "Сотрудник":
-                        FrameAdmin.Navigate(new PAGES.AdminDoctor());
+                        FrameAdmin.Navigate(new PAGES.AdminDoctorLBPage());
                         break; 
                     case "Администратор":
-                        FrameAdmin.Navigate(new PAGES.AdminAdministrator());
+                        FrameAdmin.Navigate(new PAGES.AdminPage());
                         break;
                 }
             }

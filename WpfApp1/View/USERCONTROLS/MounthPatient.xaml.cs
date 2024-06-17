@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,23 +17,21 @@ using System.Windows.Shapes;
 namespace FinalTenthPractical.View.USERCONTROLS
 {
     /// <summary>
-    /// Логика взаимодействия для ReceptionUC.xaml
+    /// Логика взаимодействия для MounthPatient.xaml
     /// </summary>
-    public partial class ReceptionUC : UserControl
+    public partial class MounthPatient : UserControl
     {
-        public event EventHandler Click;
+        public ObservableCollection<MounthAppointmentPatient> Items { get; set; }
         
-        public ReceptionUC()
-        {   
-            InitializeComponent();
-            OnClick.Click += (sender, args) => OnCardClick(sender, args);
-        }
-
-        private void OnCardClick(object sender, EventArgs e)
+        public MounthPatient()
         {
-            Click?.Invoke(this, e);
+            InitializeComponent();
+            DataContext = this;
         }
 
-        public int AppointmentId;
+        private void MounthPatient_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (Items.Count == 0) IsEmpty.Text = "В этом месяце нет записей";
+        }
     }
 }

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="FinalTenthPractical.View.USERCONTROLS.MounthPatient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalTenthPractical.View.USERCONTROLS"
+             mc:Ignorable="d" 
+             MinHeight="253"
+             Loaded="MounthPatient_OnLoaded"
+             Height="Auto" Width="371" Background="{DynamicResource SecondaryBackground }">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="mounth" Grid.Row="0" FontFamily="Inter" VerticalAlignment="Center" FontSize="16" Margin="10,0,0,0" />
+        <ListBox Padding="0" x:Name="LB" Grid.Row="1" ItemsSource="{Binding Items}" VerticalAlignment="Top">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,0,0,13"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+        <TextBlock 
+            Name="IsEmpty"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Foreground="{StaticResource SecondaryForeground}"/>
+    </Grid>
+</UserControl>
