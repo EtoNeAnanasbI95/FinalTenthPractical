@@ -5,6 +5,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
+      xmlns:vm="clr-namespace:WpfApp1.ViewModel" 
+      d:DataContext="{d:DesignInstance Type=vm:AdminViewModel}"
       Background="Transparent"
       Foreground="{DynamicResource PrimaryForeground}"
       mc:Ignorable="d" 
@@ -26,11 +28,11 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="562*"/>
         </Grid.RowDefinitions>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Номер полиса"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="8" PlaceholderText="Дата рождения"/>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес прописки"/>
+        <ui:TextBox Name="OMS" Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Номер полиса" Text="{Binding Path=selectedpatient.Oms, Mode=TwoWay}"/>
+        <ui:TextBox Name="Surname" Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия" Text="{Binding Path=selectedpatient.FirstName, Mode=TwoWay}"/>
+        <ui:TextBox Name="Firstname" Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя" Text="{Binding Path=selectedpatient.Surname, Mode=TwoWay}"/>
+        <ui:TextBox Name="Patro" Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество" Text="{Binding Path=selectedpatient.Patronymic, Mode=TwoWay}"/>
+        <ui:TextBox Name="BirthDay" Style="{DynamicResource ClearTextbox }" Grid.Row="8" PlaceholderText="Дата рождения" Text="{Binding Path=selectedpatient.BirthDay, Mode=TwoWay}"/>
+        <ui:TextBox Name="Addr" Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес прописки" Text="{Binding Path=selectedpatient.LivingAddress, Mode=TwoWay}"/>
     </Grid>
 </Page>

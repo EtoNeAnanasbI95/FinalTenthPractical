@@ -11,3 +11,4 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+<!--StartupUri="view/DEVELOPING_WINDOW.xaml"-->
