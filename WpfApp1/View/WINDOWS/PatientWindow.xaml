@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blendc:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml.cs c:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTenthPractical.View"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"  WindowStyle="None" x:Class="FinalTenthPractical.View.PatientWindow"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        x:Class="FinalTenthPractical.View.PatientWindow"
         FontFamily="Inter"
         mc:Ignorable="d"
          MinWidth="718"
@@ -46,14 +47,14 @@
         <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="Transparent"/>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="7" Grid.Row="1">
-            <ui:Button Foreground="Black" Style="{DynamicResource ButtonBar}" Click="RollUpButton_Click">
-                <ui:SymbolIcon Foreground="Black" Symbol="LineHorizontal120"/>
+            <ui:Button Style="{DynamicResource ButtonBar}" Click="RollUpButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="LineHorizontal120"/>
             </ui:Button>
-            <ui:Button Foreground="Black" Style="{DynamicResource ButtonBar}" Click="UnwrapButton_Click">
-                <ui:SymbolIcon Symbol="Maximize20"/>
+            <ui:Button Style="{DynamicResource ButtonBar}" Click="UnwrapButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="Maximize20"/>
             </ui:Button>
-            <ui:Button Foreground="Black" Style="{DynamicResource CloseButton}" Click="CloseButton_Click">
-                <ui:SymbolIcon Symbol="Dismiss48"/>
+            <ui:Button Style="{DynamicResource CloseButton}" Click="CloseButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="Dismiss48"/>
             </ui:Button>
         </StackPanel>
 

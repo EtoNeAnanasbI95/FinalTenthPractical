@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:FinalTenthPractical.View"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="Autorized" Height="220"  Width="400" ResizeMode="NoResize" WindowStyle="None">
-
+        Title="Autorized" Height="220"  Width="400" ResizeMode="NoResize" >
     <WindowChrome.WindowChrome>
         <WindowChrome
         CaptionHeight="0"
@@ -54,7 +53,17 @@
                 </ImageBrush>
             </ui:Button.Background>
         </ui:Button>
-        <ui:Button CornerRadius="0" Grid.Column="3" Grid.Row="0" BorderBrush="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,5,2,3" Icon="Maximize20" RenderTransformOrigin="0.5,0.5" Click="Button_Click_3">
+        <ui:Button 
+            CornerRadius="0"
+            Grid.Column="3"
+            Grid.Row="0"
+            BorderBrush="{x:Null}"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Margin="0,5,2,3"
+            Icon="Maximize20"
+            RenderTransformOrigin="0.5,0.5"
+            Click="Minimize_click">
             <ui:Button.Background>
                 <ImageBrush Stretch="Fill" TileMode="None" ImageSource="/Model/scroll_negate.png">
                     <ImageBrush.RelativeTransform>
