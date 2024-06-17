@@ -12,7 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EMIAS.Models;
 using FinalTenthPractical.Properties;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using WpfApp1;
 using WpfApp1.ViewModel;
 using WpfApp1.ViewModel.ApiHelper;
@@ -27,8 +30,11 @@ namespace FinalTenthPractical.View
         public AdministratorWindow()
         {
             InitializeComponent();
-            DataContext = new AdminViewModel();
+            viewmodel = new AdminViewModel();
+            DataContext = viewmodel;
         }
+
+        public AdminViewModel viewmodel;
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -39,6 +45,7 @@ namespace FinalTenthPractical.View
         {
             ComboBox comboBox = sender as ComboBox;
             ComboBoxItem selectedItem = comboBox.SelectedItem as ComboBoxItem;
+            var viewmodel = DataContext as AdminViewModel;
 
             if (selectedItem != null)
             {
@@ -46,15 +53,18 @@ namespace FinalTenthPractical.View
                 {
                     case "Пользователь":
                         FrameAdmin.Navigate(new PAGES.AdminPatient());
-                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Patients");
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Patient>>("Patients");
+                        viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break;
                     case "Сотрудник":
                         FrameAdmin.Navigate(new PAGES.AdminDoctor());
-                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Doctors");
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Doctor>>("Doctors");
+                        viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break; 
                     case "Администратор":
                         FrameAdmin.Navigate(new PAGES.AdminAdministrator());
-                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Object>>("Admins");
+                        HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Admin>>("Admins");
+                        viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break;
                 }
             }
@@ -91,6 +101,35 @@ namespace FinalTenthPractical.View
                 else
                     WindowState = WindowState.Normal;
             }
+        }
+
+        private void HumanGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (comboBox.SelectedIndex)
+            {
+                case 0:
+                    viewmodel.selectedpatient = HumanGrid.SelectedItem as Patient;
+                    viewmodel.SelectedIndexData = HumanGrid.SelectedIndex;
+                    break;
+                case 1:
+                    viewmodel.selecteddoctor = HumanGrid.SelectedItem as Doctor;
+                    viewmodel.SelectedIndexData = HumanGrid.SelectedIndex;
+                    break;
+                case 2:
+                    viewmodel.selectedadmin = HumanGrid.SelectedItem as Admin;
+                    viewmodel.SelectedIndexData = HumanGrid.SelectedIndex;
+                    break;
+            }
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            viewmodel.Create();
+        }
+
+        private void Del_Click(object sender, RoutedEventArgs e)
+        {
+            viewmodel.Delete();
         }
     }
 }

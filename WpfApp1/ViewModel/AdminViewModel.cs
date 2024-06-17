@@ -1,4 +1,6 @@
 ﻿using EMIAS.Models;
+using FinalTenthPractical.View.PAGES;
+using Newtonsoft.Json;
 using Spire.Pdf.Security;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,14 +9,20 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media.Animation;
 
 namespace WpfApp1.ViewModel;
 
 public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
 {
     private string _LoginOfAdmin;
+
+    AdminPatient patpage = new AdminPatient();
+    AdminDoctor docpage = new AdminDoctor();
+    AdminAdministrator adminpage = new AdminAdministrator();
 
     public string LoginOfAdmin
     {
@@ -43,72 +51,41 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
         catch (Exception) { Console.WriteLine("Auth bad request"); }
     }
 
-    private ObservableCollection<Object> admins;
-    public ObservableCollection<Object> Admins
+    private int _selectedIndexCombo;
+    public int SelectedIndexCombo
     {
-        get { return admins; }
+        get { return _selectedIndexCombo; }
         set
         {
-            admins = value;
-            OnPropertyChanged(nameof(Admin));
-        }
-    }
-
-    private ObservableCollection<Object> doctors;
-    public ObservableCollection<Object> Doctors
-    {
-        get { return doctors; }
-        set
-        {
-            doctors = value;
-            OnPropertyChanged(nameof(Doctor));
-        }
-    }
-
-    private ObservableCollection<Object> patiens;
-    public ObservableCollection<Object> Patiens
-    {
-        get { return patiens; }
-        set
-        {
-            patiens = value;
-            OnPropertyChanged(nameof(Patient));
-        }
-    }
-
-    private ObservableCollection<Object> _items;
-
-    public ObservableCollection<Object> Items
-    {
-        get { return _items; }
-        set
-        {
-            _items = value;
-            OnPropertyChanged(nameof(Items));
-        }
-    }
-
-    private int _selectedIndex;
-    public int SelectedIndex
-    {
-        get { return _selectedIndex; }
-        set
-        {
-            if (_selectedIndex != value)
+            if (_selectedIndexCombo != value)
             {
-                _selectedIndex = value;
-                OnPropertyChanged(nameof(SelectedIndex));
+                _selectedIndexCombo = value;
+                OnPropertyChanged(nameof(SelectedIndexCombo));
             }
         }
     }
 
+    private int _selectedIndexData;
+    public int SelectedIndexData
+    {
+        get { return _selectedIndexData; }
+        set
+        {
+            if (_selectedIndexData != value)
+            {
+                _selectedIndexData = value;
+                OnPropertyChanged(nameof(SelectedIndexData));
+            }
+        }
+    }
 
+    public Admin selectedadmin { get; set; }
+    public Patient selectedpatient { get; set; }
+    public Doctor selecteddoctor { get; set; }
 
     public AdminViewModel()
     {
-        doctors = Get<ObservableCollection<Object>>("Doctors");
-        patiens = Get<ObservableCollection<Object>>("Patients");
-        admins = Get<ObservableCollection<Object>>("Admins");
+        selectedpatient = new Patient();
     }
 
     
@@ -117,5 +94,96 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
     protected void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    public void Read()
+    {
+        switch (SelectedIndexCombo)
+        {
+            case 0:
+                selectedpatient.Oms = long.Parse(patpage.OMS.Text);
+                selectedpatient.Surname = patpage.Surname.Text;
+                selectedpatient.FirstName = patpage.Firstname.Text;
+                selectedpatient.Patronymic = patpage.Patro.Text;
+                selectedpatient.BirthDay = DateOnly.Parse(patpage.BirthDay.Text);
+                selectedpatient.LivingAddress = patpage.Addr.Text;
+                break;
+            case 1:
+                selecteddoctor.EnterPassword = docpage.Password.Text;
+                selecteddoctor.Surname = docpage.Surname.Text;
+                selecteddoctor.FirstName = docpage.Firstname.Text;
+                selecteddoctor.Patronymic = docpage.Patro.Text;
+                selecteddoctor.SpecialityId = docpage.Combo.SelectedIndex;
+                break;
+            case 2:
+                selectedadmin.EnterPassword = adminpage.Password.Text;
+                selectedadmin.SurnameAdmin = adminpage.Surname.Text;
+                selectedadmin.FirstName = adminpage.Firstname.Text;
+                selectedadmin.Patronymic = adminpage.Patro.Text;
+                break;
+        }
+    }
+    public void Create()
+    {
+        bool check = false;
+
+        switch (SelectedIndexCombo)
+        {
+            case 0:
+                Read();
+                check = Post<Patient>(JsonConvert.SerializeObject(selectedpatient), "Patients");
+                MessageBox.Show(check.ToString());
+                break;
+            case 1:
+                Read();
+                check = Post<Doctor>(JsonConvert.SerializeObject(selecteddoctor), "Doctors");
+                break;
+            case 2:
+                Read();
+                check = Post<Admin>(JsonConvert.SerializeObject(selectedadmin), "Admins");
+                break;
+        }
+    }
+    public void Update()
+    {
+        bool check = false;
+
+        switch (SelectedIndexCombo)
+        {
+            case 0:
+                Read();
+                check = Post<Patient>(JsonConvert.SerializeObject(selectedpatient), "Patients");
+                MessageBox.Show(check.ToString());
+                break;
+            case 1:
+                Read();
+                check = Post<Doctor>(JsonConvert.SerializeObject(selecteddoctor), "Doctors");
+                break;
+            case 2:
+                Read();
+                check = Post<Admin>(JsonConvert.SerializeObject(selectedadmin), "Admins");
+                break;
+        }
+    }
+
+    public void Delete()
+    {
+        bool check = false;
+        switch (SelectedIndexCombo)
+        {
+            case 0:
+                check = Delete<Patient>("Patients", SelectedIndexData);
+                MessageBox.Show(check.ToString());
+                break;
+            case 1:
+                Read();
+                check = Delete<Doctor>("Doctors", SelectedIndexData);
+                MessageBox.Show(check.ToString());
+                break;
+            case 2:
+                Read();
+                check = Delete<Admin>("Admins", SelectedIndexData);
+                MessageBox.Show(check.ToString());
+                break;
+        }
     }
 }

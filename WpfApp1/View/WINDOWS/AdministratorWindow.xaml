@@ -92,8 +92,9 @@
                 </ui:Button>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20px" FontFamily="Inter" Text="ЕМИАС — Администратор" FontWeight="Bold" />
-            <DataGrid Name="HumanGrid" Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0"  ItemsSource="{Binding Items}"/>
+            <DataGrid Name="HumanGrid" Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0" SelectionChanged="HumanGrid_SelectionChanged"/>
             <ComboBox 
+                Name="comboBox"
                 Style="{DynamicResource ClearComboBoxStyle}"
                 Grid.Column="5"
                 Grid.Row="4"
@@ -107,9 +108,9 @@
             <Frame x:Name="FrameAdmin" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2"/>
             <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <ui:Button  Style="{DynamicResource AttentionButton}" Content="Выйти из аккаунта" Grid.Column="5" Grid.Row="17" Grid.ColumnSpan="2"/>
-            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Удалить запись" Grid.Column="5" Grid.Row="13" Grid.ColumnSpan="2"/>
+            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Удалить запись" Grid.Column="5" Grid.Row="13" Grid.ColumnSpan="2" Click="Del_Click"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Изменить запись" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="2"/>
-            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Добавить запись" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2"/>
+            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Добавить запись" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Click="Add_Click"/>
         </Grid>
     </Grid>
 </Window>
