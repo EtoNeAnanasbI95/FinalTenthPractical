@@ -49,9 +49,6 @@ public partial class DoctorsPatient : UserControl
         {
             _idSpecials = value;
             TextBlock.Text = imageName[value];
-            Console.WriteLine(imageName[value]);
-            
-            Console.WriteLine(imagePaths[value]);
             string imagePath = imagePaths[value];
             Uri imageUri = new Uri(imagePath, UriKind.Relative);
             BitmapImage imageBitmap = new BitmapImage(imageUri);
