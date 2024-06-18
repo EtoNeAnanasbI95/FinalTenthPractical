@@ -14,6 +14,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media.Animation;
+using FinalTenthPractical.Properties;
 using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
@@ -321,13 +322,5 @@ public class AdminViewModel : BindingHelper
                 MessageBox.Show(check.ToString());
                 break;
         }
-    }
-
-    public void Exit()
-    {
-        _LoginOfAdmin = null;
-        _PasswordAdmin = null;
-        AuthorizationWindow authorizationWindow = new AuthorizationWindow();
-        authorizationWindow.Show();
     }
 }

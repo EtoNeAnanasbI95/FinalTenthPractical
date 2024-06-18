@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Spire.Doc.Documents;
 using WpfApp1;
 
 namespace FinalTenthPractical.View.WINDOWS
@@ -82,6 +83,15 @@ namespace FinalTenthPractical.View.WINDOWS
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.CurrentDoctor = 0;
+            Settings.Default.Save();
+            AuthorizationWindow window = new AuthorizationWindow();
+            window.Show();
+            Close();
         }
     }
 }
