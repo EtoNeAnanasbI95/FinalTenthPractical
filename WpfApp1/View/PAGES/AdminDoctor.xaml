@@ -26,15 +26,15 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="562*"/>
         </Grid.RowDefinitions>
-        <ui:TextBox Name="Password" Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа"/>
-        <ui:TextBox Name="Surname" Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"/>
-        <ui:TextBox Name="Firstname" Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"/>
-        <ui:TextBox Name="Patro" Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"/>
-        <ComboBox Name="Combo" Style="{DynamicResource ClearComboBoxStyle}" Grid.Row="8">
+        <ui:TextBox Name="Password" Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Пароль для входа" Text="{Binding Password}"/>
+        <ui:TextBox Name="Surname" Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия" Text="{Binding Surname}"/>
+        <ui:TextBox Name="Firstname" Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя" Text="{Binding Firstname}"/>
+        <ui:TextBox Name="Patro" Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество" Text="{Binding Patronymic}"/>
+        <ComboBox Name="Combo" Style="{DynamicResource ClearComboBoxStyle}" Grid.Row="8" SelectedIndex="{Binding Special}">
             <ComboBoxItem Content="Офтальмолог"/>
             <ComboBoxItem Content="Педиатр"/>
             <ComboBoxItem Content="Какой-то хуй"/>
         </ComboBox>
-        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес места работы"/>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес места работы" Text="{Binding Workaddr}"/>
     </Grid>
 </Page>

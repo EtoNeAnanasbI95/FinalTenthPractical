@@ -20,9 +20,10 @@ namespace FinalTenthPractical.View.PAGES
     /// </summary>
     public partial class AdminAdministrator : Page
     {
-        public AdminAdministrator()
+        public AdminAdministrator(object data)
         {
             InitializeComponent();
+            DataContext = data;
         }
     }
 }

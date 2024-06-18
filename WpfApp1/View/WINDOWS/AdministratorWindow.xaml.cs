@@ -30,11 +30,10 @@ namespace FinalTenthPractical.View
         public AdministratorWindow()
         {
             InitializeComponent();
-            viewmodel = new AdminViewModel();
-            DataContext = viewmodel;
+            DataContext = new AdminViewModel();
         }
 
-        public AdminViewModel viewmodel;
+/*        public AdminViewModel viewmodel;*/
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -52,17 +51,17 @@ namespace FinalTenthPractical.View
                 switch (selectedItem.Content.ToString())
                 {
                     case "Пользователь":
-                        FrameAdmin.Navigate(new PAGES.AdminPatient());
+                        FrameAdmin.Navigate(new PAGES.AdminPatient(DataContext));
                         HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Patient>>("Patients");
                         viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break;
                     case "Сотрудник":
-                        FrameAdmin.Navigate(new PAGES.AdminDoctor());
+                        FrameAdmin.Navigate(new PAGES.AdminDoctor(DataContext));
                         HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Doctor>>("Doctors");
                         viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break; 
                     case "Администратор":
-                        FrameAdmin.Navigate(new PAGES.AdminAdministrator());
+                        FrameAdmin.Navigate(new PAGES.AdminAdministrator(DataContext));
                         HumanGrid.ItemsSource = ApiHelper.Get<ObservableCollection<Admin>>("Admins");
                         viewmodel.SelectedIndexCombo = comboBox.SelectedIndex;
                         break;
@@ -105,6 +104,7 @@ namespace FinalTenthPractical.View
 
         private void HumanGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var viewmodel = DataContext as AdminViewModel;
             switch (comboBox.SelectedIndex)
             {
                 case 0:
@@ -124,12 +124,27 @@ namespace FinalTenthPractical.View
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            var viewmodel = DataContext as AdminViewModel;
             viewmodel.Create();
         }
 
         private void Del_Click(object sender, RoutedEventArgs e)
         {
+            var viewmodel = DataContext as AdminViewModel;
             viewmodel.Delete();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewmodel = DataContext as AdminViewModel;
+            viewmodel.Update();
+        }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            var viewmodel = DataContext as AdminViewModel;
+            viewmodel.Exit();
+            Close();
         }
     }
 }
