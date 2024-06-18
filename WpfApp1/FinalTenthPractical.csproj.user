@@ -2,34 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="View\PAGES\AdminAdministrator.xaml.cs">
+    <Compile Update="View\PAGES\DateAndTimeOfAppintment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\PAGES\AdminDoctor.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\AdminPatient.xaml.cs">
+    <Compile Update="View\PAGES\DateAndTimeOfAppintmentSecond.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\PAGES\MakeAnAppointmentPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\PAGES\MedicalCardAnaliz.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\MedicalCardPatient.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\MedicalCardStudy.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\PageDoctor.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\PAGES\SelectingSpecialistPatient.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\USERCONTROLS\AnalizUC.xaml.cs">
@@ -47,12 +29,6 @@
     <Compile Update="View\USERCONTROLS\DoctorWay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\PAGES\FrameAutorizedDoctor.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\PAGES\FrameAutorizedPatient.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\USERCONTROLS\MounthAppointmentPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -62,36 +38,21 @@
     <Compile Update="View\USERCONTROLS\ReceptionUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\USERCONTROLS\DateOfAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\PAGES\AdminAdministrator.xaml">
+    <Page Update="View\PAGES\DateAndTimeOfAppintment.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\PAGES\AdminDoctor.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\AdminPatient.xaml">
+    <Page Update="View\PAGES\DateAndTimeOfAppintmentSecond.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PAGES\MakeAnAppointmentPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\PAGES\MedicalCardAnaliz.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\MedicalCardPatient.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\MedicalCardStudy.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\PageDoctor.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\PAGES\SelectingSpecialistPatient.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\SettingsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\USERCONTROLS\AnalizUC.xaml">
@@ -109,12 +70,6 @@
     <Page Update="View\USERCONTROLS\DoctorWay.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\PAGES\FrameAutorizedDoctor.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\PAGES\FrameAutorizedPatient.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\USERCONTROLS\MounthAppointmentPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -122,6 +77,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\USERCONTROLS\ReceptionUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DateOfAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

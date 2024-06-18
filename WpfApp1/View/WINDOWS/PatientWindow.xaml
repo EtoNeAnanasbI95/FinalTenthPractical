@@ -85,6 +85,9 @@
                 <TreeViewItem Header="Анализы" Foreground="#E4FFFFFF" FontFamily="Inter" />
                 <TreeViewItem Header="Исследования"  Foreground="#E4FFFFFF" FontFamily="Inter"/>
             </TreeViewItem>
+            <TreeViewItem Header="DEVELOP" Foreground="#E4FFFFFF" FontFamily="Inter">
+                <TreeViewItem Header="Запись" Foreground="#E4FFFFFF" FontFamily="Inter" />
+            </TreeViewItem>
         </TreeView>
         <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="4" Margin="0,0,4,0" Grid.Row="5" Click="Button_Settings" Height="26" VerticalAlignment="Top">
             <Image Source="/Model/Settings.png" RenderTransformOrigin="0.5,0.5">

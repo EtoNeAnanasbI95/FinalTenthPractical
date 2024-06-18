@@ -44,7 +44,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Foreground="{DynamicResource PrimaryForeground }" Grid.Column="1" FontFamily="{StaticResource Inter}" FontSize="20" ><Run Language="ru-ru" Text="Исследования:"/></TextBlock>
         <Border Grid.Column="1" Grid.Row="3" Background="{DynamicResource SecondaryBackground }" Grid.RowSpan="6"/>
-        <ListBox ItemsSource="{Binding Cards}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="6">
+        <ListBox ItemsSource="{Binding Cards}" Grid.Column="1" Grid.RowSpan="8" Grid.ColumnSpan="3" Margin="90,-14,0,52">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Margin" Value="8,9,8,0"/>
