@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         MinWidth="718"
         MinHeight="472"
-        Title="Patient"
+        Title="Admin"
         Height="860"
         Width="1500"
         Background="{DynamicResource PrimaryBackground}"
@@ -18,9 +18,16 @@
         <WindowChrome
         CaptionHeight="0"
         ResizeBorderThickness="2"
-        GlassFrameThickness="0"
-        CornerRadius="0"/>
+        GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <Style TargetType="DataGrid" x:Key="datagrid">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SecondaryForeground}"/>
+            <Setter Property="RowBackground" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
+        </Style>
+    </Window.Resources>
     
     <Grid>
         <Grid.RowDefinitions>
@@ -86,7 +93,8 @@
                 </ui:Button>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20px" FontFamily="Inter" Text="ЕМИАС — Администратор" FontWeight="Bold" />
-            <DataGrid Name="HumanGrid" Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0" SelectionChanged="HumanGrid_SelectionChanged"/>
+            <!-- Style="{StaticResource datagrid}" -->
+            <DataGrid   Name="HumanGrid" Background="{DynamicResource SecondaryBackground}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="16" Margin="0,0,9,0" SelectionChanged="HumanGrid_SelectionChanged"/>
             <ComboBox 
                 Name="comboBox"
                 Style="{DynamicResource ClearComboBoxStyle}"
