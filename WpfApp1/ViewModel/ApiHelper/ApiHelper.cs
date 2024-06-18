@@ -26,6 +26,7 @@ public class ApiHelper : BindingHelper
             HttpClient client = new HttpClient();
             HttpContent body = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = client.PutAsync($"{_url}/{model}/{id}", body).Result;
+        MessageBox.Show(response.RequestMessage.ToString());
             if (response.StatusCode != HttpStatusCode.NoContent) return false;
             return true;
         }

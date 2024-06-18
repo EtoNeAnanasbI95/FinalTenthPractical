@@ -16,9 +16,6 @@
         Background="{DynamicResource PrimaryBackground}"
         Foreground="{DynamicResource PrimaryForeground}"
         WindowStartupLocation="CenterScreen">
-    <Window.DataContext>
-        <local1:AdminViewModel />
-    </Window.DataContext>
 
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -107,9 +104,9 @@
             <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="6"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
             <Frame x:Name="FrameAdmin" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2"/>
             <Separator Grid.Column="5" Height="1" BorderBrush="{DynamicResource Focusing}" Grid.Row="15"  Grid.ColumnSpan="2" Margin="8,0,8,0" />
-            <ui:Button  Style="{DynamicResource AttentionButton}" Content="Выйти из аккаунта" Grid.Column="5" Grid.Row="17" Grid.ColumnSpan="2"/>
+            <ui:Button  Style="{DynamicResource AttentionButton}" Content="Выйти из аккаунта" Grid.Column="5" Grid.Row="17" Grid.ColumnSpan="2" Click="ExitClick"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Удалить запись" Grid.Column="5" Grid.Row="13" Grid.ColumnSpan="2" Click="Del_Click"/>
-            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Изменить запись" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="2"/>
+            <ui:Button  Style="{DynamicResource FocusingButton }" Content="Изменить запись" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="2" Click="Button_Click"/>
             <ui:Button  Style="{DynamicResource FocusingButton }" Content="Добавить запись" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Click="Add_Click"/>
         </Grid>
     </Grid>

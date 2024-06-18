@@ -1,4 +1,5 @@
 ﻿using EMIAS.Models;
+using FinalTenthPractical.View;
 using FinalTenthPractical.View.PAGES;
 using Newtonsoft.Json;
 using Spire.Pdf.Security;
@@ -20,9 +21,9 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
 {
     private string _LoginOfAdmin;
 
-    AdminPatient patpage = new AdminPatient();
-    AdminDoctor docpage = new AdminDoctor();
-    AdminAdministrator adminpage = new AdminAdministrator();
+    AdminPatient patpage = new AdminPatient(null);
+    AdminDoctor docpage = new AdminDoctor(null);
+    AdminAdministrator adminpage = new AdminAdministrator(null);
 
     public string LoginOfAdmin
     {
@@ -60,7 +61,7 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
             if (_selectedIndexCombo != value)
             {
                 _selectedIndexCombo = value;
-                OnPropertyChanged(nameof(SelectedIndexCombo));
+                OnPropertyChanged();
             }
         }
     }
@@ -74,7 +75,7 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
             if (_selectedIndexData != value)
             {
                 _selectedIndexData = value;
-                OnPropertyChanged(nameof(SelectedIndexData));
+                OnPropertyChanged();
             }
         }
     }
@@ -82,10 +83,108 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
     public Admin selectedadmin { get; set; }
     public Patient selectedpatient { get; set; }
     public Doctor selecteddoctor { get; set; }
+    private string oms;
+    public string Oms
+    {
+        get { return oms; }
+        set
+        {
+            oms = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string surname;
+    public string Surname
+    {
+        get { return surname; }
+        set
+        {
+            surname = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string firstname;
+    public string Firstname
+    {
+        get { return firstname; }
+        set
+        {
+            firstname = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string patronymic;
+    public string Patronymic
+    {
+        get { return patronymic; }
+        set
+        {
+            patronymic = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string password;
+    public string Password
+    {
+        get { return password; }
+        set
+        {
+            password = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string birthday;
+    public string Birthday
+    {
+        get { return birthday; }
+        set
+        {
+            birthday = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string livaddr;
+    public string Livaddr
+    {
+        get { return livaddr; }
+        set
+        {
+            livaddr = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string workaddr;
+    public string Workaddr
+    {
+        get { return workaddr; }
+        set
+        {
+            workaddr = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private int special;
+    public int Special
+    {
+        get { return special; }
+        set
+        {
+            special = value;
+            OnPropertyChanged();
+        }
+    }
 
     public AdminViewModel()
     {
-        selectedpatient = new Patient();
+        
     }
 
     
@@ -100,12 +199,12 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
         switch (SelectedIndexCombo)
         {
             case 0:
-                selectedpatient.Oms = long.Parse(patpage.OMS.Text);
-                selectedpatient.Surname = patpage.Surname.Text;
-                selectedpatient.FirstName = patpage.Firstname.Text;
-                selectedpatient.Patronymic = patpage.Patro.Text;
-                selectedpatient.BirthDay = DateOnly.Parse(patpage.BirthDay.Text);
-                selectedpatient.LivingAddress = patpage.Addr.Text;
+                patpage.OMS.Text = selectedpatient.Oms.ToString();
+                patpage.Surname.Text = selectedpatient.Surname;
+                patpage.Firstname.Text = selectedpatient.FirstName;
+                patpage.Patro.Text = selectedpatient.Patronymic;
+                patpage.BirthDay.Text = selectedpatient.BirthDay.ToString();
+                patpage.Addr.Text = selectedpatient.AddressPatient;
                 break;
             case 1:
                 selecteddoctor.EnterPassword = docpage.Password.Text;
@@ -124,43 +223,79 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
     }
     public void Create()
     {
-        bool check = false;
+        bool check;
 
         switch (SelectedIndexCombo)
         {
             case 0:
-                Read();
-                check = Post<Patient>(JsonConvert.SerializeObject(selectedpatient), "Patients");
+                Patient patient = new Patient();
+                patient.Oms = Convert.ToInt64(oms);
+                patient.Surname = surname;
+                patient.FirstName = firstname;
+                patient.Patronymic = patronymic;
+                patient.BirthDay = DateOnly.Parse(birthday);
+                patient.AddressPatient = livaddr;
+                check = Post<Patient>(JsonConvert.SerializeObject(patient), "Patients");
                 MessageBox.Show(check.ToString());
                 break;
             case 1:
-                Read();
-                check = Post<Doctor>(JsonConvert.SerializeObject(selecteddoctor), "Doctors");
+                Doctor doctor = new Doctor();
+                doctor.EnterPassword = password;
+                doctor.Surname = surname;
+                doctor.FirstName = firstname;
+                doctor.Patronymic = patronymic;
+                doctor.SpecialityId = special;
+                doctor.WorkAddress = workaddr;
+                check = Post<Doctor>(JsonConvert.SerializeObject(doctor), "Doctors");
+                MessageBox.Show(check.ToString());
                 break;
             case 2:
-                Read();
-                check = Post<Admin>(JsonConvert.SerializeObject(selectedadmin), "Admins");
+                Admin admin = new Admin();
+                admin.EnterPassword = password;
+                admin.SurnameAdmin = surname;
+                admin.FirstName = firstname;
+                admin.Patronymic = patronymic;
+                check = Post<Admin>(JsonConvert.SerializeObject(admin), "Admins");
+                MessageBox.Show(check.ToString());
                 break;
         }
     }
     public void Update()
     {
-        bool check = false;
+        bool check;
 
         switch (SelectedIndexCombo)
         {
             case 0:
-                Read();
-                check = Post<Patient>(JsonConvert.SerializeObject(selectedpatient), "Patients");
+                Patient patient = Get<Patient>("Patients", (int)selectedpatient.Oms);
+                patient.Oms = oms != null && oms != "" ? Convert.ToInt64(oms) : selectedpatient.Oms;
+                patient.Surname = surname != null && surname != "" ? surname : selectedpatient.Surname;
+                patient.FirstName = firstname != null && firstname != "" ? firstname : selectedpatient.FirstName;
+                patient.Patronymic = patronymic != null && patronymic != "" ? patronymic : selectedpatient.Patronymic;
+                patient.BirthDay = birthday != null && birthday != "" ? DateOnly.Parse(birthday) : selectedpatient.BirthDay;
+                patient.AddressPatient = livaddr != null && livaddr != "" ? livaddr : selectedpatient.AddressPatient;
+                check = Put<Patient>(JsonConvert.SerializeObject(patient), "Patients", (int)selectedpatient.Oms);
                 MessageBox.Show(check.ToString());
                 break;
             case 1:
-                Read();
-                check = Post<Doctor>(JsonConvert.SerializeObject(selecteddoctor), "Doctors");
+                Doctor doctor = Get<Doctor>("Doctors", (int)selecteddoctor.IdDoctor);
+                doctor.EnterPassword = password != null && password != "" ? password : selecteddoctor.EnterPassword;
+                doctor.Surname = surname != null && surname != "" ? surname : selecteddoctor.Surname;
+                doctor.FirstName = firstname != null && firstname != "" ? firstname : selecteddoctor.FirstName;
+                doctor.Patronymic = patronymic != null && patronymic != "" ? patronymic : selecteddoctor.Patronymic;
+                doctor.SpecialityId = special > -1 ? special : selecteddoctor.SpecialityId;
+                doctor.WorkAddress = workaddr != null && workaddr != "" ? workaddr : selecteddoctor.WorkAddress;
+                check = Put<Doctor>(JsonConvert.SerializeObject(doctor), "Doctors", (int)selecteddoctor.IdDoctor);
+                MessageBox.Show(check.ToString());
                 break;
             case 2:
-                Read();
-                check = Post<Admin>(JsonConvert.SerializeObject(selectedadmin), "Admins");
+                Admin admin = Get<Admin>("Admins", (int)selectedadmin.IdAdmin);
+                admin.EnterPassword = password != null && password != "" ? password : selectedadmin.EnterPassword;
+                admin.SurnameAdmin = surname != null && surname != "" ? surname : selectedadmin.SurnameAdmin;
+                admin.FirstName = firstname != null && firstname != "" ? firstname : selectedadmin.FirstName;
+                admin.Patronymic = patronymic != null && patronymic != "" ? patronymic : selectedadmin.Patronymic;
+                check = Put<Admin>(JsonConvert.SerializeObject(admin), "Admins", (int)selectedadmin.IdAdmin);
+                MessageBox.Show(check.ToString());
                 break;
         }
     }
@@ -171,19 +306,27 @@ public class AdminViewModel : ApiHelper.ApiHelper, INotifyPropertyChanged
         switch (SelectedIndexCombo)
         {
             case 0:
-                check = Delete<Patient>("Patients", SelectedIndexData);
+                check = Delete<Patient>("Patients", (int)selectedpatient.Oms);
                 MessageBox.Show(check.ToString());
                 break;
             case 1:
                 Read();
-                check = Delete<Doctor>("Doctors", SelectedIndexData);
+                check = Delete<Doctor>("Doctors", (int)selecteddoctor.IdDoctor);
                 MessageBox.Show(check.ToString());
                 break;
             case 2:
                 Read();
-                check = Delete<Admin>("Admins", SelectedIndexData);
+                check = Delete<Admin>("Admins", (int)selectedadmin.IdAdmin);
                 MessageBox.Show(check.ToString());
                 break;
         }
+    }
+
+    public void Exit()
+    {
+        _LoginOfAdmin = null;
+        _PasswordAdmin = null;
+        AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+        authorizationWindow.Show();
     }
 }
