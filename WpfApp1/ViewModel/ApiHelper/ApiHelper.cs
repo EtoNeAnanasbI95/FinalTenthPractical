@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Media.TextFormatting;
 using Newtonsoft.Json;
 using SecondLibPractice;
+using Wpf.Ui.Hardware;
 
 namespace WpfApp1.ViewModel.ApiHelper;
 
@@ -39,9 +40,11 @@ public static class ApiHelper
             return true;
         }
 
-        public static HttpResponseMessage Delete<T>(string model, int id)
+        public static bool Delete<T>(string model, int id)
         {
             HttpClient client = new HttpClient();
-            return  client.DeleteAsync($"{_url}/{model}/{id}").Result;
+            var response = client.DeleteAsync($"{_url}/{model}/{id}").Result;
+            if (response.StatusCode == HttpStatusCode.NoContent) return true;
+            else return false;
         }
     }
