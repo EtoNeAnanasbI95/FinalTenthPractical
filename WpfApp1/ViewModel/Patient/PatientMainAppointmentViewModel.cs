@@ -53,9 +53,6 @@ public class PatientMainAppointmentViewModel : BindingHelper
             doctor.IdSpecials = item.IdSpeciality.Value;
             SpecialitiesCards.Add(doctor);
         }
-        
-        MounthPatient sdcx = new MounthPatient();
-        sdcx.mounth.Text = "Хуябрь 2023";
     }
     
     private ObservableCollection<MounthPatient> _appointmentCards;
@@ -74,7 +71,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
         set => SetField(ref _archiveAppointmentCards, value);
     }
 
-    private DateOnly _timeOf = DateOnly.FromDateTime(DateTime.Today);
+    public DateOnly _timeOf;
 
     public void DataOfPick(object sender, SelectionChangedEventArgs  e)
     {
@@ -82,7 +79,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
         ActiveAppointments();
     }
     
-    private DateOnly _timeTo = DateOnly.FromDateTime(DateTime.Today.AddMonths(3));
+    public DateOnly _timeTo;
     
     public void DataToPick(object sender, SelectionChangedEventArgs  e)
     {
@@ -90,7 +87,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
         ActiveAppointments();
     }
     
-    private DateOnly _timeOfArchive = DateOnly.FromDateTime(DateTime.Today.AddMonths(-1));
+    public DateOnly _timeOfArchive;
 
     public void DataOfPickArchive(object sender, SelectionChangedEventArgs  e)
     {
@@ -98,7 +95,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
         ArchiveAppointments();
     }
     
-    private DateOnly _timeToArchive = DateOnly.FromDateTime(DateTime.Today.AddMonths(1));
+    public DateOnly _timeToArchive;
     
     public void DataToPickArchive(object sender, SelectionChangedEventArgs  e)
     {
@@ -116,50 +113,43 @@ public class PatientMainAppointmentViewModel : BindingHelper
 
     public void ActiveAppointments()
     {
-        if (_timeOf != DateOnly.MinValue && _timeTo != DateOnly.MinValue)
-        {
-            var appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments").Where(item =>
-                item.Oms == Settings.Default.CurrentPatient && item.AppointmentDate > _timeOf &&
-                item.AppointmentDate < _timeTo);
-            var doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
+        var appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments").Where(item =>
+            item.Oms == Settings.Default.CurrentPatient && item.AppointmentDate > _timeOf &&
+            item.AppointmentDate < _timeTo);
+        var doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
 
-            var arhiveAppointments = appointments.Where(item => item.StatusId == 4);
-            var activeAppointments = appointments.Except(arhiveAppointments);
-            var Cards = new ObservableCollection<MounthPatient>();
-            ArchiveAppointmentCards = new ObservableCollection<MounthPatient>();
-            for (int i = 0; i <= CalculateMonthsDifference(_timeOf, _timeTo); i++)
+        var arhiveAppointments = appointments.Where(item => item.StatusId == 4);
+        var activeAppointments = appointments.Except(arhiveAppointments);
+        var Cards = new ObservableCollection<MounthPatient>();
+        ArchiveAppointmentCards = new ObservableCollection<MounthPatient>();
+        for (int i = 0; i <= CalculateMonthsDifference(_timeOf, _timeTo); i++)
+        {
+            ObservableCollection<MounthAppointmentPatient> cards = new ObservableCollection<MounthAppointmentPatient>();
+            var currnetDate = _timeOf.AddMonths(i);
+            var activeAppointmentsMounth = activeAppointments.Where(item =>
+                item.AppointmentDate.Month == currnetDate.Month && (item.AppointmentDate.Day <= currnetDate.Day || item.AppointmentDate.Day >= currnetDate.Day)).ToList();
+            for (int g = 0; g < activeAppointmentsMounth.Count(); g++)
             {
-                ObservableCollection<MounthAppointmentPatient> cards = new ObservableCollection<MounthAppointmentPatient>();
-                var activeAppointmentsMounth = activeAppointments.Where(item =>
-                    item.AppointmentDate.Month == _timeOf.AddMonths(i).Month &&
-                    item.AppointmentDate.Day >= _timeOf.AddMonths(i).Day).ToList();
-                if (activeAppointmentsMounth != null)
-                {
-                    for (int g = 0; g < activeAppointmentsMounth.Count(); g++)
-                    {
-                        MounthAppointmentPatient card = new MounthAppointmentPatient();
-                        card.CurrentAppointmentId = activeAppointmentsMounth[g].IdAppointment.Value;
-                        card.CycleStage = i;
-                        card.NumberOfCard = g;
-                        card.Date.Text = activeAppointmentsMounth[g].AppointmentDate.ToString();
-                        var currDoctor = doctors.Find(item => item.IdDoctor == activeAppointmentsMounth[g].DoctorId);
-                        card.Specialisation.Text = ApiHelper.ApiHelper
-                            .Get<Speciality>("Specialities", currDoctor.SpecialityId.Value).NameSpecialities;
-                        card.DoctorName.Text = $"{currDoctor.Surname} {currDoctor.FirstName} {currDoctor.Patronymic}";
-                        card.Address.Text = currDoctor.WorkAddress;
-                        card.FirstAction.Content = "Перенести";
-                        // card.FirstAction.Click += "Перенести";
-                        card.SecondAction.Content = "Отменить";
-                        card.SecondActionClick += (sender, e) => delete(sender, e);
-                        cards.Add(card);
-                    }
-                }
-                var mounthPatient = new MounthPatient();
-                mounthPatient.mounth.Text = _timeOf.AddMonths(i).ToString("MMMM yyyy");
-                mounthPatient.Items = cards;
-                Cards.Add(mounthPatient);
-                AppointmentCards = Cards;
+                MounthAppointmentPatient card = new MounthAppointmentPatient();
+                card.CurrentAppointmentId = activeAppointmentsMounth[g].IdAppointment.Value;
+                card.CycleStage = i;
+                card.NumberOfCard = g;
+                card.Date.Text = activeAppointmentsMounth[g].AppointmentDate.ToString();
+                var currDoctor = doctors.Find(item => item.IdDoctor == activeAppointmentsMounth[g].DoctorId);
+                card.Specialisation.Text = ApiHelper.ApiHelper
+                    .Get<Speciality>("Specialities", currDoctor.SpecialityId.Value).NameSpecialities;
+                card.DoctorName.Text = $"{currDoctor.Surname} {currDoctor.FirstName} {currDoctor.Patronymic}";
+                card.Address.Text = currDoctor.WorkAddress;
+                card.FirstAction.Content = "Перенести";
+                card.SecondAction.Content = "Отменить";
+                card.SecondActionClick += (sender, e) => delete(sender, e);
+                cards.Add(card);
             }
+            var mounthPatient = new MounthPatient();
+            mounthPatient.mounth.Text = _timeOf.AddMonths(i).ToString("MMMM yyyy");
+            mounthPatient.Items = cards;
+            Cards.Add(mounthPatient);
+            AppointmentCards = Cards;
         }
     }
 
@@ -191,7 +181,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
                 ObservableCollection<MounthAppointmentPatient> cards = new ObservableCollection<MounthAppointmentPatient>();
                 var activeAppointmentsMounth = arhiveAppointments.Where(item =>
                     item.AppointmentDate.Month == _timeOfArchive.AddMonths(i).Month &&
-                    item.AppointmentDate.Day >= _timeOfArchive.AddMonths(i).Day).ToList();
+                    (item.AppointmentDate.Day <= _timeOfArchive.AddMonths(i).Day || item.AppointmentDate.Day >= _timeOfArchive.AddMonths(i).Day)).ToList();
                 if (activeAppointmentsMounth != null)
                 {
                     for (int g = 0; g < activeAppointmentsMounth.Count(); g++)

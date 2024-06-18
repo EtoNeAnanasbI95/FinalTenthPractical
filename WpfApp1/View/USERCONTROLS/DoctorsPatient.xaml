@@ -31,6 +31,8 @@
                        HorizontalAlignment="Center"/>
                     <!-- Margin="0,0,0, 4" -->
                 <TextBlock
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
                     Foreground="{DynamicResource PrimaryForeground}"
                     Name="TextBlock"
                     Grid.Row="1"

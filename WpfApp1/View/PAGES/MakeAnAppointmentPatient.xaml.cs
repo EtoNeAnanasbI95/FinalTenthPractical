@@ -1,6 +1,7 @@
 ﻿using FinalTenthPractical.View.USERCONTROLS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EMIAS.Models;
+using FinalTenthPractical.Properties;
+using WpfApp1.ViewModel;
+using WpfApp1.ViewModel.ApiHelper;
 
 namespace FinalTenthPractical.View.PAGES
 {
@@ -21,127 +26,51 @@ namespace FinalTenthPractical.View.PAGES
     /// </summary>
     public partial class MakeAnAppointmentPatient : Page
     {
+        private PatientMakeAnAppointmentViewModel _viewmodel;
+        
         public MakeAnAppointmentPatient()
         {
             InitializeComponent();
+            _viewmodel = new PatientMakeAnAppointmentViewModel();
+            DataContext = _viewmodel;
 
+            DoctorsPatient emergency = new DoctorsPatient();
+            DoctorsPatient covid = new DoctorsPatient();
+            emergency.IdSpecials = 11;
+            covid.IdSpecials = 12;
+            List<DoctorsPatient> ORVI_COVID_cards = new List<DoctorsPatient>() { emergency, covid };
 
-            // DoctorsPatient th = new DoctorsPatient();
-            // th.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient qw = new DoctorsPatient();
-            // qw.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient tccvh = new DoctorsPatient();
-            // tccvh.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient sdsdsd = new DoctorsPatient();
-            // sdsdsd.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient ghjk = new DoctorsPatient();
-            // ghjk.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient wefgbn = new DoctorsPatient();
-            // wefgbn.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient txcvbhgtr4h = new DoctorsPatient();
-            // txcvbhgtr4h.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient tsdhth = new DoctorsPatient();
-            // tsdhth.first.Text = "Jadsjskd";
-            // ///////////////////////////////////////////////////////
-            //
-            // DoctorsPatient a = new DoctorsPatient();
-            // th.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient s = new DoctorsPatient();
-            // qw.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient d = new DoctorsPatient();
-            // tccvh.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient f = new DoctorsPatient();
-            // sdsdsd.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient g = new DoctorsPatient();
-            // ghjk.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient h = new DoctorsPatient();
-            // wefgbn.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient j = new DoctorsPatient();
-            // txcvbhgtr4h.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient k = new DoctorsPatient();
-            // tsdhth.first.Text = "Jadsjskd";
-            //
-            // ///////////////////////////////////////////////
-            // ///
-            // DoctorsPatient zx = new DoctorsPatient();
-            // th.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient m = new DoctorsPatient();
-            // qw.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient n = new DoctorsPatient();
-            // tccvh.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient b = new DoctorsPatient();
-            // sdsdsd.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient v = new DoctorsPatient();
-            // ghjk.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient c = new DoctorsPatient();
-            // wefgbn.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient x = new DoctorsPatient();
-            // txcvbhgtr4h.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient z = new DoctorsPatient();
-            // tsdhth.first.Text = "Jadsjskd";
-            // //////////////////////////////////////////////////////
-            //  DoctorsPatient kk = new DoctorsPatient();
-            // th.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient jj = new DoctorsPatient();
-            // qw.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient hh = new DoctorsPatient();
-            // tccvh.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient gg = new DoctorsPatient();
-            // sdsdsd.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient ff = new DoctorsPatient();
-            // ghjk.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient dd = new DoctorsPatient();
-            // wefgbn.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient ss = new DoctorsPatient();
-            // txcvbhgtr4h.first.Text = "Jadsjskd";
-            //
-            // DoctorsPatient aa = new DoctorsPatient();
-            // tsdhth.first.Text = "Jadsjskd";
-            //
-            //
-            // List<DoctorsPatient> users = new List<DoctorsPatient>() { th, qw, tccvh, sdsdsd, ghjk, wefgbn, txcvbhgtr4h, tsdhth };
-            // LB_first.ItemsSource = users;
-            //
-            //
-            // List<DoctorsPatient> qqq = new List<DoctorsPatient>() { a, s, d, f, g, h, j, k };
-            // LB_second.ItemsSource = qqq;
-            //
-            //
-            // List<DoctorsPatient> qqqqq = new List<DoctorsPatient>() { aa, ss, dd, ff, gg, hh, jj, kk };
-            // LB_third.ItemsSource = qqqqq;
-            //
-            //
-            // List<DoctorsPatient> qqw = new List<DoctorsPatient>() { zx, x, z, c, v, b, b, n };
-            // LB_four.ItemsSource = qqw;
+            ORVI_COVID.ItemsSource = ORVI_COVID_cards;
 
+            List<DoctorsPatient> SpecialitiesCards = new List<DoctorsPatient>();
+            var specialities = ApiHelper.Get<List<Speciality>>("Specialities");
+            foreach (var item in specialities)
+            {
+                DoctorsPatient doctor = new DoctorsPatient();
+                doctor.IdSpecials = item.IdSpeciality.Value;
+                SpecialitiesCards.Add(doctor);
+            }
+            Specialities.ItemsSource = SpecialitiesCards;
 
+            var directions = ApiHelper.Get<List<Direction>>("Directions").Where(item => item.Oms == Settings.Default.CurrentPatient);
+            
+            List<DoctorsPatient> DirectionsCards = new List<DoctorsPatient>();
+            foreach (var direct in directions)
+            {
+                DoctorsPatient doctor = new DoctorsPatient();
+                doctor.IdSpecials = direct.SpecialityId.Value;
+                DirectionsCards.Add(doctor);
+            }
+            Directions.ItemsSource = DirectionsCards;
+            
+            List<DoctorsPatient> TargetCards = new List<DoctorsPatient>();
+            foreach (var item in specialities)
+            {
+                DoctorsPatient doctor = new DoctorsPatient();
+                doctor.IdSpecials = item.IdSpeciality.Value;
+                TargetCards.Add(doctor);
+            }
+            Targets.ItemsSource = TargetCards;
         }
     }
 }
