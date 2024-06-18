@@ -143,7 +143,12 @@ namespace FinalTenthPractical.View
         private void ExitClick(object sender, RoutedEventArgs e)
         {
             var viewmodel = DataContext as AdminViewModel;
-            viewmodel.Exit();
+            viewmodel.LoginOfAdmin = null;
+            viewmodel.PasswordAdmin = null;
+            Settings.Default.CurrentAdmin = 0;
+            Settings.Default.Save();
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
             Close();
         }
     }

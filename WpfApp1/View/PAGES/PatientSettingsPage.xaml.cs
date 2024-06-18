@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
 using WpfApp1;
 
 namespace FinalTenthPractical.View.PAGES
@@ -45,12 +46,17 @@ namespace FinalTenthPractical.View.PAGES
                     }
                 }
             }
-
-
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ExitClick(object sender, RoutedEventArgs e)
         {
+            Settings.Default.CurrentPatient = 0;
+            Settings.Default.Save();
+            var auth = new AuthorizationWindow();
+            auth.Show();
+            var window = Window.GetWindow(this);
+            window.Close();
         }
     }
 }
+    
