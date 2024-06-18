@@ -32,6 +32,10 @@ public partial class PatientAppointmentPage : Page
 
     private void PatientAppointmentPage_OnLoaded(object sender, RoutedEventArgs e)
     {
+        _patientMainAppointmentViewModel._timeOf = DateOnly.FromDateTime(DateTime.Today);
+        _patientMainAppointmentViewModel._timeTo = DateOnly.FromDateTime(DateTime.Today.AddMonths(2));
+        _patientMainAppointmentViewModel._timeOfArchive = DateOnly.FromDateTime(DateTime.Today.AddMonths(-1));
+        _patientMainAppointmentViewModel._timeToArchive = DateOnly.FromDateTime(DateTime.Today.AddMonths(1));
         _patientMainAppointmentViewModel.Specialisations();
         _patientMainAppointmentViewModel.ActiveAppointments();
         _patientMainAppointmentViewModel.ArchiveAppointments();

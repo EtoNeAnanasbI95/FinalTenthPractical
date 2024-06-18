@@ -28,14 +28,14 @@
             <RowDefinition Height="140"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="1" Grid.Column="1" Text="Запись" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="1" Grid.Column="1" Text="Записаться на приём" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="3" Grid.Column="1" Text="ОРВИ / COVID 19" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="5" VerticalAlignment="Center"  Grid.Column="1" Text="Специальности" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="7" VerticalAlignment="Center"  Grid.Column="1" Text="Направления" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Row="9" VerticalAlignment="Center"  Grid.Column="1" Text="Цели обращения" FontSize="20" FontFamily="Inter" Grid.ColumnSpan="2"/>
         <ScrollViewer Grid.Row="4" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
             <Grid Background="{DynamicResource SecondaryBackground}">
-                <ItemsControl x:Name="LB_first" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="ORVI_COVID">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -51,7 +51,7 @@
         </ScrollViewer>
         <ScrollViewer Grid.Row="6" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
             <Grid Background="{DynamicResource SecondaryBackground}">
-                <ItemsControl x:Name="LB_second" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="Specialities" ItemsSource="{Binding CurrentRecords}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -67,7 +67,7 @@
         </ScrollViewer>
         <ScrollViewer Grid.Row="8" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
             <Grid Background="{DynamicResource SecondaryBackground}">
-                <ItemsControl x:Name="LB_third" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="Directions" ItemsSource="{Binding CurrentRecords}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -83,7 +83,7 @@
         </ScrollViewer>
         <ScrollViewer Grid.Row="10" Grid.Column="1" HorizontalScrollBarVisibility="Auto">
             <Grid Background="{DynamicResource SecondaryBackground}">
-                <ItemsControl x:Name="LB_four" ItemsSource="{Binding CurrentRecords}">
+                <ItemsControl x:Name="Targets" ItemsSource="{Binding CurrentRecords}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>

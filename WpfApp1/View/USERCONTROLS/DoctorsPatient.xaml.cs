@@ -17,6 +17,8 @@ public partial class DoctorsPatient : UserControl
         {8, @"..\..\..\Model\img\oncologist.png"},
         {9, @"..\..\..\Model\img\psychologist.png"},
         {10, @"..\..\..\Model\img\otorhinolaryngologist.png"},
+        {11, @"..\..\..\Model\img\emergency.png"},
+        {12, @"..\..\..\Model\img\covid.png"},
     };
     
     private Dictionary<int, string> imageName = new Dictionary<int, string>
@@ -30,7 +32,9 @@ public partial class DoctorsPatient : UserControl
         {7, "Кардиолог"},
         {8, "Онколог"},
         {9, "Психолог"},
-        {10, "ЛОР"}
+        {10, "ЛОР"},
+        {11, "Дежурный врач"},
+        {12, "Вакцинация от COVID-19"}
     };
 
     private int _idSpecials;
