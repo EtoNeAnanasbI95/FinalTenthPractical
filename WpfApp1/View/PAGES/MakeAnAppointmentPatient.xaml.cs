@@ -39,38 +39,12 @@ namespace FinalTenthPractical.View.PAGES
             emergency.IdSpecials = 11;
             covid.IdSpecials = 12;
             List<DoctorsPatient> ORVI_COVID_cards = new List<DoctorsPatient>() { emergency, covid };
-
             ORVI_COVID.ItemsSource = ORVI_COVID_cards;
+        }
 
-            List<DoctorsPatient> SpecialitiesCards = new List<DoctorsPatient>();
-            var specialities = ApiHelper.Get<List<Speciality>>("Specialities");
-            foreach (var item in specialities)
-            {
-                DoctorsPatient doctor = new DoctorsPatient();
-                doctor.IdSpecials = item.IdSpeciality.Value;
-                SpecialitiesCards.Add(doctor);
-            }
-            Specialities.ItemsSource = SpecialitiesCards;
-
-            var directions = ApiHelper.Get<List<Direction>>("Directions").Where(item => item.Oms == Settings.Default.CurrentPatient);
-            
-            List<DoctorsPatient> DirectionsCards = new List<DoctorsPatient>();
-            foreach (var direct in directions)
-            {
-                DoctorsPatient doctor = new DoctorsPatient();
-                doctor.IdSpecials = direct.SpecialityId.Value;
-                DirectionsCards.Add(doctor);
-            }
-            Directions.ItemsSource = DirectionsCards;
-            
-            List<DoctorsPatient> TargetCards = new List<DoctorsPatient>();
-            foreach (var item in specialities)
-            {
-                DoctorsPatient doctor = new DoctorsPatient();
-                doctor.IdSpecials = item.IdSpeciality.Value;
-                TargetCards.Add(doctor);
-            }
-            Targets.ItemsSource = TargetCards;
+        private void MakeAnAppointmentPatient_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            _viewmodel.GetData();
         }
     }
 }
