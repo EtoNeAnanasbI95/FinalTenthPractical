@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View.PAGES
 {
@@ -21,16 +22,18 @@ namespace FinalTenthPractical.View.PAGES
     /// </summary>
     public partial class PatientAnalysDocumentsPage : Page
     {
+        private PatientAnalysDocumentsViewModel _viewModel;
         public PatientAnalysDocumentsPage()
         {
             InitializeComponent();
+            _viewModel = new PatientAnalysDocumentsViewModel();
+            DataContext = _viewModel;
+            _viewModel.RTB = RTB.Document;
+        }
 
-            AnalizUC th = new AnalizUC();
-            th.FirstTB.Text = "Общий клинический анализ крови; микроскопическое исследование мазка";
-            th.SecondTB.Text = "29 хуебря 2023 г.";
-
-            List<Object> Cards = new List<Object>() { th };
-            LBUC.ItemsSource = Cards;
+        private void PatientResearchDocumentsPage_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Load();
         }
     }
 }

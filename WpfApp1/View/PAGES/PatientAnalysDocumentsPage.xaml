@@ -5,9 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
+      Loaded="PatientResearchDocumentsPage_OnLoaded"
       Height="Auto" Width="Auto"
       Title="MedicalCardAnaliz">
-
+    
+    <Page.Resources>
+        <Style x:Key="RTB" TargetType="RichTextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1"/>
@@ -26,9 +38,9 @@
             <ColumnDefinition Width="737*"/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <TextBlock  Grid.Row="1" Grid.Column="1" FontFamily="Inter" FontSize="20" Foreground="{DynamicResource PrimaryForeground}"><Run Language="ru-ru" Text="Анализы"/></TextBlock>
+        <TextBlock  Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="{DynamicResource PrimaryForeground}" Text="Анализы"/>
         <Border Grid.Column="1" Grid.Row="3" Grid.RowSpan="4" Background="{DynamicResource SecondaryBackground }"/>
-        <ListBox x:Name="LBUC" Grid.RowSpan="4" Grid.Row="3" Grid.Column="1" >
+        <ListBox ItemsSource="{Binding Cards}" Grid.RowSpan="4" Grid.Row="3" Grid.Column="1" >
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Margin" Value="8,9,8,0"/>
@@ -47,10 +59,37 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="257"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Column="1" FontFamily="Inter" FontSize="14" TextAlignment="Right" VerticalAlignment="Center" Text="Москва, Профсоюзная улица, д. 111А"/>
-            <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.Column="1" Grid.Row="1" FontFamily="Inter" TextAlignment="Right" FontSize="14" VerticalAlignment="Center" Text="13 мая 2023 г."/>
-            <TextBlock Foreground="{DynamicResource PrimaryForeground }" Grid.RowSpan="2" FontFamily="Inter" TextAlignment="Left" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Text="Определение антигена Coronavirus (SARS-CoV-2 качественно)"/>
+            <TextBlock
+                Foreground="{DynamicResource PrimaryForeground }"
+                Grid.Column="1"
+                FontSize="14"
+                TextAlignment="Right"
+                VerticalAlignment="Center"
+                Text="{Binding Address}"/>
+            <TextBlock
+                Foreground="{DynamicResource PrimaryForeground }"
+                Grid.Column="1" 
+                Grid.Row="1"
+                TextAlignment="Right"
+                FontSize="14"
+                VerticalAlignment="Center"
+                Text="{Binding Date}"/>
+            <TextBlock
+                Foreground="{DynamicResource PrimaryForeground }"
+                Grid.RowSpan="2"
+                TextAlignment="Left"
+                FontSize="20"
+                TextWrapping="Wrap"
+                VerticalAlignment="Center"
+                Text="{Binding AnalysName}"/>
         </Grid>
-        <RichTextBox Style="{DynamicResource RTB}" Background="{DynamicResource PrimaryBackground }" Foreground="{DynamicResource PrimaryForeground }" BorderBrush="Transparent" Grid.Column="3" Grid.Row="5"/>
+        <RichTextBox 
+            Name="RTB"
+            Style="{DynamicResource RTB}" 
+            Background="{DynamicResource PrimaryBackground }" 
+            Foreground="{DynamicResource PrimaryForeground }" 
+            BorderBrush="Transparent" 
+            Grid.Column="3"
+            Grid.Row="5"/>
     </Grid>
 </Page>

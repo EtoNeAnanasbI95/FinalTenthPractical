@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Windows;
 using System.Windows.Documents;
 using EMIAS.Models;
@@ -67,14 +68,14 @@ public class PatientResearchDocumentsViewModel : BindingHelper
         set => SetField(ref _download, value);
     }
 
-    private List<AppointmentDocument> ResearchDocuments;
+    private List<ResearchDocument> ResearchDocuments;
     private List<Appointment> Appointments = new();
     private List<Doctor> Doctors;
 
     public void Load()
     {
         ResearchDocuments =
-            ApiHelper.ApiHelper.Get<List<AppointmentDocument>>("ResearchDocuments");
+            ApiHelper.ApiHelper.Get<List<ResearchDocument>>("ResearchDocuments");
         Appointments =
             ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments")
                 .Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
@@ -102,6 +103,7 @@ public class PatientResearchDocumentsViewModel : BindingHelper
     {
         var card = sender as ReceptionUC;
         var document = ResearchDocuments.Find(item => item.IdAppointment == card.AppointmentId);
+        _id = card.AppointmentId;
         File.WriteAllText("buffer.rtf", document.Rtf);
         var range = new TextRange(RTB.ContentStart, RTB.ContentEnd);
         var fs = new FileStream("buffer.rtf", FileMode.Open);
@@ -117,22 +119,55 @@ public class PatientResearchDocumentsViewModel : BindingHelper
         Download = true;
     }
 
+    private int _id;
+    
     public void GoDownload(object sender, EventArgs e)
     {
-        var dialog = new SaveFileDialog
+        var attachment = ResearchDocuments.Find(item => item.IdAppointment == _id).Attachment;
+        if (attachment != null)
         {
-            Filter = "Word file (*.docx)|*.docx|All files (*.*)|*.*",
-            Title = "Save a Word File"
-        };
-        dialog.ShowDialog();
-        var range = new TextRange(RTB.ContentStart, RTB.ContentEnd);
-        var fs = new FileStream("buffer.rtf", FileMode.Create);
-        range.Save(fs, DataFormats.Rtf);
-        fs.Close();
+            var dialog = new SaveFileDialog
+            {
+                Filter = "PNG Image (*.png)|*.png|JPEG Image (*.jpg;*.jpeg)|*.jpg;*.jpeg|Bitmap Image (*.bmp)|*.bmp",
+                Title = "Save an Image File"
+            };
+            var result = dialog.ShowDialog();
+            if (result == true)
+            {
+                MemoryStream ms = new MemoryStream(ResearchDocuments.Find(item => item.IdAppointment == _id).Attachment);
+                Image image = Image.FromStream(ms);
+                try
+                {
+                    image.Save(dialog.FileName);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                ms.Dispose();
+            }
+            
+        }
+        else
+        {
+            var dialog = new SaveFileDialog
+            {
+                Filter = "Word file (*.docx)|*.docx|All files (*.*)|*.*",
+                Title = "Save a Word File"
+            };
+            var result = dialog.ShowDialog();
+            if (result == true)
+            {
+                var range = new TextRange(RTB.ContentStart, RTB.ContentEnd);
+                var fs = new FileStream("buffer.rtf", FileMode.Create);
+                range.Save(fs, DataFormats.Rtf);
+                fs.Close();
 
-        var doc = new Document();
-        doc.LoadFromFile("buffer.rtf");
-        doc.SaveToFile(dialog.FileName, FileFormat.Docx);
-        File.Delete("buffer.rtf");
+                var doc = new Document();
+                doc.LoadFromFile("buffer.rtf");
+                doc.SaveToFile(dialog.FileName, FileFormat.Docx);
+                File.Delete("buffer.rtf");
+            }
+        }
     }
 }
