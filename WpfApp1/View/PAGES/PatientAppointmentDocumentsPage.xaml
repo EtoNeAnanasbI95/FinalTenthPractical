@@ -19,7 +19,6 @@
                 <Trigger Property="IsMouseOver" Value="False">
                 </Trigger>
             </Style.Triggers>
-
         </Style>
     </Page.Resources>
 
