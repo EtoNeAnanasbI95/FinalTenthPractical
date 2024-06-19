@@ -4,8 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using EMIAS.Models;
+using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
 using FinalTenthPractical.View.USERCONTROLS;
+using Newtonsoft.Json;
 using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
@@ -88,11 +90,7 @@ public class PatientChooseDoctorViewModel : BindingHelper
         Day = new();
         Evening = new();
 
-        DateTime dateTime;
-        const string format = "dd MMMM, ddd";
-        CultureInfo ruCulture = new CultureInfo("ru-RU");
-        DateTime.TryParseExact(lastButtonDay.Content.ToString(), format, ruCulture, DateTimeStyles.None, out dateTime);
-        List<TimeOnly> times = busyDays.Where(item => item.AppointmentDate == DateOnly.FromDateTime(dateTime)).Select(item => item.AppointmentTime).ToList();
+        List<TimeOnly> times = busyDays.Where(item => item.AppointmentDate == GetCorrectDate(lastButtonDay.Content.ToString())).Select(item => item.AppointmentTime).ToList();
         AddButtonsToPanel(Morning, new TimeOnly(8, 00), new TimeOnly(12, 00), times);
         AddButtonsToPanel(Day, new TimeOnly(12, 10), new TimeOnly(16, 50), times);
         AddButtonsToPanel(Evening, new TimeOnly(17, 10), new TimeOnly(19, 50), times);
@@ -119,9 +117,11 @@ public class PatientChooseDoctorViewModel : BindingHelper
 
     private Style style;
     private IEnumerable<Appointment> busyDays;
+    private int _doctorId;
 
     public void LoadRoutine(int doctorId)
     {
+        _doctorId = doctorId;
         var doc = MainViewModel.Doctors.Find(item => item.IdDoctor == doctorId);
         busyDays = MainViewModel.Appointments.Where(item => item.DoctorId == doctorId);
         DoctorName = $"{doc.Surname} {doc.FirstName} {doc.Patronymic}";
@@ -159,11 +159,12 @@ public class PatientChooseDoctorViewModel : BindingHelper
         }
     }
 
-    private ToggleButton lastButtonDay = new ToggleButton();
-    private ToggleButton lastButtonHour = new ToggleButton();
+    private ToggleButton lastButtonDay;
+    private ToggleButton lastButtonHour;
 
     private void DisableAllButtonsDay(object sender, EventArgs e)
     {
+        if (lastButtonDay == null) lastButtonDay = new();
         lastButtonDay.IsChecked = false;
         lastButtonDay = sender as ToggleButton;
         GenerateToggleButtons();
@@ -171,6 +172,7 @@ public class PatientChooseDoctorViewModel : BindingHelper
     
     private void DisableAllButtonsHour(object sender, EventArgs e)
     {
+        if (lastButtonHour == null) lastButtonHour = new();
         lastButtonHour.IsChecked = false;
         lastButtonHour = sender as ToggleButton;
     }
@@ -193,8 +195,39 @@ public class PatientChooseDoctorViewModel : BindingHelper
         }
     }
 
+    public void SendAppointment(object sender, EventArgs e)
+    {
+        if (lastButtonDay != null && lastButtonHour != null)
+        {
+            var appointment = new Appointment();
+            appointment.Oms = Settings.Default.CurrentPatient;
+            appointment.AppointmentDate = GetCorrectDate(lastButtonDay.Content.ToString());
+            appointment.AppointmentTime = TimeOnly.Parse(lastButtonHour.Content.ToString());
+            appointment.DoctorId = _doctorId;
+            appointment.StatusId = 1;
+
+            var response =
+                ApiHelper.ApiHelper.Post<Appointment>(JsonConvert.SerializeObject(appointment), "Appointments");
+
+            if (response)
+                MessageBox.Show(
+                    $"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
+            else MessageBox.Show("Что-то пошло не так");
+        }
+        else MessageBox.Show("Некорректный ввод");
+    }
+
     private void GoDoc(object sender, EventArgs e)
     {
         LoadRoutine((sender as ReceptionUC).AppointmentId);
+    }
+
+    private DateOnly GetCorrectDate(string date)
+    {
+        DateTime dateTime;
+        const string format = "dd MMMM, ddd";
+        CultureInfo ruCulture = new CultureInfo("ru-RU");
+        DateTime.TryParseExact(lastButtonDay.Content.ToString(), format, ruCulture, DateTimeStyles.None, out dateTime);
+        return DateOnly.FromDateTime(dateTime);
     }
 }

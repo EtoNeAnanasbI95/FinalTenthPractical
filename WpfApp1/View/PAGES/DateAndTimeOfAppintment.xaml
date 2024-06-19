@@ -62,7 +62,15 @@
                 </b:EventTrigger>
             </b:Interaction.Triggers>
         </ui:Button>
-        <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="3" Grid.Row="7" Content="Записаться на прием" Margin="0,8,0,9"/>
+        <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="3" Grid.Row="7" Content="Записаться на прием" Margin="0,8,0,9">
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="Click">
+                    <b:CallMethodAction
+                        TargetObject="{Binding }"
+                        MethodName="SendAppointment" />
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
+        </ui:Button>
         <Frame x:Name="Frame" Grid.Row="3" Grid.Column="3" Grid.RowSpan="4"/>
     </Grid>
 </Page>
