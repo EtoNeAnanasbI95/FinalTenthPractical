@@ -28,10 +28,10 @@ namespace FinalTenthPractical.View.PAGES
     {
         private PatientMakeAnAppointmentViewModel _viewmodel;
         
-        public MakeAnAppointmentPatient()
+        public MakeAnAppointmentPatient(Frame frame)
         {
             InitializeComponent();
-            _viewmodel = new PatientMakeAnAppointmentViewModel();
+            _viewmodel = new PatientMakeAnAppointmentViewModel(frame);
             DataContext = _viewmodel;
 
             DoctorsPatient emergency = new DoctorsPatient();

@@ -64,10 +64,9 @@ public partial class DoctorsPatient : UserControl
     }
 
     public event EventHandler Click;
-    
 
     private void OnCardClick(object sender, EventArgs e)
     {
-        Click?.Invoke(sender, e);
+        Click?.Invoke(this, e);
     }
 }

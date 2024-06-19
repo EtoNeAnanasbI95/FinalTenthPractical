@@ -1,13 +1,24 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
 using EMIAS.Models;
 using FinalTenthPractical.Properties;
+using FinalTenthPractical.View.PAGES;
 using FinalTenthPractical.View.USERCONTROLS;
+using Microsoft.Win32;
 using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
 
 public class PatientMakeAnAppointmentViewModel : BindingHelper
 {
+    public PatientMakeAnAppointmentViewModel(Frame frame)
+    {
+        _mainFrame = frame;
+    }
+
+    private Frame _mainFrame;
+    
     private ObservableCollection<DoctorsPatient> _specialities;
     public ObservableCollection<DoctorsPatient> Specialities
     {
@@ -30,6 +41,11 @@ public class PatientMakeAnAppointmentViewModel : BindingHelper
         get => _targets;
         set => SetField(ref _targets, value);
     }
+
+    private void GoChooseDoctor(object sender, EventArgs e)
+    {
+        _mainFrame.Navigate(new DateAndTimeOfAppintment(_mainFrame, sender as DoctorsPatient));
+    }
     
     public void GetData()
     {
@@ -42,6 +58,7 @@ public class PatientMakeAnAppointmentViewModel : BindingHelper
         {
             DoctorsPatient doctor = new DoctorsPatient();
             doctor.IdSpecials = item.IdSpeciality.Value;
+            doctor.Click += (sender, e) => GoChooseDoctor(sender, e);
             Specialities.Add(doctor);
         }
         

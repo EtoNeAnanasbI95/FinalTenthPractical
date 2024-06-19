@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FinalTenthPractical.View.USERCONTROLS;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View.PAGES
 {
@@ -20,13 +22,19 @@ namespace FinalTenthPractical.View.PAGES
     /// </summary>
     public partial class DateAndTimeOfAppintment : Page
     {
-        public DateAndTimeOfAppintment()
+        private PatientChooseDoctorViewModel _viewModel;
+        
+        public DateAndTimeOfAppintment(Frame mainFrame, DoctorsPatient targetButton)
         {
             InitializeComponent();
+            _viewModel = new PatientChooseDoctorViewModel(mainFrame, targetButton);
+            DataContext = _viewModel;
+            Frame.Navigate(new DateAndTimeOfAppintmentSecond(_viewModel));
+        }
 
-            Frame.Navigate(new DateAndTimeOfAppintmentSecond());
-
-
+        private void DateAndTimeOfAppintment_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Load();
         }
     }
 }

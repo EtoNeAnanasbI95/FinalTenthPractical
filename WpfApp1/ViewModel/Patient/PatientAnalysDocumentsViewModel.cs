@@ -6,6 +6,7 @@ using FinalTenthPractical.Properties;
 using FinalTenthPractical.View.USERCONTROLS;
 using SecondLibPractice;
 using Wpf.Ui.Controls;
+using MessageBox = System.Windows.MessageBox;
 
 namespace WpfApp1.ViewModel;
 
@@ -66,7 +67,7 @@ public class PatientAnalysDocumentsViewModel : BindingHelper
     private void GoAnalys(object sender, EventArgs e)
     {
         var realSender = sender as AnalizUC;
-        Address = Doctors.Find(item => item.IdDoctor == realSender.Appointment.IdAppointment).WorkAddress;
+        Address = Doctors.Find(item => item.IdDoctor == realSender.Appointment.DoctorId).WorkAddress;
         AnalysName = realSender.Title.Text;
         Date = realSender.Appointment.AppointmentDate.ToString();
         var document = AnalysDocuments.Find(item => item.IdAppointment == realSender.Appointment.IdAppointment);

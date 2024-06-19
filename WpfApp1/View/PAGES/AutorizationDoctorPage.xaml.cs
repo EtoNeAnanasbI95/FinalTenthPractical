@@ -23,8 +23,7 @@ namespace FinalTenthPractical.View
     /// </summary>
     public partial class AutorizationDoctorPage : Page
     {
-        private DoctorViewModel _doctorViewModel; 
-        
+        private DoctorViewModel _doctorViewModel;
         public AutorizationDoctorPage()
         {
             InitializeComponent();

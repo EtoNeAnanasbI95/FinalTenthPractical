@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using EMIAS.Models;
 using FinalTenthPractical.Properties;
+using FinalTenthPractical.View.PAGES;
 using FinalTenthPractical.View.USERCONTROLS;
 using SecondLibPractice;
 
@@ -10,6 +11,20 @@ namespace WpfApp1.ViewModel;
 
 public class PatientMainAppointmentViewModel : BindingHelper
 {
+    private Frame _frame;
+
+    public PatientMainAppointmentViewModel(Frame frame)
+    {
+        _frame = frame;
+    }
+    
+    public PatientMainAppointmentViewModel() {}
+
+    private void GoChooseDoctor(object sender, EventArgs e)
+    {
+        _frame.Navigate(new DateAndTimeOfAppintment(_frame, sender as DoctorsPatient));
+    }
+    
     private string _OMS;
     
     public string OMS
@@ -51,6 +66,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
             Console.WriteLine(item.IdSpeciality);
             DoctorsPatient doctor = new DoctorsPatient();
             doctor.IdSpecials = item.IdSpeciality.Value;
+            doctor.Click += (sender, e) => GoChooseDoctor(sender, e);
             SpecialitiesCards.Add(doctor);
         }
     }

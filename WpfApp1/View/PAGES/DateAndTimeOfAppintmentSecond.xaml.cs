@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View.PAGES
 {
@@ -21,30 +23,11 @@ namespace FinalTenthPractical.View.PAGES
     /// </summary>
     public partial class DateAndTimeOfAppintmentSecond : Page
     {
-        public DateAndTimeOfAppintmentSecond()
+        public DateAndTimeOfAppintmentSecond(PatientChooseDoctorViewModel _viewModel)
         {
 
-
+            DataContext = _viewModel;
             InitializeComponent();
-
-            DateOfAppointment aa = new DateOfAppointment();
-            aa.tbl.Text = "29 мая, ср";
-
-            DateOfAppointment aaa = new DateOfAppointment();
-            aaa.tbl.Text = "29 мая, ср";
-
-            DateOfAppointment aaaa = new DateOfAppointment();
-            aaaa.tbl.Text = "29 мая, ср";
-
-            DateOfAppointment aaaaa = new DateOfAppointment();
-            aaaaa.tbl.Text = "29 мая, ср";
-
-            DateOfAppointment aaaaaa = new DateOfAppointment();
-            aaaaaa.tbl.Text = "29 мая, ср";
-
-
-            List<DateOfAppointment> users = new List<DateOfAppointment>() { aa, aaa, aaaa, aaaaa, aaaaaa };
-            LB.ItemsSource = users;
         }
 
     }

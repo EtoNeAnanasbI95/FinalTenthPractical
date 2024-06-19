@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
-      mc:Ignorable="d" 
+      xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
       Height="Auto" Width="Auto"
+      Loaded="DateAndTimeOfAppintment_OnLoaded"
       Title="DateAndTimeOfAppintment">
 
     <Page.Resources>
@@ -40,7 +41,7 @@
             <ColumnDefinition Width="737*"/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource Inter}" FontSize="20" Foreground="{DynamicResource PrimaryForeground}"><Run Text="Выбор специалиста - "/><Run Language="ru-ru" Text="О"/><Run Text="фтальмолог"/></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="{DynamicResource PrimaryForeground}"><Run Text="Выбор специалиста - "/><Run Language="ru-ru" Text="{Binding Doctor}"/></TextBlock>
         <Border Grid.Column="1" Grid.Row="3" Background="{DynamicResource SecondaryBackground }" Grid.RowSpan="4"/>
         <ListBox ItemsSource="{Binding Cards}"  Grid.Row="3" Grid.Column="1" Grid.RowSpan="4">
             <ListBox.Resources>
@@ -52,7 +53,15 @@
                 </Style>
             </ListBox.Resources>
         </ListBox>
-        <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="1" Grid.Row="7" Content="Назад" Margin="0,8,0,9"/>
+        <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="1" Grid.Row="7" Content="Назад" Margin="0,8,0,9">
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="Click">
+                    <b:CallMethodAction
+                        TargetObject="{Binding }"
+                        MethodName="GoBack" />
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
+        </ui:Button>
         <ui:Button Style="{DynamicResource FocusingButton}" Grid.Column="3" Grid.Row="7" Content="Записаться на прием" Margin="0,8,0,9"/>
         <Frame x:Name="Frame" Grid.Row="3" Grid.Column="3" Grid.RowSpan="4"/>
     </Grid>
