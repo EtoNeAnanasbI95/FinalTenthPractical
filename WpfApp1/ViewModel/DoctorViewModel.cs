@@ -7,26 +7,25 @@ namespace WpfApp1.ViewModel;
 public class DoctorViewModel : BindingHelper
 {
     private string _NumberOfDoctor;
-    
+    private string _PasswordDoctor;
+
     public string NumberOfDoctor
     {
         get => _NumberOfDoctor;
         set => SetField(ref _NumberOfDoctor, value);
     }
-    private string _PasswordDoctor;
-    
+
     public string PasswordDoctor
     {
         get => _PasswordDoctor;
         set => SetField(ref _PasswordDoctor, value);
     }
-    
+
     public event EventHandler GoDoctor;
     public event EventHandler GoAdmin;
-    
+
     public void AuthDoctor(object sender, EventArgs e)
     {
-        Console.WriteLine("Try auth doctor");
         try
         {
             var doctor = MainViewModel.Doctors.Find(item => item.IdDoctor == Convert.ToInt32(NumberOfDoctor));
@@ -45,8 +44,9 @@ public class DoctorViewModel : BindingHelper
                 Settings.Default.CurrentAdminPassword = PasswordDoctor;
                 Settings.Default.Save();
             }
-            Console.WriteLine("Doctor auth successful");
-        } 
-        catch (Exception) {Console.WriteLine("Doctor or admin auth bad request");}
+        }
+        catch (Exception)
+        {
+        }
     }
 }

@@ -1,20 +1,8 @@
-﻿using EMIAS.Models;
-using FinalTenthPractical.View;
+﻿using System.ComponentModel;
+using System.Windows;
+using EMIAS.Models;
 using FinalTenthPractical.View.PAGES;
 using Newtonsoft.Json;
-using Spire.Pdf.Security;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media.Animation;
-using FinalTenthPractical.Properties;
 using SecondLibPractice;
 
 namespace WpfApp1.ViewModel;
@@ -22,17 +10,38 @@ namespace WpfApp1.ViewModel;
 public class AdminViewModel : BindingHelper
 {
     private string _LoginOfAdmin;
+    private string _PasswordAdmin;
 
-    AdminPatientLBPage patpage = new AdminPatientLBPage(null);
-    AdminDoctorLBPage docpage = new AdminDoctorLBPage(null);
-    AdminPage adminpage = new AdminPage(null);
+    private int _selectedIndexCombo;
+
+    private int _selectedIndexData;
+    private readonly AdminPage adminpage = new(null);
+
+    private string birthday;
+    private readonly AdminDoctorLBPage docpage = new(null);
+
+    private string firstname;
+
+    private string livaddr;
+    private string oms;
+
+    private string password;
+
+    private readonly AdminPatientLBPage patpage = new(null);
+
+    private string patronymic;
+
+    private int special;
+
+    private string surname;
+
+    private string workaddr;
 
     public string LoginOfAdmin
     {
         get => _LoginOfAdmin;
         set => SetField(ref _LoginOfAdmin, value);
     }
-    private string _PasswordAdmin;
 
     public string PasswordAdmin
     {
@@ -40,24 +49,9 @@ public class AdminViewModel : BindingHelper
         set => SetField(ref _PasswordAdmin, value);
     }
 
-    public event EventHandler GodoctorPage;
-
-    public void AuthAdmin(object sender, EventArgs e)
-    {
-        Console.WriteLine("Try auth");
-        try
-        {
-            var admin = ApiHelper.ApiHelper.Get<Admin>("Admins", Convert.ToInt32(LoginOfAdmin));
-            if (admin.EnterPassword == PasswordAdmin) GodoctorPage?.Invoke(this, EventArgs.Empty);
-            Console.WriteLine("Auth successful");
-        }
-        catch (Exception) { Console.WriteLine("Auth bad request"); }
-    }
-
-    private int _selectedIndexCombo;
     public int SelectedIndexCombo
     {
-        get { return _selectedIndexCombo; }
+        get => _selectedIndexCombo;
         set
         {
             if (_selectedIndexCombo != value)
@@ -68,10 +62,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private int _selectedIndexData;
     public int SelectedIndexData
     {
-        get { return _selectedIndexData; }
+        get => _selectedIndexData;
         set
         {
             if (_selectedIndexData != value)
@@ -85,10 +78,10 @@ public class AdminViewModel : BindingHelper
     public Admin selectedadmin { get; set; }
     public Patient selectedpatient { get; set; }
     public Doctor selecteddoctor { get; set; }
-    private string oms;
+
     public string Oms
     {
-        get { return oms; }
+        get => oms;
         set
         {
             oms = value;
@@ -96,10 +89,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string surname;
     public string Surname
     {
-        get { return surname; }
+        get => surname;
         set
         {
             surname = value;
@@ -107,10 +99,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string firstname;
     public string Firstname
     {
-        get { return firstname; }
+        get => firstname;
         set
         {
             firstname = value;
@@ -118,10 +109,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string patronymic;
     public string Patronymic
     {
-        get { return patronymic; }
+        get => patronymic;
         set
         {
             patronymic = value;
@@ -129,10 +119,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string password;
     public string Password
     {
-        get { return password; }
+        get => password;
         set
         {
             password = value;
@@ -140,10 +129,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string birthday;
     public string Birthday
     {
-        get { return birthday; }
+        get => birthday;
         set
         {
             birthday = value;
@@ -151,10 +139,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string livaddr;
     public string Livaddr
     {
-        get { return livaddr; }
+        get => livaddr;
         set
         {
             livaddr = value;
@@ -162,10 +149,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private string workaddr;
     public string Workaddr
     {
-        get { return workaddr; }
+        get => workaddr;
         set
         {
             workaddr = value;
@@ -173,10 +159,9 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    private int special;
     public int Special
     {
-        get { return special; }
+        get => special;
         set
         {
             special = value;
@@ -184,18 +169,28 @@ public class AdminViewModel : BindingHelper
         }
     }
 
-    public AdminViewModel()
+    public event EventHandler GodoctorPage;
+
+    public void AuthAdmin(object sender, EventArgs e)
     {
-        
+        try
+        {
+            var admin = ApiHelper.ApiHelper.Get<Admin>("Admins", Convert.ToInt32(LoginOfAdmin));
+            if (admin.EnterPassword == PasswordAdmin) GodoctorPage?.Invoke(this, EventArgs.Empty);
+        }
+        catch (Exception)
+        {
+        }
     }
 
-    
 
     public event PropertyChangedEventHandler PropertyChanged;
+
     protected void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
+
     public void Read()
     {
         switch (SelectedIndexCombo)
@@ -223,6 +218,7 @@ public class AdminViewModel : BindingHelper
                 break;
         }
     }
+
     public void Create()
     {
         bool check;
@@ -230,7 +226,7 @@ public class AdminViewModel : BindingHelper
         switch (SelectedIndexCombo)
         {
             case 0:
-                Patient patient = new Patient();
+                var patient = new Patient();
                 patient.Oms = Convert.ToInt64(oms);
                 patient.Surname = surname;
                 patient.FirstName = firstname;
@@ -241,7 +237,7 @@ public class AdminViewModel : BindingHelper
                 MessageBox.Show(check.ToString());
                 break;
             case 1:
-                Doctor doctor = new Doctor();
+                var doctor = new Doctor();
                 doctor.EnterPassword = password;
                 doctor.Surname = surname;
                 doctor.FirstName = firstname;
@@ -252,7 +248,7 @@ public class AdminViewModel : BindingHelper
                 MessageBox.Show(check.ToString());
                 break;
             case 2:
-                Admin admin = new Admin();
+                var admin = new Admin();
                 admin.EnterPassword = password;
                 admin.SurnameAdmin = surname;
                 admin.FirstName = firstname;
@@ -262,6 +258,7 @@ public class AdminViewModel : BindingHelper
                 break;
         }
     }
+
     public void Update()
     {
         bool check;
@@ -269,34 +266,39 @@ public class AdminViewModel : BindingHelper
         switch (SelectedIndexCombo)
         {
             case 0:
-                Patient patient = ApiHelper.ApiHelper.Get<Patient>("Patients", (int)selectedpatient.Oms);
+                var patient = ApiHelper.ApiHelper.Get<Patient>("Patients", (int)selectedpatient.Oms);
                 patient.Oms = oms != null && oms != "" ? Convert.ToInt64(oms) : selectedpatient.Oms;
                 patient.Surname = surname != null && surname != "" ? surname : selectedpatient.Surname;
                 patient.FirstName = firstname != null && firstname != "" ? firstname : selectedpatient.FirstName;
                 patient.Patronymic = patronymic != null && patronymic != "" ? patronymic : selectedpatient.Patronymic;
-                patient.BirthDay = birthday != null && birthday != "" ? DateOnly.Parse(birthday) : selectedpatient.BirthDay;
+                patient.BirthDay = birthday != null && birthday != ""
+                    ? DateOnly.Parse(birthday)
+                    : selectedpatient.BirthDay;
                 patient.AddressPatient = livaddr != null && livaddr != "" ? livaddr : selectedpatient.AddressPatient;
-                check = ApiHelper.ApiHelper.Put<Patient>(JsonConvert.SerializeObject(patient), "Patients", (int)selectedpatient.Oms);
+                check = ApiHelper.ApiHelper.Put<Patient>(JsonConvert.SerializeObject(patient), "Patients",
+                    (int)selectedpatient.Oms);
                 MessageBox.Show(check.ToString());
                 break;
             case 1:
-                Doctor doctor = ApiHelper.ApiHelper.Get<Doctor>("Doctors", (int)selecteddoctor.IdDoctor);
+                var doctor = ApiHelper.ApiHelper.Get<Doctor>("Doctors", (int)selecteddoctor.IdDoctor);
                 doctor.EnterPassword = password != null && password != "" ? password : selecteddoctor.EnterPassword;
                 doctor.Surname = surname != null && surname != "" ? surname : selecteddoctor.Surname;
                 doctor.FirstName = firstname != null && firstname != "" ? firstname : selecteddoctor.FirstName;
                 doctor.Patronymic = patronymic != null && patronymic != "" ? patronymic : selecteddoctor.Patronymic;
                 doctor.SpecialityId = special > -1 ? special : selecteddoctor.SpecialityId;
                 doctor.WorkAddress = workaddr != null && workaddr != "" ? workaddr : selecteddoctor.WorkAddress;
-                check = ApiHelper.ApiHelper.Put<Doctor>(JsonConvert.SerializeObject(doctor), "Doctors", (int)selecteddoctor.IdDoctor);
+                check = ApiHelper.ApiHelper.Put<Doctor>(JsonConvert.SerializeObject(doctor), "Doctors",
+                    (int)selecteddoctor.IdDoctor);
                 MessageBox.Show(check.ToString());
                 break;
             case 2:
-                Admin admin = ApiHelper.ApiHelper.Get<Admin>("Admins", (int)selectedadmin.IdAdmin);
+                var admin = ApiHelper.ApiHelper.Get<Admin>("Admins", (int)selectedadmin.IdAdmin);
                 admin.EnterPassword = password != null && password != "" ? password : selectedadmin.EnterPassword;
                 admin.SurnameAdmin = surname != null && surname != "" ? surname : selectedadmin.SurnameAdmin;
                 admin.FirstName = firstname != null && firstname != "" ? firstname : selectedadmin.FirstName;
                 admin.Patronymic = patronymic != null && patronymic != "" ? patronymic : selectedadmin.Patronymic;
-                check = ApiHelper.ApiHelper.Put<Admin>(JsonConvert.SerializeObject(admin), "Admins", (int)selectedadmin.IdAdmin);
+                check = ApiHelper.ApiHelper.Put<Admin>(JsonConvert.SerializeObject(admin), "Admins",
+                    (int)selectedadmin.IdAdmin);
                 MessageBox.Show(check.ToString());
                 break;
         }
@@ -304,7 +306,7 @@ public class AdminViewModel : BindingHelper
 
     public void Delete()
     {
-        bool check = false;
+        var check = false;
         switch (SelectedIndexCombo)
         {
             case 0:

@@ -5,60 +5,63 @@ using EMIAS.Models;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View.USERCONTROLS;
 using SecondLibPractice;
-using Wpf.Ui.Controls;
-using MessageBox = System.Windows.MessageBox;
 
 namespace WpfApp1.ViewModel;
 
 public class PatientAnalysDocumentsViewModel : BindingHelper
 {
+    public string _address;
+
+    public string _analysName;
     public List<AnalizUC> _cards;
+
+    public string _date;
+
+    private List<AnalysDocument> AnalysDocuments;
+    private List<Appointment> Appointments = new();
+    private List<Doctor> Doctors;
+
+    public FlowDocument RTB;
+
     public List<AnalizUC> Cards
     {
         get => _cards;
         set => SetField(ref _cards, value);
     }
-    
-    public FlowDocument RTB;
-    
-    public string _address;
+
     public string Address
     {
         get => _address;
         set => SetField(ref _address, value);
     }
-    
-    public string _date;
+
     public string Date
     {
         get => _date;
         set => SetField(ref _date, value);
     }
-    
-    public string _analysName;
+
     public string AnalysName
     {
         get => _analysName;
         set => SetField(ref _analysName, value);
     }
 
-    private List<AnalysDocument> AnalysDocuments;
-    private List<Appointment> Appointments = new();
-    private List<Doctor> Doctors;
-
     public void Load()
     {
         AnalysDocuments = MainViewModel.AnalysDocuments;
-        Appointments = MainViewModel.Appointments.Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
+        Appointments = MainViewModel.Appointments
+            .Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
         Doctors = MainViewModel.Doctors;
         Cards = new List<AnalizUC>();
         foreach (var appointment in Appointments)
         {
-            AnalizUC card = new AnalizUC();
+            var card = new AnalizUC();
             card.Appointment = appointment;
             var curDoctor = Doctors.First(item => item.IdDoctor == appointment.DoctorId);
             card.Click += (sender, args) => GoAnalys(sender, args);
-            card.Title.Text = AnalysDocuments.Find(item => item.IdAppointment == appointment.IdAppointment).DocumentName;
+            card.Title.Text = AnalysDocuments.Find(item => item.IdAppointment == appointment.IdAppointment)
+                .DocumentName;
             card.Date.Text = appointment.AppointmentDate.ToString();
             Cards.Add(card);
         }

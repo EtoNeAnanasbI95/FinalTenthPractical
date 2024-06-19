@@ -13,64 +13,73 @@ namespace WpfApp1.ViewModel;
 
 public class PatientResearchDocumentsViewModel : BindingHelper
 {
+    private string _address;
+
+    private List<ReceptionUC> _cards;
+
+    private string _dateTime;
+
+    private string _doc;
+
+    private string _doctorName;
+
+    private bool _download;
+
+    private int _id;
+
+    private string _title;
+    private List<Appointment> Appointments = new();
+    private List<Doctor> Doctors;
+
+    private List<ResearchDocument> ResearchDocuments;
+    public FlowDocument RTB = new();
+
     public PatientResearchDocumentsViewModel()
     {
         Download = false;
-    }    
-    public FlowDocument RTB = new();
+    }
 
-    private List<ReceptionUC> _cards;
     public List<ReceptionUC> Cards
     {
         get => _cards;
         set => SetField(ref _cards, value);
     }
 
-    private string _title;
     public string Title
     {
         get => _title;
         set => SetField(ref _title, value);
     }
-    
-    private string _address;
+
     public string Address
     {
         get => _address;
         set => SetField(ref _address, value);
     }
-    
-    private string _doc;
+
     public string doc
     {
         get => _doc;
         set => SetField(ref _doc, value);
     }
-    
-    private string _doctorName;
+
     public string DoctorName
     {
         get => _doctorName;
         set => SetField(ref _doctorName, value);
     }
-    
-    private string _dateTime;
+
     public string DateTime
     {
         get => _dateTime;
         set => SetField(ref _dateTime, value);
     }
-    
-    private bool _download;
+
     public bool Download
     {
         get => _download;
         set => SetField(ref _download, value);
     }
-
-    private List<ResearchDocument> ResearchDocuments;
-    private List<Appointment> Appointments = new();
-    private List<Doctor> Doctors;
 
     public void Load()
     {
@@ -83,22 +92,22 @@ public class PatientResearchDocumentsViewModel : BindingHelper
             ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
         Cards = new List<ReceptionUC>();
         foreach (var appointment in Appointments)
-        {
             if (ResearchDocuments.Find(item => item.IdAppointment == appointment.IdAppointment) != null)
             {
-                ReceptionUC card = new ReceptionUC();
+                var card = new ReceptionUC();
                 var curDoctor = Doctors.First(item => item.IdDoctor == appointment.DoctorId);
-                card.doctorName.Text = $"{curDoctor.Surname} {curDoctor.FirstName.Substring(0, 1).ToUpper()} {curDoctor.Patronymic.Substring(0, 1).ToUpper()}";
+                card.doctorName.Text =
+                    $"{curDoctor.Surname} {curDoctor.FirstName.Substring(0, 1).ToUpper()} {curDoctor.Patronymic.Substring(0, 1).ToUpper()}";
                 card.Address.Text = curDoctor.WorkAddress;
                 card.Date.Text = appointment.AppointmentDate.ToString();
-                card.Title.Text = ResearchDocuments.First(item => item.IdAppointment == appointment.IdAppointment).DocumentName;
+                card.Title.Text = ResearchDocuments.First(item => item.IdAppointment == appointment.IdAppointment)
+                    .DocumentName;
                 card.Click += (sender, args) => GoDoc(sender, args);
                 card.AppointmentId = appointment.IdAppointment.Value;
                 Cards.Add(card);
             }
-        }
     }
-    
+
     private void GoDoc(object sender, EventArgs e)
     {
         var card = sender as ReceptionUC;
@@ -119,8 +128,6 @@ public class PatientResearchDocumentsViewModel : BindingHelper
         Download = true;
     }
 
-    private int _id;
-    
     public void GoDownload(object sender, EventArgs e)
     {
         var attachment = ResearchDocuments.Find(item => item.IdAppointment == _id).Attachment;
@@ -134,19 +141,18 @@ public class PatientResearchDocumentsViewModel : BindingHelper
             var result = dialog.ShowDialog();
             if (result == true)
             {
-                MemoryStream ms = new MemoryStream(ResearchDocuments.Find(item => item.IdAppointment == _id).Attachment);
-                Image image = Image.FromStream(ms);
+                var ms = new MemoryStream(ResearchDocuments.Find(item => item.IdAppointment == _id).Attachment);
+                var image = Image.FromStream(ms);
                 try
                 {
                     image.Save(dialog.FileName);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
                 }
+
                 ms.Dispose();
             }
-            
         }
         else
         {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace EMIAS.Models;
 
-namespace EMIAS.Models;
-
-public partial class Appointment
+public class Appointment
 {
     public int? IdAppointment { get; set; }
 

@@ -1,33 +1,30 @@
-﻿using FinalTenthPractical.View.USERCONTROLS;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using EMIAS.Models;
+using System.Windows.Navigation;
 using WpfApp1.ViewModel;
-using WpfApp1.ViewModel.ApiHelper;
 
 namespace FinalTenthPractical.View.PAGES;
 
 public partial class PatientAppointmentPage : Page
 {
-    private PatientMainAppointmentViewModel _patientMainAppointmentViewModel;
-    private Frame _frame;
-    
+    private readonly Frame _frame;
+    private readonly PatientMainAppointmentViewModel _patientMainAppointmentViewModel;
+
     public PatientAppointmentPage(Frame frame)
     {
         InitializeComponent();
         _frame = frame;
         _patientMainAppointmentViewModel = new PatientMainAppointmentViewModel(_frame);
         DataContext = _patientMainAppointmentViewModel;
-        
     }
 
-    private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+    private void Button_Click(object sender, RoutedEventArgs e)
     {
         var MakeAnAppo = Window.GetWindow(this);
 
         if (MakeAnAppo != null && MakeAnAppo is PatientWindow autorized)
         {
-            autorized.Frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
+            autorized.Frame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             autorized.Frame.Content = new MakeAnAppointmentPatient(_frame);
         }
     }
