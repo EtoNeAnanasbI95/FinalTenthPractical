@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinalTenthPractical.View.PAGES"
       mc:Ignorable="d" 
-      Height="850" Width="786"
+      Height="auto" Width="auto"
       Title="DateAndTimeOfAppintmentSecond" FontFamily="Inter">
 
     <Grid>
@@ -24,9 +24,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Иванов Иван Иванович" FontSize="20" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Text="{Binding DoctorName}" FontSize="20" VerticalAlignment="Center" Height="24"/>
         <TextBlock Grid.Row="2" Text="Текущая неделя" FontSize="14"/>
-        <ListBox x:Name="LB" Grid.Row="3" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox ItemsSource="{Binding CurrentWeek}" Grid.Row="3" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" IsItemsHost="True">
@@ -40,7 +40,7 @@
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <ListBox x:Name="LB2" Grid.Row="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox ItemsSource="{Binding NextWeek}" Grid.Row="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" IsItemsHost="True">
@@ -54,7 +54,7 @@
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <ListBox x:Name="LB3" Grid.Row="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox ItemsSource="{Binding Morning}" Grid.Row="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" IsItemsHost="True">
@@ -68,7 +68,7 @@
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <ListBox x:Name="LB4" Grid.Row="9" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+        <ListBox ItemsSource="{Binding Day}" Grid.Row="9" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" IsItemsHost="True">
@@ -81,7 +81,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <ListBox x:Name="LB5" Grid.Row="11" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox ItemsSource="{Binding Evening}" Grid.Row="11" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" IsItemsHost="True">

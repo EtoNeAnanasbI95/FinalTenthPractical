@@ -10,11 +10,13 @@ namespace FinalTenthPractical.View.PAGES;
 public partial class PatientAppointmentPage : Page
 {
     private PatientMainAppointmentViewModel _patientMainAppointmentViewModel;
-    public PatientAppointmentPage()
+    private Frame _frame;
+    
+    public PatientAppointmentPage(Frame frame)
     {
         InitializeComponent();
-        
-        _patientMainAppointmentViewModel = new PatientMainAppointmentViewModel();
+        _frame = frame;
+        _patientMainAppointmentViewModel = new PatientMainAppointmentViewModel(_frame);
         DataContext = _patientMainAppointmentViewModel;
         
     }
@@ -26,7 +28,7 @@ public partial class PatientAppointmentPage : Page
         if (MakeAnAppo != null && MakeAnAppo is PatientWindow autorized)
         {
             autorized.Frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
-            autorized.Frame.Content = new MakeAnAppointmentPatient();
+            autorized.Frame.Content = new MakeAnAppointmentPatient(_frame);
         }
     }
 

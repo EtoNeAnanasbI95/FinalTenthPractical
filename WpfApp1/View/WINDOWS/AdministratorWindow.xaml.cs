@@ -33,8 +33,6 @@ namespace FinalTenthPractical.View
             DataContext = new AdminViewModel();
         }
 
-/*        public AdminViewModel viewmodel;*/
-
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
