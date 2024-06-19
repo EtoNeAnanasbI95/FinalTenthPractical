@@ -29,7 +29,7 @@ public class PatientChooseDoctorViewModel : BindingHelper
 
     private ObservableCollection<ToggleButton> _nextWeek;
     private IEnumerable<Appointment> busyDays;
-    public DoctorsPatient button;
+    public int button;
 
     private ToggleButton lastButtonDay;
     private ToggleButton lastButtonHour;
@@ -38,10 +38,17 @@ public class PatientChooseDoctorViewModel : BindingHelper
 
     private Style style;
 
-    public PatientChooseDoctorViewModel(Frame Frame, DoctorsPatient target)
+    public PatientChooseDoctorViewModel(Frame Frame, int target)
     {
         mainFrame = Frame;
         button = target;
+    }
+    
+    public PatientChooseDoctorViewModel(Frame Frame, Doctor target)
+    {
+        mainFrame = Frame;
+        //button = target;
+        LoadRoutine(target.IdDoctor.Value);
     }
 
     public string DoctorName
@@ -189,7 +196,7 @@ public class PatientChooseDoctorViewModel : BindingHelper
     public void Load()
     {
         var Doctors =
-            ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors").Where(item => item.SpecialityId == button.IdSpecials);
+            ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors").Where(item => item.SpecialityId == button);
         Cards = new ObservableCollection<ReceptionUC>();
         foreach (var doctor in Doctors)
         {
@@ -218,9 +225,20 @@ public class PatientChooseDoctorViewModel : BindingHelper
             var response =
                 ApiHelper.ApiHelper.Post<Appointment>(JsonConvert.SerializeObject(appointment), "Appointments");
 
-            if (response)
+            if (button == 0)
             {
-                ReloadStatic();
+                if (response)
+                {
+                    ApiHelper.ApiHelper.Delete<Appointment>("Appointments", MainViewModel.AppointmentidForDelete);
+                    ApiHelper.ApiHelper.Delete<AnalysDocument>("AnalysDocuments", MainViewModel.AppointmentidForDelete);
+                    ApiHelper.ApiHelper.Delete<ResearchDocument>("ResearchDocuments", MainViewModel.AppointmentidForDelete);
+                    ApiHelper.ApiHelper.Delete<AppointmentDocument>("AppointmentDocuments", MainViewModel.AppointmentidForDelete);
+                    MainViewModel.ReloadAppointments();
+                    MessageBox.Show($"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
+                }
+            } else if (response)
+            {
+                MainViewModel.ReloadAppointments();
                 MessageBox.Show($"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
             }
             else MessageBox.Show("Что-то пошло не так");
@@ -235,11 +253,6 @@ public class PatientChooseDoctorViewModel : BindingHelper
     {
         LoadRoutine((sender as ReceptionUC).AppointmentId);
     }
-
-    private async void ReloadStatic()
-    {
-        MainViewModel.Appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments");
-    } 
 
     private DateOnly GetCorrectDate(string date)
     {

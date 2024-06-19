@@ -4,13 +4,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blendc:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml.cs c:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
     x:Class="FinalTenthPractical.View.PatientWindow"
     FontFamily="Inter"
     mc:Ignorable="d"
     MinWidth="718"
     MinHeight="200"
     Background="{DynamicResource PrimaryBackground}"
-    Title="Patient" Height="860" Width="1500" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    Title="Patient"
+    Height="860" Width="1500" 
+    WindowStartupLocation="CenterScreen"
+    Loaded="PatientWindow_OnLoaded">
 
 
     <WindowChrome.WindowChrome>
@@ -104,7 +108,18 @@
                 </Image.RenderTransform>
             </Image>
         </ui:Button>
-        <TextBlock Foreground="White" Grid.Row="5" Grid.Column="1" Text="Полис ОМС:" Margin="3,0,0,0" FontSize="14"
-                   FontFamily="Inter" VerticalAlignment="Center" Grid.ColumnSpan="3" Height="16" />
+        <TextBlock Foreground="White" Grid.Row="5" Grid.Column="1" Text="Полис ОМС:" Margin="3,0,0,0" FontSize="14" 
+                   VerticalAlignment="Center" Grid.ColumnSpan="3" Height="16" >
+            <TextBlock Margin="10, 0" Text=""/>
+            <ComboBox Name="CurrentUser" Style="{DynamicResource MenuComboBox}">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectionChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="SwithAcc" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </ComboBox>
+        </TextBlock>
     </Grid>
 </Window>

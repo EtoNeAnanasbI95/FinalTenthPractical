@@ -9,7 +9,7 @@ public static class ApiHelper
 {
     private static readonly string _url = "http://93.185.159.39:5000/api";
 
-    public static T? Get<T>(string model, int id = 0)
+    public static T? Get<T>(string model, long id = 0)
     {
         var client = new HttpClient();
         var request = id == 0 ? $"{model}" : $"{model}/{id}";
@@ -18,7 +18,7 @@ public static class ApiHelper
         return JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);
     }
 
-    public static bool Put<T>(string json, string model, int id)
+    public static bool Put<T>(string json, string model, long id)
     {
         var client = new HttpClient();
         HttpContent body = new StringContent(json, Encoding.UTF8, "application/json");
@@ -36,7 +36,7 @@ public static class ApiHelper
         return true;
     }
 
-    public static bool Delete<T>(string model, int id)
+    public static bool Delete<T>(string model, long id)
     {
         var client = new HttpClient();
         var response = client.DeleteAsync($"{_url}/{model}/{id}").Result;

@@ -43,7 +43,7 @@ public class PatientMakeAnAppointmentViewModel : BindingHelper
 
     private void GoChooseDoctor(object sender, EventArgs e)
     {
-        _mainFrame.Navigate(new DateAndTimeOfAppintment(_mainFrame, sender as DoctorsPatient));
+        _mainFrame.Navigate(new DateAndTimeOfAppintment(_mainFrame, (sender as DoctorsPatient).IdSpecials));
     }
 
     public void GetData()

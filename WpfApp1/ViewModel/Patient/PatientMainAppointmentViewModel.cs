@@ -62,7 +62,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
 
     private void GoChooseDoctor(object sender, EventArgs e)
     {
-        _frame.Navigate(new DateAndTimeOfAppintment(_frame, sender as DoctorsPatient));
+        _frame.Navigate(new DateAndTimeOfAppintment(_frame, (sender as DoctorsPatient).IdSpecials));
     }
 
     public event EventHandler GoPatient;
@@ -75,6 +75,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
             GoPatient?.Invoke(this, EventArgs.Empty);
             Settings.Default.CurrentPatient = Convert.ToInt32(OMS);
             Settings.Default.Save();
+            MainViewModel.NewUser();
         }
         catch (Exception)
         {
@@ -159,10 +160,10 @@ public class PatientMainAppointmentViewModel : BindingHelper
                 card.Address.Text = currDoctor.WorkAddress;
                 card.FirstAction.Content = "Перенести";
                 card.SecondAction.Content = "Отменить";
+                card.FirstActionClick += (sender, e) => Move(sender, e);
                 card.SecondActionClick += (sender, e) => delete(sender, e);
                 cards.Add(card);
             }
-
             var mounthPatient = new MounthPatient();
             mounthPatient.mounth.Text = _timeOf.AddMonths(i).ToString("MMMM yyyy");
             mounthPatient.Items = cards;
@@ -179,8 +180,20 @@ public class PatientMainAppointmentViewModel : BindingHelper
         ApiHelper.ApiHelper.Delete<ResearchDocument>("ResearchDocuments", parent.CurrentAppointmentId);
         ApiHelper.ApiHelper.Delete<AppointmentDocument>("AppointmentDocuments", parent.CurrentAppointmentId);
         AppointmentCards[parent.CycleStage].Items.Remove(parent);
+        
+        MainViewModel.ReloadAppointments();
+        MainViewModel.ReloadAnalysDocuments();
     }
 
+    private void Move(object sender, EventArgs e)
+    {
+        var parent = sender as MounthAppointmentPatient;
+        MainViewModel.AppointmentidForDelete = parent.CurrentAppointmentId;
+        MainViewModel.ReloadAppointments();
+        MainViewModel.ReloadAnalysDocuments();
+        var appointment = MainViewModel.Appointments.Find(item => item.IdAppointment == parent.CurrentAppointmentId);
+        _frame.Navigate(new DateAndTimeOfAppintment(_frame, MainViewModel.Doctors.Find(item => item.IdDoctor == appointment.DoctorId)));
+    }
 
     public void ArchiveAppointments()
     {
@@ -215,9 +228,9 @@ public class PatientMainAppointmentViewModel : BindingHelper
                         card.DoctorName.Text = $"{currDoctor.Surname} {currDoctor.FirstName} {currDoctor.Patronymic}";
                         card.Address.Text = currDoctor.WorkAddress;
                         card.FirstAction.Content = "Повторить";
-                        // card.FirstAction.Click += "Перенести";
                         card.SecondAction.Content = "Отменить";
                         card.SecondActionClick += (sender, e) => delete(sender, e);
+                        card.FirstActionClick += (sender, e) => Move(sender, e);
                         cards.Add(card);
                     }
 
@@ -229,4 +242,6 @@ public class PatientMainAppointmentViewModel : BindingHelper
             }
         }
     }
+    
+    
 }

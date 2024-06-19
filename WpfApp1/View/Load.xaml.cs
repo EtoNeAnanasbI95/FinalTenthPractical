@@ -20,16 +20,18 @@ public partial class Load : Window
     public Load()
     {
         InitializeComponent();
+        // Settings.Default.CurrentPatient = 0;
+        // Settings.Default.Save();
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
-        MainViewModel.Appointments = ApiHelper.Get<List<Appointment>>("Appointments");
-        MainViewModel.Doctors = ApiHelper.Get<List<Doctor>>("Doctors");
-        MainViewModel.AnalysDocuments = ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        timer = new Timer(100);
+        MainViewModel.Appointments = ApiHelper.Get<List<Appointment>>("Appointments");
+        MainViewModel.Doctors = ApiHelper.Get<List<Doctor>>("Doctors");
+        MainViewModel.AnalysDocuments = ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
+        MainViewModel.LoadUsers();
+        timer = new Timer(700);
         timer.Elapsed += Timer_Elapsed;
         timer.AutoReset = false;
         timer.Start();

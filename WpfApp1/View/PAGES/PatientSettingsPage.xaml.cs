@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using FinalTenthPractical.Properties;
 using WpfApp1;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View.PAGES;
 
@@ -10,9 +11,14 @@ namespace FinalTenthPractical.View.PAGES;
 /// </summary>
 public partial class PatientSettingsPage : Page
 {
+    private PatientSettingsViewModel _viewModel;
+    
     public PatientSettingsPage()
     {
         InitializeComponent();
+        _viewModel = new PatientSettingsViewModel();
+        DataContext = _viewModel;
+        
     }
 
     private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -30,6 +36,7 @@ public partial class PatientSettingsPage : Page
             }
         }
     }
+    
 
     private void ExitClick(object sender, RoutedEventArgs e)
     {
@@ -38,6 +45,19 @@ public partial class PatientSettingsPage : Page
         var auth = new AuthorizationWindow();
         auth.Show();
         var window = Window.GetWindow(this);
+        window.Close();
+    }
+
+    private void PatientSettingsPage_OnLoaded(object sender, RoutedEventArgs e)
+    { 
+        _viewModel.LoadData();
+    }
+
+    private void NewAcc(object sender, RoutedEventArgs e)
+    {
+        var window = Window.GetWindow(this);
+        AuthorizationWindow auth = new AuthorizationWindow();
+        auth.Show();
         window.Close();
     }
 }

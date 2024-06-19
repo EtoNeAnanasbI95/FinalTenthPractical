@@ -3,7 +3,10 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using EMIAS.Models;
+using FinalTenthPractical.Properties;
 using FinalTenthPractical.View.PAGES;
+using WpfApp1.ViewModel;
 
 namespace FinalTenthPractical.View;
 
@@ -12,6 +15,8 @@ namespace FinalTenthPractical.View;
 /// </summary>
 public partial class PatientWindow : Window
 {
+    private PatientSettingsViewModel _viewModel;
+    
     public PatientWindow()
     {
         InitializeComponent();
@@ -19,6 +24,11 @@ public partial class PatientWindow : Window
         Frame.Content = new PatientAppointmentPage(Frame);
         MinWidth = 718;
         MinHeight = 472;
+        _viewModel = new PatientSettingsViewModel();
+        DataContext = _viewModel;
+        CurrentUser.ItemsSource = MainViewModel.Users;
+        CurrentUser.SelectedItem = MainViewModel.Users.Find(item => item.Oms == Settings.Default.CurrentPatient);
+        CurrentUser.DisplayMemberPath = "FirstName";
     }
 
     private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -31,15 +41,7 @@ public partial class PatientWindow : Window
     {
         DragMove();
     }
-
-    private void Settings(object sender, RoutedEventArgs e)
-    {
-    }
-
-    private void Grid_Scroll(object sender, ScrollEventArgs e)
-    {
-    }
-
+    
     private void RollUpButton_Click(object sender, RoutedEventArgs e)
     {
         WindowState = WindowState.Minimized;
@@ -58,10 +60,6 @@ public partial class PatientWindow : Window
             else
                 WindowState = WindowState.Normal;
         }
-    }
-
-    private void Frame_Navigated(object sender, NavigationEventArgs e)
-    {
     }
 
     private void Button_Settings(object sender, RoutedEventArgs e)
@@ -89,7 +87,8 @@ public partial class PatientWindow : Window
             }
     }
 
-    private void Window_Loaded(object sender, RoutedEventArgs e)
+    private void PatientWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
+        //_viewModel.LoadData();
     }
 }
