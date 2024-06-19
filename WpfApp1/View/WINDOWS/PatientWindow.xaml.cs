@@ -99,6 +99,9 @@ namespace FinalTenthPractical.View
                         break; 
                     case "Записи и направления":
                         Frame.Navigate(new PatientAppointmentPage());
+                        break; 
+                    case "Запись":
+                        Frame.Navigate(new DateAndTimeOfAppintment());
                         break;  
                 }
             }
