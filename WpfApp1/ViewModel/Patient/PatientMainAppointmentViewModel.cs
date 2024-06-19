@@ -113,7 +113,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
 
     public void ActiveAppointments()
     {
-        var appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments").Where(item =>
+        var appointments = MainViewModel.Appointments.Where(item =>
             item.Oms == Settings.Default.CurrentPatient && item.AppointmentDate > _timeOf &&
             item.AppointmentDate < _timeTo);
         var doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
@@ -168,10 +168,10 @@ public class PatientMainAppointmentViewModel : BindingHelper
     {
         if (_timeOfArchive != DateOnly.MinValue && _timeToArchive != DateOnly.MinValue)
         {
-            var appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments").Where(item =>
+            var appointments = MainViewModel.Appointments.Where(item =>
                 item.Oms == Settings.Default.CurrentPatient && item.AppointmentDate > _timeOfArchive &&
                 item.AppointmentDate < _timeToArchive);
-            var doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
+            var doctors = MainViewModel.Doctors;
 
             var arhiveAppointments = appointments.Where(item => item.StatusId == 4);
             var Cards = new ObservableCollection<MounthPatient>();

@@ -60,11 +60,8 @@ public class PatientArchiveAppointmentViewModel : BindingHelper
     {
         AppointmentDocuments =
             ApiHelper.ApiHelper.Get<List<AppointmentDocument>>("AppointmentDocuments");
-        Appointments =
-            ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments")
-                .Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
-        Doctors =
-            ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
+        Appointments = MainViewModel.Appointments.Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
+        Doctors = MainViewModel.Doctors;
         Cards = new List<ReceptionUC>();
         foreach (var appointment in Appointments)
         {

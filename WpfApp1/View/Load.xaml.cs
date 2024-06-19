@@ -9,10 +9,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EMIAS.Models;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
 using FinalTenthPractical.View.WINDOWS;
 using WpfApp1.ViewModel;
+using WpfApp1.ViewModel.ApiHelper;
 
 namespace WpfApp1;
 
@@ -27,6 +29,10 @@ public partial class Load : Window
     {
         InitializeComponent();
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        
+        MainViewModel.Appointments = ApiHelper.Get<List<Appointment>>("Appointments");
+        MainViewModel.Doctors = ApiHelper.Get<List<Doctor>>("Doctors");
+        MainViewModel.AnalysDocuments = ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)

@@ -77,7 +77,7 @@ public class PatientResearchDocumentsViewModel : BindingHelper
         ResearchDocuments =
             ApiHelper.ApiHelper.Get<List<ResearchDocument>>("ResearchDocuments");
         Appointments =
-            ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments")
+            MainViewModel.Appointments
                 .Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
         Doctors =
             ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
