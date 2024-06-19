@@ -47,13 +47,9 @@ public class PatientAnalysDocumentsViewModel : BindingHelper
 
     public void Load()
     {
-        AnalysDocuments =
-            ApiHelper.ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
-        Appointments =
-            ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments")
-                .Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
-        Doctors =
-             ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
+        AnalysDocuments = MainViewModel.AnalysDocuments;
+        Appointments = MainViewModel.Appointments.Where(item => item.StatusId == 4 && item.Oms == Settings.Default.CurrentPatient).ToList();
+        Doctors = MainViewModel.Doctors;
         Cards = new List<AnalizUC>();
         foreach (var appointment in Appointments)
         {

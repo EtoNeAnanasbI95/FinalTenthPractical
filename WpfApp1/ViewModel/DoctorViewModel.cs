@@ -29,7 +29,7 @@ public class DoctorViewModel : BindingHelper
         Console.WriteLine("Try auth doctor");
         try
         {
-            var doctor = ApiHelper.ApiHelper.Get<Doctor>("Doctors", Convert.ToInt32(NumberOfDoctor));
+            var doctor = MainViewModel.Doctors.Find(item => item.IdDoctor == Convert.ToInt32(NumberOfDoctor));
             var admin = ApiHelper.ApiHelper.Get<Admin>("Admins", Convert.ToInt32(NumberOfDoctor));
             if (doctor.EnterPassword == PasswordDoctor)
             {
