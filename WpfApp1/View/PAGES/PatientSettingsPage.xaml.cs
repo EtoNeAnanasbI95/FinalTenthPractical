@@ -37,9 +37,9 @@ public partial class PatientSettingsPage : Page
         }
     }
     
-
     private void ExitClick(object sender, RoutedEventArgs e)
     {
+        MainViewModel.ExitFromAcc();
         Settings.Default.CurrentPatient = 0;
         Settings.Default.Save();
         var auth = new AuthorizationWindow();

@@ -46,18 +46,32 @@ public static class MainViewModel
         {
             var json = File.ReadAllText("UserData.json");
             Users = JsonConvert.DeserializeObject<List<Patient>>(json);
-            var user = ApiHelper.ApiHelper.Get<Patient>("Patients", Settings.Default.CurrentPatient);
-            if (!Users.Contains(user)) Users.Add(user);
-            json = JsonConvert.SerializeObject(Users);
-            File.WriteAllText("UserData.json", json);
+            if (Users.Count == 0) GoUser();
+            else
+            {
+                var user = ApiHelper.ApiHelper.Get<Patient>("Patients", Settings.Default.CurrentPatient);
+                var checkpoint = Users.Find(item => item.Oms == Settings.Default.CurrentPatient);
+                if (checkpoint == null) Users.Add(user);
+                json = JsonConvert.SerializeObject(Users);
+                File.WriteAllText("UserData.json", json);
+            }
         }
-        else
-        {
-            var user = ApiHelper.ApiHelper.Get<Patient>("Patients", Settings.Default.CurrentPatient);
-            Users.Add(user);
-            var json = JsonConvert.SerializeObject(Users);
-            File.WriteAllText("UserData.json", json);
-        }
+        else GoUser();
+    }
+
+    private static void GoUser()
+    {
+        var user = ApiHelper.ApiHelper.Get<Patient>("Patients", Settings.Default.CurrentPatient);
+        Users.Add(user);
+        var json = JsonConvert.SerializeObject(Users);
+        File.WriteAllText("UserData.json", json);
+    }
+
+    public static void ExitFromAcc()
+    {
+        Users.Remove(Users.Find(item => item.Oms == Settings.Default.CurrentPatient));
+        var json = JsonConvert.SerializeObject(Users);
+        File.WriteAllText("UserData.json", json);
     }
 
     public static void LoadUsers()

@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <ApplicationIcon>EMIAS.ico</ApplicationIcon>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net8.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
@@ -109,6 +110,10 @@
         <None Remove="Model\img\vaccine.png"/>
         <Resource Include="Model\img\vaccine.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="EMIAS.ico" />
+        <Resource Include="EMIAS.ico">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
     </ItemGroup>
 

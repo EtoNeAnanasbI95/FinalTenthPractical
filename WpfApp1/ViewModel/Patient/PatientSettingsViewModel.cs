@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using EMIAS.Models;
 using FinalTenthPractical.Properties;
+using FinalTenthPractical.View;
+using FinalTenthPractical.View.PAGES;
 using Newtonsoft.Json;
 using SecondLibPractice;
 
@@ -127,11 +129,9 @@ public class PatientSettingsViewModel : BindingHelper
 
     public void SwithAcc(object sender, EventArgs e)
     {
-        var save = MainFrame;
         var choisedUser = (sender as ComboBox).SelectedItem as Patient;
         Settings.Default.CurrentPatient = choisedUser.Oms.Value;
         Settings.Default.Save();
-        MainFrame = null;
-        MainFrame = save;
+        MainFrame.Navigate(new PatientAppointmentPage(MainFrame));
     }
 }

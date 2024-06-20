@@ -24,11 +24,10 @@ public partial class PatientWindow : Window
         Frame.Content = new PatientAppointmentPage(Frame);
         MinWidth = 718;
         MinHeight = 472;
-        _viewModel = new PatientSettingsViewModel();
-        DataContext = _viewModel;
         CurrentUser.ItemsSource = MainViewModel.Users;
         CurrentUser.SelectedItem = MainViewModel.Users.Find(item => item.Oms == Settings.Default.CurrentPatient);
-        CurrentUser.DisplayMemberPath = "FirstName";
+        _viewModel = new PatientSettingsViewModel(Frame);
+        DataContext = _viewModel;
     }
 
     private void Button_Click_1(object sender, RoutedEventArgs e)

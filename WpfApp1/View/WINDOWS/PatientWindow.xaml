@@ -110,8 +110,13 @@
         </ui:Button>
         <TextBlock Foreground="White" Grid.Row="5" Grid.Column="1" Text="Полис ОМС:" Margin="3,0,0,0" FontSize="14" 
                    VerticalAlignment="Center" Grid.ColumnSpan="3" Height="16" >
-            <TextBlock Margin="10, 0" Text=""/>
-            <ComboBox Name="CurrentUser" Style="{DynamicResource MenuComboBox}">
+            <ComboBox Name="CurrentUser" Foreground="White" Style="{DynamicResource MenuComboBox}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="{StaticResource Inter}" Foreground="#FFFFFF" Margin="2"
+                                   Text="{Binding FirstName}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
                 <b:Interaction.Triggers>
                     <b:EventTrigger EventName="SelectionChanged">
                         <b:CallMethodAction

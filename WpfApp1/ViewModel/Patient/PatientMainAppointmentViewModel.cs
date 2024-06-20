@@ -72,10 +72,10 @@ public class PatientMainAppointmentViewModel : BindingHelper
         try
         {
             var doctor = ApiHelper.ApiHelper.Get<Patient>("Patients", Convert.ToInt32(OMS));
-            GoPatient?.Invoke(this, EventArgs.Empty);
             Settings.Default.CurrentPatient = Convert.ToInt32(OMS);
             Settings.Default.Save();
             MainViewModel.NewUser();
+            GoPatient?.Invoke(this, EventArgs.Empty);
         }
         catch (Exception)
         {
