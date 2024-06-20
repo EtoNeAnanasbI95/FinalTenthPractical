@@ -5,8 +5,6 @@ namespace FinalTenthPractical.View.USERCONTROLS;
 
 public partial class DoctorsPatient : UserControl
 {
-    private int _idSpecials;
-
     private readonly Dictionary<int, string> imageName = new()
     {
         { 1, "Педиатор" },
@@ -38,6 +36,8 @@ public partial class DoctorsPatient : UserControl
         { 11, @"..\..\..\Model\img\emergency.png" },
         { 12, @"..\..\..\Model\img\covid.png" }
     };
+
+    private int _idSpecials;
 
     public DoctorsPatient()
     {

@@ -111,9 +111,9 @@
         <Resource Include="Model\img\vaccine.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="EMIAS.ico" />
+        <None Remove="EMIAS.ico"/>
         <Resource Include="EMIAS.ico">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
     </ItemGroup>
 

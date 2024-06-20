@@ -10,10 +10,10 @@ namespace WpfApp1.ViewModel;
 
 public class PatientMainAppointmentViewModel : BindingHelper
 {
+    private readonly Frame _frame;
     private ObservableCollection<MounthPatient> _appointmentCards;
 
     private ObservableCollection<MounthPatient> _archiveAppointmentCards;
-    private readonly Frame _frame;
 
     private string _OMS;
 
@@ -164,6 +164,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
                 card.SecondActionClick += (sender, e) => delete(sender, e);
                 cards.Add(card);
             }
+
             var mounthPatient = new MounthPatient();
             mounthPatient.mounth.Text = _timeOf.AddMonths(i).ToString("MMMM yyyy");
             mounthPatient.Items = cards;
@@ -180,7 +181,7 @@ public class PatientMainAppointmentViewModel : BindingHelper
         ApiHelper.ApiHelper.Delete<ResearchDocument>("ResearchDocuments", parent.CurrentAppointmentId);
         ApiHelper.ApiHelper.Delete<AppointmentDocument>("AppointmentDocuments", parent.CurrentAppointmentId);
         AppointmentCards[parent.CycleStage].Items.Remove(parent);
-        
+
         MainViewModel.ReloadAppointments();
         MainViewModel.ReloadAnalysDocuments();
     }
@@ -192,7 +193,8 @@ public class PatientMainAppointmentViewModel : BindingHelper
         MainViewModel.ReloadAppointments();
         MainViewModel.ReloadAnalysDocuments();
         var appointment = MainViewModel.Appointments.Find(item => item.IdAppointment == parent.CurrentAppointmentId);
-        _frame.Navigate(new DateAndTimeOfAppintment(_frame, MainViewModel.Doctors.Find(item => item.IdDoctor == appointment.DoctorId)));
+        _frame.Navigate(new DateAndTimeOfAppintment(_frame,
+            MainViewModel.Doctors.Find(item => item.IdDoctor == appointment.DoctorId)));
     }
 
     public void ArchiveAppointments()
@@ -242,6 +244,4 @@ public class PatientMainAppointmentViewModel : BindingHelper
             }
         }
     }
-    
-    
 }

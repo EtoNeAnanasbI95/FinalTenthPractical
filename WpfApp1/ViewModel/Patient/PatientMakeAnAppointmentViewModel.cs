@@ -10,9 +10,8 @@ namespace WpfApp1.ViewModel;
 
 public class PatientMakeAnAppointmentViewModel : BindingHelper
 {
-    private ObservableCollection<DoctorsPatient> _directions;
-
     private readonly Frame _mainFrame;
+    private ObservableCollection<DoctorsPatient> _directions;
 
     private ObservableCollection<DoctorsPatient> _specialities;
 

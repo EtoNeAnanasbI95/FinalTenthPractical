@@ -76,7 +76,8 @@ public class PatientArchiveAppointmentViewModel : BindingHelper
                 $"{curDoctor.Surname} {curDoctor.FirstName.Substring(0, 1).ToUpper()} {curDoctor.Patronymic.Substring(0, 1).ToUpper()}";
             card.Address.Text = curDoctor.WorkAddress;
             card.Date.Text = appointment.AppointmentDate.ToString();
-            card.Title.Text = AppointmentDocuments.First(item => item.IdAppointment == appointment.IdAppointment).DocumentName;
+            card.Title.Text = AppointmentDocuments.First(item => item.IdAppointment == appointment.IdAppointment)
+                .DocumentName;
             card.Click += (sender, args) => GoDoc(sender, args);
             card.AppointmentId = appointment.IdAppointment.Value;
             Cards.Add(card);

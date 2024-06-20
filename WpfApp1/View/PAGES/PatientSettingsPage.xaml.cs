@@ -11,14 +11,13 @@ namespace FinalTenthPractical.View.PAGES;
 /// </summary>
 public partial class PatientSettingsPage : Page
 {
-    private PatientSettingsViewModel _viewModel;
-    
+    private readonly PatientSettingsViewModel _viewModel;
+
     public PatientSettingsPage()
     {
         InitializeComponent();
         _viewModel = new PatientSettingsViewModel();
         DataContext = _viewModel;
-        
     }
 
     private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -36,7 +35,7 @@ public partial class PatientSettingsPage : Page
             }
         }
     }
-    
+
     private void ExitClick(object sender, RoutedEventArgs e)
     {
         MainViewModel.ExitFromAcc();
@@ -49,14 +48,14 @@ public partial class PatientSettingsPage : Page
     }
 
     private void PatientSettingsPage_OnLoaded(object sender, RoutedEventArgs e)
-    { 
+    {
         _viewModel.LoadData();
     }
 
     private void NewAcc(object sender, RoutedEventArgs e)
     {
         var window = Window.GetWindow(this);
-        AuthorizationWindow auth = new AuthorizationWindow();
+        var auth = new AuthorizationWindow();
         auth.Show();
         window.Close();
     }

@@ -9,16 +9,18 @@ namespace WpfApp1.ViewModel;
 
 public class AdminViewModel : BindingHelper
 {
+    private readonly AdminPage adminpage = new(null);
+    private readonly AdminDoctorLBPage docpage = new(null);
+
+    private readonly AdminPatientLBPage patpage = new(null);
     private string _LoginOfAdmin;
     private string _PasswordAdmin;
 
     private int _selectedIndexCombo;
 
     private int _selectedIndexData;
-    private readonly AdminPage adminpage = new(null);
 
     private string birthday;
-    private readonly AdminDoctorLBPage docpage = new(null);
 
     private string firstname;
 
@@ -26,8 +28,6 @@ public class AdminViewModel : BindingHelper
     private string oms;
 
     private string password;
-
-    private readonly AdminPatientLBPage patpage = new(null);
 
     private string patronymic;
 

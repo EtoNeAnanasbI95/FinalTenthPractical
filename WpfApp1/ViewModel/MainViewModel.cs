@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Windows;
 using EMIAS.Models;
 using FinalTenthPractical.Properties;
 using Newtonsoft.Json;
@@ -9,36 +8,36 @@ namespace WpfApp1.ViewModel;
 public static class MainViewModel
 {
     public static List<AnalysDocument> AnalysDocuments;
-    
+
     public static List<Appointment> Appointments;
-    
+
     public static List<Doctor> Doctors;
 
     public static int AppointmentidForDelete;
 
-    public async static void ReloadAll()
+    public static List<Patient> Users = new();
+
+    public static async void ReloadAll()
     {
         Appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments");
         AnalysDocuments = ApiHelper.ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
-        Doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
-    }
-    
-    public async static void ReloadAnalysDocuments()
-    {
-        AnalysDocuments = ApiHelper.ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
-    }
-    
-    public async static void ReloadAppointments()
-    {
-        Appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments");
-    }
-    
-    public async static void ReloadDoctors()
-    {
         Doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
     }
 
-    public static List<Patient> Users = new();
+    public static async void ReloadAnalysDocuments()
+    {
+        AnalysDocuments = ApiHelper.ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
+    }
+
+    public static async void ReloadAppointments()
+    {
+        Appointments = ApiHelper.ApiHelper.Get<List<Appointment>>("Appointments");
+    }
+
+    public static async void ReloadDoctors()
+    {
+        Doctors = ApiHelper.ApiHelper.Get<List<Doctor>>("Doctors");
+    }
 
     public static void NewUser()
     {
@@ -46,7 +45,10 @@ public static class MainViewModel
         {
             var json = File.ReadAllText("UserData.json");
             Users = JsonConvert.DeserializeObject<List<Patient>>(json);
-            if (Users.Count == 0) GoUser();
+            if (Users.Count == 0)
+            {
+                GoUser();
+            }
             else
             {
                 var user = ApiHelper.ApiHelper.Get<Patient>("Patients", Settings.Default.CurrentPatient);
@@ -56,7 +58,10 @@ public static class MainViewModel
                 File.WriteAllText("UserData.json", json);
             }
         }
-        else GoUser();
+        else
+        {
+            GoUser();
+        }
     }
 
     private static void GoUser()

@@ -1,9 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Navigation;
-using EMIAS.Models;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View.PAGES;
 using WpfApp1.ViewModel;
@@ -15,8 +12,8 @@ namespace FinalTenthPractical.View;
 /// </summary>
 public partial class PatientWindow : Window
 {
-    private PatientSettingsViewModel _viewModel;
-    
+    private readonly PatientSettingsViewModel _viewModel;
+
     public PatientWindow()
     {
         InitializeComponent();
@@ -40,7 +37,7 @@ public partial class PatientWindow : Window
     {
         DragMove();
     }
-    
+
     private void RollUpButton_Click(object sender, RoutedEventArgs e)
     {
         WindowState = WindowState.Minimized;

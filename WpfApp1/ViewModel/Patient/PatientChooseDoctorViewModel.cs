@@ -43,7 +43,7 @@ public class PatientChooseDoctorViewModel : BindingHelper
         mainFrame = Frame;
         button = target;
     }
-    
+
     public PatientChooseDoctorViewModel(Frame Frame, Doctor target)
     {
         mainFrame = Frame;
@@ -218,7 +218,8 @@ public class PatientChooseDoctorViewModel : BindingHelper
             var appointment = new Appointment();
             appointment.Oms = Settings.Default.CurrentPatient;
             appointment.AppointmentDate = GetCorrectDate(lastButtonDay.Content.ToString());
-            appointment.AppointmentTime = TimeOnly.FromDateTime(DateTime.ParseExact(lastButtonHour.Content.ToString()!, "HH:mm", new CultureInfo("ru-RU")));
+            appointment.AppointmentTime = TimeOnly.FromDateTime(DateTime.ParseExact(lastButtonHour.Content.ToString()!,
+                "HH:mm", new CultureInfo("ru-RU")));
             appointment.DoctorId = _doctorId;
             appointment.StatusId = 1;
 
@@ -231,17 +232,25 @@ public class PatientChooseDoctorViewModel : BindingHelper
                 {
                     ApiHelper.ApiHelper.Delete<Appointment>("Appointments", MainViewModel.AppointmentidForDelete);
                     ApiHelper.ApiHelper.Delete<AnalysDocument>("AnalysDocuments", MainViewModel.AppointmentidForDelete);
-                    ApiHelper.ApiHelper.Delete<ResearchDocument>("ResearchDocuments", MainViewModel.AppointmentidForDelete);
-                    ApiHelper.ApiHelper.Delete<AppointmentDocument>("AppointmentDocuments", MainViewModel.AppointmentidForDelete);
+                    ApiHelper.ApiHelper.Delete<ResearchDocument>("ResearchDocuments",
+                        MainViewModel.AppointmentidForDelete);
+                    ApiHelper.ApiHelper.Delete<AppointmentDocument>("AppointmentDocuments",
+                        MainViewModel.AppointmentidForDelete);
                     MainViewModel.ReloadAppointments();
-                    MessageBox.Show($"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
+                    MessageBox.Show(
+                        $"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
                 }
-            } else if (response)
+            }
+            else if (response)
             {
                 MainViewModel.ReloadAppointments();
-                MessageBox.Show($"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
+                MessageBox.Show(
+                    $"Вы успешно записаны на приём {GetCorrectDate(lastButtonDay.Content.ToString()).ToString()}");
             }
-            else MessageBox.Show("Что-то пошло не так");
+            else
+            {
+                MessageBox.Show("Что-то пошло не так");
+            }
         }
         else
         {
