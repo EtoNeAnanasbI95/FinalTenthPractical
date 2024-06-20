@@ -33,5 +33,65 @@ namespace FinalTenthPractical.Properties {
                 this["CurrentTheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long CurrentPatient {
+            get {
+                return ((long)(this["CurrentPatient"]));
+            }
+            set {
+                this["CurrentPatient"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentDoctor {
+            get {
+                return ((int)(this["CurrentDoctor"]));
+            }
+            set {
+                this["CurrentDoctor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentAdmin {
+            get {
+                return ((int)(this["CurrentAdmin"]));
+            }
+            set {
+                this["CurrentAdmin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("null")]
+        public string CurrentDoctorPassword {
+            get {
+                return ((string)(this["CurrentDoctorPassword"]));
+            }
+            set {
+                this["CurrentDoctorPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("null")]
+        public string CurrentAdminPassword {
+            get {
+                return ((string)(this["CurrentAdminPassword"]));
+            }
+            set {
+                this["CurrentAdminPassword"] = value;
+            }
+        }
     }
 }

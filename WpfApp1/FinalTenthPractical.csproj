@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <ApplicationIcon>EMIAS.ico</ApplicationIcon>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net8.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
@@ -9,36 +10,149 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Model\" />
+        <None Remove="Model\Copy.png"/>
+        <None Remove="Model\Cross_negate.png"/>
+        <None Remove="Model\Cross_negate_negate.png"/>
+        <None Remove="Model\Moon.png"/>
+        <None Remove="Model\scroll_negate.png"/>
+        <None Remove="Model\scroll_negate_negate.png"/>
+        <None Remove="Model\Settings.png"/>
+        <None Remove="Model\square.png"/>
+        <None Remove="Model\square_negate.png"/>
+        <None Remove="Model\TrashBeen.png"/>
+        <None Remove="Model\изображение 19.png"/>
+        <None Remove="Model\Офтальмолог.png"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="View\Authorization.xaml">
-        <Generator>MSBuild:Compile</Generator>
-        <XamlRuntime>Wpf</XamlRuntime>
-        <SubType>Designer</SubType>
-      </Page>
+        <Resource Include="Model\Copy.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\Cross_negate_negate.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\Moon.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\scroll_negate.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\scroll_negate_negate.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\Settings.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\square.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\square_negate.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\TrashBeen.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Model\изображение 19.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\cardiologist.png"/>
+        <Resource Include="Model\img\cardiologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\covid.png"/>
+        <Resource Include="Model\img\covid.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\dentist.png"/>
+        <Resource Include="Model\img\dentist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\doctor.png"/>
+        <Resource Include="Model\img\doctor.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\document.png"/>
+        <Resource Include="Model\img\document.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\emergency.png"/>
+        <Resource Include="Model\img\emergency.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\gynecologist.png"/>
+        <Resource Include="Model\img\gynecologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\oncologist.png"/>
+        <Resource Include="Model\img\oncologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\ophthalmologist.png"/>
+        <Resource Include="Model\img\ophthalmologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\otorhinolaryngologist.png"/>
+        <Resource Include="Model\img\otorhinolaryngologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\psychologist.png"/>
+        <Resource Include="Model\img\psychologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\surgeon.png"/>
+        <Resource Include="Model\img\surgeon.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\traumatologist.png"/>
+        <Resource Include="Model\img\traumatologist.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Model\img\vaccine.png"/>
+        <Resource Include="Model\img\vaccine.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="EMIAS.ico"/>
+        <Resource Include="EMIAS.ico">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
-      <PackageReference Include="Mpt.10labThemes" Version="1.1.0" />
-      <PackageReference Include="Mpt.BindingHelper" Version="1.0.1" />
+        <Page Update="View\Load.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Properties\Settings.Designer.cs">
-        <DesignTimeSharedInput>True</DesignTimeSharedInput>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Settings.settings</DependentUpon>
-      </Compile>
+        <PackageReference Include="FreeSpire.Doc" Version="12.2.0"/>
+        <PackageReference Include="FreeSpire.Office" Version="8.2.0"/>
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122"/>
+        <PackageReference Include="Mpt.10labThemes" Version="1.3.9"/>
+        <PackageReference Include="Mpt.BindingHelper" Version="1.0.1"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Properties\Settings.settings">
-        <Generator>SettingsSingleFileGenerator</Generator>
-        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-      </None>
+        <Resource Include="Model\Cross_negate.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Properties\Settings.Designer.cs">
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="FinalTenthPractical.View.PAGES.AdminDoctorLBPage"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Foreground="{DynamicResource PrimaryForeground}"
+      Background="Transparent"
+      Height="Auto" Width="Auto" Title="AdminDoctor">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="562*" />
+        </Grid.RowDefinitions>
+        <ui:TextBox Name="Password" Style="{DynamicResource ClearTextbox }" Grid.Row="0"
+                    PlaceholderText="Пароль для входа" Text="{Binding Password}" />
+        <ui:TextBox Name="Surname" Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"
+                    Text="{Binding Surname}" />
+        <ui:TextBox Name="Firstname" Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"
+                    Text="{Binding Firstname}" />
+        <ui:TextBox Name="Patro" Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"
+                    Text="{Binding Patronymic}" />
+        <ComboBox Name="Combo" Style="{DynamicResource ClearComboBoxStyle}" Grid.Row="8"
+                  SelectedIndex="{Binding Special}">
+            <ComboBoxItem Content="Офтальмолог" />
+            <ComboBoxItem Content="Педиатр" />
+            <ComboBoxItem Content="Какой-то хуй" />
+        </ComboBox>
+        <ui:TextBox Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес места работы"
+                    Text="{Binding Workaddr}" />
+    </Grid>
+</Page>

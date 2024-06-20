@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="View\PAGES\DateAndTimeOfAppintment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\DateAndTimeOfAppintmentSecond.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\MakeAnAppointmentPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PAGES\SelectingSpecialistPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\AnalizUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContril.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContrilEnd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorRightContrilTime.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DoctorWay.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\MounthAppointmentPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\MounthPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\ReceptionUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\USERCONTROLS\DateOfAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\PAGES\DateAndTimeOfAppintment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\DateAndTimeOfAppintmentSecond.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\MakeAnAppointmentPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PAGES\SelectingSpecialistPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\AnalizUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContril.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContrilEnd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorRightContrilTime.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DoctorWay.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\MounthAppointmentPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\MounthPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\ReceptionUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\USERCONTROLS\DateOfAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

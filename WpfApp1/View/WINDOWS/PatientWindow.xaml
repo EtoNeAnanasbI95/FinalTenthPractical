@@ -1,0 +1,130 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blendc:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml.cs c:\users\ilyam\source\repos\finaltenthpractical\wpfapp1\view\patient.xaml/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    x:Class="FinalTenthPractical.View.PatientWindow"
+    FontFamily="Inter"
+    mc:Ignorable="d"
+    MinWidth="718"
+    MinHeight="200"
+    Background="{DynamicResource PrimaryBackground}"
+    Title="Patient"
+    Height="860" Width="1500"
+    WindowStartupLocation="CenterScreen"
+    Loaded="PatientWindow_OnLoaded">
+
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            ResizeBorderThickness="5"
+            GlassFrameThickness="0"
+            CornerRadius="7" />
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="13" />
+            <RowDefinition />
+            <RowDefinition Height="13" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16" />
+            <ColumnDefinition Width="156.667" />
+            <ColumnDefinition Width="71*" />
+            <ColumnDefinition Width="36.187" />
+            <ColumnDefinition Width="26" />
+            <ColumnDefinition Width="16" />
+            <ColumnDefinition Width="1082*" />
+            <ColumnDefinition Width="89" />
+            <ColumnDefinition Width="7" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="3" Grid.Column="6">
+            <ScrollViewer PanningMode="Both" VerticalScrollBarVisibility="Auto">
+                <Frame x:Name="Frame" />
+            </ScrollViewer>
+        </Grid>
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                Background="Transparent" />
+
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="7" Grid.Row="1">
+            <ui:Button Style="{DynamicResource ButtonBar}" Click="RollUpButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="LineHorizontal120" />
+            </ui:Button>
+            <ui:Button Style="{DynamicResource ButtonBar}" Click="UnwrapButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="Maximize20" />
+            </ui:Button>
+            <ui:Button Style="{DynamicResource CloseButton}" Click="CloseButton_Click">
+                <ui:SymbolIcon Foreground="{DynamicResource PrimaryForeground}" Symbol="Dismiss48" />
+            </ui:Button>
+        </StackPanel>
+
+        <Border BorderBrush="#FF007BFE" Background="#FF007BFE" BorderThickness="1" Grid.Column="0" Grid.Row="0"
+                Grid.RowSpan="7" Grid.ColumnSpan="6" />
+
+        <Border Grid.Column="1" Grid.Row="2" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="White"
+                Margin="0,6,0,5" Grid.ColumnSpan="4" />
+        <Border Grid.Column="1" Grid.Row="4" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="White"
+                Margin="0,6,0,5" Grid.ColumnSpan="4" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text=" ЕМИАС" Foreground="#E4FFFFFF" FontFamily="Inter" FontSize="20"
+                   FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,50,0" />
+        <TextBlock Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" Text=" в. 1.0" Foreground="#E4FFFFFF"
+                   FontFamily="Inter" FontSize="20" FontWeight="Bold" />
+
+
+        <Border Grid.Column="0" Background="#007BFE" Grid.ColumnSpan="6" />
+
+        <TreeView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="4"
+                  SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeViewItem Header="Главная" Foreground="#E4FFFFFF" FontFamily="Inter">
+                <TreeViewItem Header="Записи и направления" Foreground="#E4FFFFFF" FontFamily="Inter" />
+                <TreeViewItem Header="Рецепты" Foreground="#E4FFFFFF" FontFamily="Inter" />
+                <TreeViewItem Header="Диспансеризация" Foreground="#E4FFFFFF" FontFamily="Inter" />
+            </TreeViewItem>
+            <TreeViewItem Header="Медкарта" Foreground="#E4FFFFFF" FontFamily="Inter">
+                <TreeViewItem Header="Приёмы" Foreground="#E4FFFFFF" FontFamily="Inter" />
+                <TreeViewItem Header="Анализы" Foreground="#E4FFFFFF" FontFamily="Inter" />
+                <TreeViewItem Header="Исследования" Foreground="#E4FFFFFF" FontFamily="Inter" />
+            </TreeViewItem>
+        </TreeView>
+        <ui:Button Style="{DynamicResource ButtonBar}" Grid.Column="4" Margin="0,0,4,0" Grid.Row="5"
+                   Click="Button_Settings" Height="26" VerticalAlignment="Top">
+            <Image Source="/Model/Settings.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </ui:Button>
+        <TextBlock Foreground="White" Grid.Row="5" Grid.Column="1" Text="Полис ОМС:" Margin="3,0,0,0" FontSize="14"
+                   VerticalAlignment="Center" Grid.ColumnSpan="3" Height="16">
+            <ComboBox Name="CurrentUser" Foreground="White" Style="{DynamicResource MenuComboBox}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="{StaticResource Inter}" Foreground="#FFFFFF" Margin="2"
+                                   Text="{Binding FirstName}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="SelectionChanged">
+                        <b:CallMethodAction
+                            TargetObject="{Binding }"
+                            MethodName="SwithAcc" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </ComboBox>
+        </TextBlock>
+    </Grid>
+</Window>

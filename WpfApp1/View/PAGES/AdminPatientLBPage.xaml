@@ -1,0 +1,42 @@
+﻿<Page x:Class="FinalTenthPractical.View.PAGES.AdminPatientLBPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      Background="Transparent"
+      Foreground="{DynamicResource PrimaryForeground}"
+      mc:Ignorable="d"
+      Title="AdminPatient" Height="Auto" Width="Auto">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="562*" />
+        </Grid.RowDefinitions>
+        <ui:TextBox Name="OMS" Style="{DynamicResource ClearTextbox }" Grid.Row="0" PlaceholderText="Номер полиса"
+                    Text="{Binding Oms}" />
+        <ui:TextBox Name="Surname" Style="{DynamicResource ClearTextbox }" Grid.Row="2" PlaceholderText="Фамилия"
+                    Text="{Binding Surname}" />
+        <ui:TextBox Name="Firstname" Style="{DynamicResource ClearTextbox }" Grid.Row="4" PlaceholderText="Имя"
+                    Text="{Binding Firstname}" />
+        <ui:TextBox Name="Patro" Style="{DynamicResource ClearTextbox }" Grid.Row="6" PlaceholderText="Отчество"
+                    Text="{Binding Patronymic}" />
+        <ui:TextBox Name="BirthDay" Style="{DynamicResource ClearTextbox }" Grid.Row="8"
+                    PlaceholderText="Дата рождения" Text="{Binding Birthday}" />
+        <ui:TextBox Name="Addr" Style="{DynamicResource ClearTextbox }" Grid.Row="10" PlaceholderText="Адрес прописки"
+                    Text="{Binding Livaddr}" />
+    </Grid>
+</Page>
