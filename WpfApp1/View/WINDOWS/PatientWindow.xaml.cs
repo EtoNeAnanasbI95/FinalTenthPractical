@@ -1,117 +1,90 @@
-﻿using FinalTenthPractical.View.PAGES;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using FinalTenthPractical.Properties;
+using FinalTenthPractical.View.PAGES;
+using WpfApp1.ViewModel;
 
-namespace FinalTenthPractical.View
+namespace FinalTenthPractical.View;
+
+/// <summary>
+///     Логика взаимодействия для Patient.xaml
+/// </summary>
+public partial class PatientWindow : Window
 {
-    /// <summary>
-    /// Логика взаимодействия для Patient.xaml
-    /// </summary>
-    public partial class PatientWindow : Window
+    private readonly PatientSettingsViewModel _viewModel;
+
+    public PatientWindow()
     {
-        public PatientWindow()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            Frame.Content = new PatientAppointmentPage(Frame);
-            this.MinWidth = 718;
-            this.MinHeight = 472;
+        Frame.Content = new PatientAppointmentPage(Frame);
+        MinWidth = 718;
+        MinHeight = 472;
+        CurrentUser.ItemsSource = MainViewModel.Users;
+        CurrentUser.SelectedItem = MainViewModel.Users.Find(item => item.Oms == Settings.Default.CurrentPatient);
+        _viewModel = new PatientSettingsViewModel(Frame);
+        DataContext = _viewModel;
+    }
+
+    private void Button_Click_1(object sender, RoutedEventArgs e)
+    {
+        var auth = new AuthorizationWindow();
+        Close();
+    }
+
+    private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        DragMove();
+    }
+
+    private void RollUpButton_Click(object sender, RoutedEventArgs e)
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    private void CloseButton_Click(object sender, RoutedEventArgs e)
+    {
+        Close();
+    }
+
+    private void UnwrapButton_Click(object sender, RoutedEventArgs e)
+    {
+        {
+            if (WindowState == WindowState.Normal)
+                WindowState = WindowState.Maximized;
+            else
+                WindowState = WindowState.Normal;
         }
+    }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            AuthorizationWindow auth = new AuthorizationWindow();
-            this.Close();
-   
-        }
-     
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
+    private void Button_Settings(object sender, RoutedEventArgs e)
+    {
+        Frame.Navigate(new PatientSettingsPage());
+    }
 
-        private void Settings(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Grid_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
-        }
-        private void RollUpButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void UnwrapButton_Click(object sender, RoutedEventArgs e)
-        {
+    private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+    {
+        if (e.NewValue is TreeViewItem selectedItem)
+            switch (selectedItem.Header)
             {
-                if (WindowState == WindowState.Normal)
-                    WindowState = WindowState.Maximized;
-                else
-                    WindowState = WindowState.Normal;
+                case "Приёмы":
+                    Frame.Navigate(new PatientAppointmentDocumentsPage());
+                    break;
+                case "Анализы":
+                    Frame.Navigate(new PatientAnalysDocumentsPage());
+                    break;
+                case "Исследования":
+                    Frame.Navigate(new PatientResearchDocumentsPage());
+                    break;
+                case "Записи и направления":
+                    Frame.Navigate(new PatientAppointmentPage(Frame));
+                    break;
             }
-        }
+    }
 
-        private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-
-        }
-
-        private void Button_Settings(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(new PatientSettingsPage());
-        }
-
-        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (e.NewValue is TreeViewItem selectedItem)
-            {
-                switch (selectedItem.Header)
-                {
-                    case "Приёмы":
-                        Frame.Navigate(new PatientAppointmentDocumentsPage());
-                        break; 
-                    case "Анализы":
-                        Frame.Navigate(new PatientAnalysDocumentsPage());
-                        break; 
-                    case "Исследования":
-                        Frame.Navigate(new PatientResearchDocumentsPage());
-                        break; 
-                    case "Записи и направления":
-                        Frame.Navigate(new PatientAppointmentPage(Frame));
-                        break; 
-                    case "Запись":
-                        // Frame.Navigate(new DateAndTimeOfAppintment(Frame));
-                        break;  
-                }
-            }
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
+    private void PatientWindow_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        //_viewModel.LoadData();
     }
 }

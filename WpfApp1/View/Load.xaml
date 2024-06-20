@@ -3,25 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
         Foreground="{DynamicResource PrimaryForeground}"
         Background="{DynamicResource PrimaryBackground}"
-        Title="MainWindow" Height="185" Width="185"  ResizeMode="NoResize" WindowStyle="None" Loaded="MainWindow_Loaded">
+        Title="MainWindow" Height="185" Width="185" ResizeMode="NoResize" WindowStyle="None" Loaded="MainWindow_Loaded">
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard>
                 <Storyboard>
                     <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                     From="0.0" To="2.0" Duration="0:0:2"/>
+                                     From="0.0" To="2.0" Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    <Grid >
+    <Grid>
         <Image Source="/Model/изображение 19.png" />
-        
+
     </Grid>
 </Window>
-

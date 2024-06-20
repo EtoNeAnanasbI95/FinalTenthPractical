@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace EMIAS.Models;
 
-namespace EMIAS.Models;
-
-public partial class Speciality
+public class Speciality
 {
     public int? IdSpeciality { get; set; }
 

@@ -1,25 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FinalTenthPractical.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="CurrentTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Light</Value>
-    </Setting>
-    <Setting Name="CurrentPatient" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="CurrentDoctor" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="CurrentAdmin" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="CurrentDoctorPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">null</Value>
-    </Setting>
-    <Setting Name="CurrentAdminPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">null</Value>
-    </Setting>
-  </Settings>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="FinalTenthPractical.Properties" GeneratedClassName="Settings">
+    <Profiles/>
+    <Settings>
+        <Setting Name="CurrentTheme" Type="System.String" Scope="User">
+            <Value Profile="(Default)">Light</Value>
+        </Setting>
+        <Setting Name="CurrentPatient" Type="System.Int64" Scope="User">
+            <Value Profile="(Default)">0</Value>
+        </Setting>
+        <Setting Name="CurrentDoctor" Type="System.Int32" Scope="User">
+            <Value Profile="(Default)">0</Value>
+        </Setting>
+        <Setting Name="CurrentAdmin" Type="System.Int32" Scope="User">
+            <Value Profile="(Default)">0</Value>
+        </Setting>
+        <Setting Name="CurrentDoctorPassword" Type="System.String" Scope="User">
+            <Value Profile="(Default)">null</Value>
+        </Setting>
+        <Setting Name="CurrentAdminPassword" Type="System.String" Scope="User">
+            <Value Profile="(Default)">null</Value>
+        </Setting>
+    </Settings>
 </SettingsFile>
 

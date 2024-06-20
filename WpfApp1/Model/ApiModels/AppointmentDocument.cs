@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace EMIAS.Models;
 
-namespace EMIAS.Models;
-
-public partial class AppointmentDocument
+public class AppointmentDocument
 {
     public int? IdAppointment { get; set; }
 
     public string Rtf { get; set; } = null!;
-    
+
     public string DocumentName { get; set; }
 }

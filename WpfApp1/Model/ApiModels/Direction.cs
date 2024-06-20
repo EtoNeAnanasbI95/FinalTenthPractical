@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace EMIAS.Models;
 
-namespace EMIAS.Models;
-
-public partial class Direction
+public class Direction
 {
     public int? IdDirection { get; set; }
 

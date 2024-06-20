@@ -1,43 +1,37 @@
-﻿using System.Text;
-using System.Timers;
+﻿using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using EMIAS.Models;
 using FinalTenthPractical.Properties;
 using FinalTenthPractical.View;
 using FinalTenthPractical.View.WINDOWS;
 using WpfApp1.ViewModel;
 using WpfApp1.ViewModel.ApiHelper;
+using Timer = System.Timers.Timer;
 
 namespace WpfApp1;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+///     Interaction logic for MainWindow.xaml
 /// </summary>
 public partial class Load : Window
 {
-    private System.Timers.Timer timer;
+    private Timer timer;
 
     public Load()
     {
         InitializeComponent();
+        // Settings.Default.CurrentPatient = 0;
+        // Settings.Default.Save();
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        
-        MainViewModel.Appointments = ApiHelper.Get<List<Appointment>>("Appointments");
-        MainViewModel.Doctors = ApiHelper.Get<List<Doctor>>("Doctors");
-        MainViewModel.AnalysDocuments = ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        timer = new System.Timers.Timer(100);
+        MainViewModel.Appointments = ApiHelper.Get<List<Appointment>>("Appointments");
+        MainViewModel.Doctors = ApiHelper.Get<List<Doctor>>("Doctors");
+        MainViewModel.AnalysDocuments = ApiHelper.Get<List<AnalysDocument>>("AnalysDocuments");
+        MainViewModel.LoadUsers();
+        timer = new Timer(700);
         timer.Elapsed += Timer_Elapsed;
         timer.AutoReset = false;
         timer.Start();
@@ -49,19 +43,19 @@ public partial class Load : Window
         {
             if (Settings.Default.CurrentPatient != 0)
             {
-                PatientWindow window = new PatientWindow();
+                var window = new PatientWindow();
                 window.Show();
                 Close();
             }
             else if (Settings.Default.CurrentDoctor != 0)
             {
-                DoctorWindow window = new DoctorWindow();
+                var window = new DoctorWindow();
                 window.Show();
                 Close();
             }
             else if (Settings.Default.CurrentAdmin != 0)
             {
-                AdministratorWindow window = new AdministratorWindow();
+                var window = new AdministratorWindow();
                 window.Show();
                 Close();
             }
@@ -74,6 +68,3 @@ public partial class Load : Window
         });
     }
 }
-
-
-   

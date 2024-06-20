@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace EMIAS.Models;
 
-namespace EMIAS.Models;
-
-public partial class Patient
+public class Patient
 {
     public long? Oms { get; set; }
 

@@ -37,9 +37,9 @@ namespace FinalTenthPractical.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int CurrentPatient {
+        public long CurrentPatient {
             get {
-                return ((int)(this["CurrentPatient"]));
+                return ((long)(this["CurrentPatient"]));
             }
             set {
                 this["CurrentPatient"] = value;
